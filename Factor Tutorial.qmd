@@ -180,7 +180,8 @@ opinion_data <- opinion_data |>
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
-## Hint
+## Answer
+
 ```{webr-r}
 opinion_data <- opinion_data |> 
   mutate(race = fct_recode(race, "Latino" = "Hispanic"))

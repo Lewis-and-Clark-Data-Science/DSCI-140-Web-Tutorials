@@ -1,0 +1,308 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+title: "Introduction to Base R"
+---
+
+
+```{webr-r}
+#| label: input data
+#| context:setup
+sample_data <- data.frame(
+  id = 1:10,
+  city = factor(c("New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose")),
+  age = c(23, 30, 25, 28, 22, 32, 27, 26, 31, 29),
+  height = c(170, 165, 180, 158, 175, 160, 172, 167, 182, 168)
+)
+
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Welcome
+
+Welcome to this interactive tutorial for students new to base R. You'll learn about creating vectors, data frames, summarizing data, understanding data structures, and basic plotting. This tutorial also introduces the use of the $ operator to reference variables in dataframes.
+
+### Functions in Focus
+
+Before we dive into the exercises, let's introduce the key functions we will be working with and provide some guidance on their syntax:
+1. `c()`: This function is used for combining values into a vector. It is a fundamental function in R, often used in data analysis for creating vectors which can be used as input for other functions or for data manipulation.
+
+Syntax: `c(element1, element2, ...)`
+
+2. summary(): This function provides statistical summaries of the contents of an R object, such as mean, median, min, max, and quartiles for numeric data, or frequency counts for factors. It's a quick way to get an overview of your data.
+
+Syntax when used with a dataframe: `summary(df)`
+
+3. `plot()`: This function is used for creating basic types of graphs such as scatterplots, line plots, histograms, etc. It's a versatile function for quick and easy visualization of data in a dataframe.
+
+Syntax for a simple scatter plot: `plot(df$column1, df$column2)` (plotting data from two columns of df against each other)
+These functions are essential building blocks in R for data manipulation and analysis. They provide foundational capabilities for handling, exploring, and visualizing data.
+
+
+## Bracket Indexing Review
+
+Indexing in base R is a fundamental concept for accessing and manipulating elements within vectors and dataframes. It primarily uses brackets `[]` to specify the elements you want to extract or modify.
+
+For Vectors:
+- Indexing by Position: You can access elements of a vector by their position. For instance, if `v` is a vector, `v[2]` will give you the second element of v.
+- Logical Indexing: You can also use logical vectors to index. If `v` is a vector `v[v>3]` will return elements of `v` greater than 3.
+
+For Dataframes:
+Dataframes can be indexed by row and column.
+
+- Indexing by Position: To access specific elements, you can specify the row and column numbers. For instance, `df[2, 3]` will give you the element in the second row and third column of the dataframe `df`.
+- Logical Indexing: Similar to vectors, you can use logical statements for indexing. For example, `df[df$column_name > 10, ]` will give you all rows of `df` where the values in `column_name` are greater than 10.
+
+## Our Dataset
+
+We will work with a dataset that measures individual's cities, heights, and weights.
+
+```{webr-r}
+#| context:setup
+# Create a sample dataset
+sample_data <- data.frame(
+  id = 1:10,
+  city = factor(c("New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose")),
+  age = c(23, 30, 25, 28, 22, 32, 27, 26, 31, 29),
+  height = c(170, 165, 180, 158, 175, 160, 172, 167, 182, 168)
+)
+
+```
+
+Here is a preview of the data you will be working with:
+
+``` {webr-r}
+
+sample_data
+
+```
+
+
+## Exercises
+
+Here are some practice exercises.  You can click for hints for each problem.  The last hint will be the solution. 
+
+### Exercise 1: Creating a Vector
+
+Create a vector named numbers containing the first ten numbers.
+
+``` {webr-r}
+# Your code here
+
+numbers 
+# this code will run successfully and indicate a vector 
+# was created if your code is right!
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+Use the c() function to combine individual numbers into a vector
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+The syntax for creating a vector generally looks like: c(1, 2, 3, ...).  You could also use a colon as a shortcut!
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+
+## Solution
+
+``` {webr-r}
+
+numbers <- c(1:10) #numbers<- c(1,2,3,4,5,6,7,8,9,10) also works!
+```
+:::
+
+### Exercise 2
+
+Exercise 2: Summarizing Data. 
+Apply the summary() function to sample_data.
+
+``` {webr-r}
+# Your code here
+
+ # if your code worked, you should see that no cities 
+ # has more than one data point and the mean age is 27.3
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+Call summary() on your data frame, which is named sample_data
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+``` {webr-r}
+summary(____)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+
+## Solution
+
+``` {webr-r}
+summary(sample_data)
+```
+
+:::
+
+### Exercise 3
+
+Create a simple plot of 'age' vs 'height' from sample_data.
+
+``` {webr-r}
+# Your code here
+
+# if your code worked a scatter plot should appear!
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+Hint: Use the plot() function with two arguments from your data frame.
+
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+``` {webr-r}
+#The syntax is 
+plot(data_frame$column1, data_frame$column2)
+```
+
+::: 
+
+::: {.callout-note collapse="true" icon="false"}
+
+## Solution
+``` {webr-r}
+plot(sample_data$age, sample_data$height)
+```
+:::
+
+### Exercise 4
+
+Using the $ Operator: Extract the 'age' column from sample_data using the $ operator.
+Assign it to a new stand-alone vector called age
+
+``` {webr-r}
+# Your code here
+
+age # This should print the vector if done correctly
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+The $ operator is used to select a single column from a data frame.
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+Start with age <- and use syntax like my_data_frame$column_name 
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+
+## Solution 
+
+``` {webr-r}
+ age <- sample_data$age
+```
+
+:::
+
+### Exercise 5
+
+Using the $ operator to reference the vector (variable) age in the dataframe sample_data, create a new object called thirties that takes on only the age values of survey respondents greater than or equal to 30.
+
+``` {webr-r}
+# Your code here
+
+thirties # this will print ages if successfully coded
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+Use bracket indexing. The vector sample_data$age should appear twice in the correct code!
+
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+``` {webr-r}
+# thirties <- sample_data$age[___ >= 30]
+```
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+
+## Solution
+
+``` {webr-r}
+thirties <- sample_data$age[sample_data$age>= 30]
+```
+
+:::
+
+
+### Exercise 6
+
+This time, extract the entire dataset (all columns, including weight and city info) for the group of respondent 30 and over.  Call this object thirties_data
+
+``` {webr-r}
+# Your code here
+
+thirties_data # this will print ages if successfully coded
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+Use bracket indexing. You will need to specify rows you are interested in, and leave the column field blank to return ALL columns of data
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+
+## Hint
+
+``` {webr-r}
+# thirties_data <- sample_data[___ >= 30,]
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+
+## Solution
+``` {webr-r}
+# thirties_data <- sample_data[sample_data$age >= 30,]
+```
+:::
+
+Congratulations, you finished this tutorial!

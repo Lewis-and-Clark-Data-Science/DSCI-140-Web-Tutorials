@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSCI 140 Web Tutorials - Introduction to forcats Package</title>
+<title>DSCI 140 Web Tutorials - Introduction to Base R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"    # context setup prevents this from being shown in the website\n\nlibrary(tidyverse)\n\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Very Strong Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1,"options":{"label":"load-packages","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"true","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"setup","out-height":"","read-only":"false","classes":""}},{"code":"# Create a sample dataset\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Very Strong Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)","id":2,"options":{"label":"unnamed-chunk-2","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data","id":3,"options":{"label":"unnamed-chunk-3","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nstr(opinion_data$age_group) # this code will run successfully and indicate a factor variable was created if your code is right!","id":4,"options":{"label":"unnamed-chunk-4","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Hint: You might need to categorize the 'age' data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.","id":5,"options":{"label":"unnamed-chunk-5","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    ____ ~ \"______\",\n    ____ & ______ ~ \"______\",\n    ____ ~ \"______\"), \n  age_group = _________(age_group)) ","id":6,"options":{"label":"unnamed-chunk-6","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    age < 40 ~ \"Young\",\n    age >= 40 & age <= 59 ~ \"Middle-Aged\",\n    age >= 60 ~ \"Senior\"), \n  age_group = as.factor(age_group)) # converting the new column to a factor","id":7,"options":{"label":"unnamed-chunk-7","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nlevels(opinion_data$ideology) # if your code worked, you should see the new levels with this line of code","id":8,"options":{"label":"unnamed-chunk-8","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(ideology = fct_expand(______, \"______\"))","id":9,"options":{"label":"unnamed-chunk-9","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(ideology = fct_expand(ideology, \"Libertarian\"))","id":10,"options":{"label":"unnamed-chunk-10","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nlevels(opinion_data$race) # if your code worked, the recoded levels should appear here","id":11,"options":{"label":"unnamed-chunk-11","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(race = ________(race, \"______\" = \"______\"))```","id":12,"options":{"label":"unnamed-chunk-12","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(race = fct_recode(race, \"Latino\" = \"Hispanic\"))","id":13,"options":{"label":"unnamed-chunk-13","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nlevels(opinion_data$religion) # Only two levels should appear if done correctly","id":14,"options":{"label":"unnamed-chunk-14","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"\nopinion_data <- opinion_data |>\n  mutate(religion = _______(_______, \n                                  Christian = c(\"Catholic\", \"Protestant\"),\n                                  NonChristian = c(\"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\")))","id":15,"options":{"label":"unnamed-chunk-15","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(religion = fct_collapse(religion, \n                                  Christian = c(\"Catholic\", \"Protestant\"),\n                                  NonChristian = c(\"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\")))","id":16,"options":{"label":"unnamed-chunk-16","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"count(opinion_data, party)","id":17,"options":{"label":"unnamed-chunk-17","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\ncount(opinion_data, party) # the table should appear in a different order if successfully coded","id":18,"options":{"label":"unnamed-chunk-18","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# To reorder:\nopinion_data <- opinion_data |> \n   mutate(party = fct_infreq(_____))\n\n# To create a frequency table:\ncount(opinion_data, ______)","id":19,"options":{"label":"unnamed-chunk-19","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(party = fct_infreq(party))\n\n# Create frequency table\ncount(opinion_data, party)","id":20,"options":{"label":"unnamed-chunk-20","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"autorun":"true","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"setup","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"input data"},"code":"sample_data <- data.frame(\n  id = 1:10,\n  city = factor(c(\"New York\", \"Los Angeles\", \"Chicago\", \"Houston\", \"Phoenix\", \"Philadelphia\", \"San Antonio\", \"San Diego\", \"Dallas\", \"San Jose\")),\n  age = c(23, 30, 25, 28, 22, 32, 27, 26, 31, 29),\n  height = c(170, 165, 180, 158, 175, 160, 172, 167, 182, 168)\n)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"autorun":"true","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"setup","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-2"},"code":"# Create a sample dataset\nsample_data <- data.frame(\n  id = 1:10,\n  city = factor(c(\"New York\", \"Los Angeles\", \"Chicago\", \"Houston\", \"Phoenix\", \"Philadelphia\", \"San Antonio\", \"San Diego\", \"Dallas\", \"San Jose\")),\n  age = c(23, 30, 25, 28, 22, 32, 27, 26, 31, 29),\n  height = c(170, 165, 180, 158, 175, 160, 172, 167, 182, 168)\n)"},{"id":3,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-3"},"code":"\nsample_data"},{"id":4,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-4"},"code":"# Your code here\n\nnumbers \n# this code will run successfully and indicate a vector \n# was created if your code is right!"},{"id":5,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-5"},"code":"\nnumbers <- c(1:10) #numbers<- c(1,2,3,4,5,6,7,8,9,10) also works!"},{"id":6,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-6"},"code":"# Your code here\n\n # if your code worked, you should see that no cities \n # has more than one data point and the mean age is 27.3"},{"id":7,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-7"},"code":"summary(____)"},{"id":8,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-8"},"code":"summary(sample_data)"},{"id":9,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-9"},"code":"# Your code here\n\n# if your code worked a scatter plot should appear!"},{"id":10,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-10"},"code":"#The syntax is \nplot(data_frame$column1, data_frame$column2)"},{"id":11,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-11"},"code":"plot(sample_data$age, sample_data$height)"},{"id":12,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-12"},"code":"# Your code here\n\nage # This should print the vector if done correctly"},{"id":13,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-13"},"code":" age <- sample_data$age"},{"id":14,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-14"},"code":"# Your code here\n\nthirties # this will print ages if successfully coded"},{"id":15,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-15"},"code":"# thirties <- sample_data$age[___ >= 30]"},{"id":16,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-16"},"code":"thirties <- sample_data$age[sample_data$age>= 30]"},{"id":17,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-17"},"code":"# Your code here\n\nthirties_data # this will print ages if successfully coded"},{"id":18,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-18"},"code":"# thirties_data <- sample_data[___ >= 30,]"},{"id":19,"options":{"autorun":"false","editor-max-height":"","comment":"","fig-width":7,"read-only":"false","out-height":"","message":"true","editor-quick-suggestions":"false","context":"interactive","warning":"true","fig-height":5,"out-width":"700px","output":"true","fig-cap":"","classes":"","results":"markup","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-19"},"code":"# thirties_data <- sample_data[sample_data$age >= 30,]"}];
 
 </script>
 <script type="module">
@@ -1130,11 +1130,11 @@ globalThis.qwebrExecuteCode = async function (
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./Factor Tutorial.html" aria-current="page"> 
+    <a class="nav-link" href="./Factor Tutorial.html"> 
 <span class="menu-text">Introduction to forcats Package</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./intro_R_tutorial.html"> 
+    <a class="nav-link active" href="./intro_R_tutorial.html" aria-current="page"> 
 <span class="menu-text">Introduction to Base R</span></a>
   </li>  
 </ul>
@@ -1157,14 +1157,19 @@ globalThis.qwebrExecuteCode = async function (
   <ul class="collapse">
   <li><a href="#functions-in-focus" id="toc-functions-in-focus" class="nav-link" data-scroll-target="#functions-in-focus">Functions in Focus</a></li>
   </ul></li>
+  <li><a href="#bracket-indexing-review" id="toc-bracket-indexing-review" class="nav-link" data-scroll-target="#bracket-indexing-review">Bracket Indexing Review</a></li>
   <li><a href="#our-dataset" id="toc-our-dataset" class="nav-link" data-scroll-target="#our-dataset">Our Dataset</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-1-creating-a-vector" id="toc-exercise-1-creating-a-vector" class="nav-link" data-scroll-target="#exercise-1-creating-a-vector">Exercise 1: Creating a Vector</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  </ul></li>
+  <li><a href="#hint-6" id="toc-hint-6" class="nav-link" data-scroll-target="#hint-6">Hint</a>
+  <ul class="collapse">
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1401,7 +1406,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to forcats Package</h1>
+<h1 class="title">Introduction to Base R</h1>
 </div>
 
 
@@ -1422,24 +1427,34 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>In this tutorial, you will learn how to work with categorical data using the forcats package in the tidyverse. Categorical data is essential in data analysis, and forcats provides powerful tools for managing factors.</p>
+<p>Welcome to this interactive tutorial for students new to base R. You’ll learn about creating vectors, data frames, summarizing data, understanding data structures, and basic plotting. This tutorial also introduces the use of the $ operator to reference variables in dataframes.</p>
 <section id="functions-in-focus" class="level3">
 <h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
-<p>Before we dive into the exercises, let’s introduce the key functions we will be working with and provide some guidance on their syntax:</p>
-<ol type="1">
-<li><p><code>as.factor()</code>: This function can convert a variable in another format into a factor variable. Syntax: `as.factor(nonfactor_variable)</p></li>
-<li><p><code>fct_expand()</code>: This function is used to add new levels to a factor variable. Syntax: <code>fct_expand(factor_variable, "new_levels")</code></p></li>
-<li><p><code>fct_collapse()</code>: Use this function to group levels in a factor variable into broader categories. Syntax: <code>fct_collapse(factor_variable, new_levels=c("old_leve1", "old_level2"))</code></p></li>
-<li><p><code>fct_recode()</code>: This function allows you to recode levels in a factor variable. Syntax: <code>fct_recode(factor_variable, new_level="old_level")</code></p></li>
-<li><p><code>fct_lump_n()</code>: Use <code>fct_lump_n()</code> to lump levels in a factor variable into broader categories. Syntax: <code>fct_lump(factor_variable, n=X)</code></p></li>
-<li><p><code>fct_infreq()</code>: Use <code>fct_infreq()</code> to reorder the levels of the factor variable to follow the frequency of observations for different factor levels. Syntax: <code>fct_infreq(factor_variable</code></p></li>
+<p>Before we dive into the exercises, let’s introduce the key functions we will be working with and provide some guidance on their syntax: 1. <code>c()</code>: This function is used for combining values into a vector. It is a fundamental function in R, often used in data analysis for creating vectors which can be used as input for other functions or for data manipulation.</p>
+<p>Syntax: <code>c(element1, element2, ...)</code></p>
+<ol start="2" type="1">
+<li>summary(): This function provides statistical summaries of the contents of an R object, such as mean, median, min, max, and quartiles for numeric data, or frequency counts for factors. It’s a quick way to get an overview of your data.</li>
 </ol>
-<p>Now, let’s proceed to the exercises!</p>
+<p>Syntax when used with a dataframe: <code>summary(df)</code></p>
+<ol start="3" type="1">
+<li><code>plot()</code>: This function is used for creating basic types of graphs such as scatterplots, line plots, histograms, etc. It’s a versatile function for quick and easy visualization of data in a dataframe.</li>
+</ol>
+<p>Syntax for a simple scatter plot: <code>plot(df$column1, df$column2)</code> (plotting data from two columns of df against each other) These functions are essential building blocks in R for data manipulation and analysis. They provide foundational capabilities for handling, exploring, and visualizing data.</p>
 </section>
+</section>
+<section id="bracket-indexing-review" class="level2">
+<h2 class="anchored" data-anchor-id="bracket-indexing-review">Bracket Indexing Review</h2>
+<p>Indexing in base R is a fundamental concept for accessing and manipulating elements within vectors and dataframes. It primarily uses brackets <code>[]</code> to specify the elements you want to extract or modify.</p>
+<p>For Vectors: - Indexing by Position: You can access elements of a vector by their position. For instance, if <code>v</code> is a vector, <code>v[2]</code> will give you the second element of v. - Logical Indexing: You can also use logical vectors to index. If <code>v</code> is a vector <code>v[v&gt;3]</code> will return elements of <code>v</code> greater than 3.</p>
+<p>For Dataframes: Dataframes can be indexed by row and column.</p>
+<ul>
+<li>Indexing by Position: To access specific elements, you can specify the row and column numbers. For instance, <code>df[2, 3]</code> will give you the element in the second row and third column of the dataframe <code>df</code>.</li>
+<li>Logical Indexing: Similar to vectors, you can use logical statements for indexing. For example, <code>df[df$column_name &gt; 10, ]</code> will give you all rows of <code>df</code> where the values in <code>column_name</code> are greater than 10.</li>
+</ul>
 </section>
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
-<p>We will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.</p>
+<p>We will work with a dataset that measures individual’s cities, heights, and weights.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Here is a preview of the data you will be working with:</p>
@@ -1448,10 +1463,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a new variable called age_group that groups the “age” variable into three categories: “Young” (under 40), “Middle-Aged” (40-59), and “Senior” (60 and above). Make this new variable a factor variable.</p>
+<p>Here are some practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
+<section id="exercise-1-creating-a-vector" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-creating-a-vector">Exercise 1: Creating a Vector</h3>
+<p>Create a vector named numbers containing the first ten numbers.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1466,8 +1481,7 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the c() function to combine individual numbers into a vector</p>
 </div>
 </div>
 </div>
@@ -1483,8 +1497,7 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The syntax for creating a vector generally looks like: c(1, 2, 3, …). You could also use a colon as a shortcut!</p>
 </div>
 </div>
 </div>
@@ -1494,13 +1507,13 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1508,8 +1521,8 @@ Answer
 </section>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Use the <code>fct_expand()</code> function to add one new level, “Libertarian”, to the “ideology” factor variable.</p>
-<div id="qwebr-insertion-location-8"></div>
+<p>Exercise 2: Summarizing Data. Apply the summary() function to sample_data.</p>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1523,7 +1536,7 @@ Hint
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the fct_expand() function on the ‘ideology’ column of ‘opinion_data’. Don’t forget to assign the new levels you want to add.</p>
+<p>Call summary() on your data frame, which is named sample_data</p>
 </div>
 </div>
 </div>
@@ -1539,7 +1552,7 @@ Hint
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1550,13 +1563,13 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1564,8 +1577,8 @@ Answer
 </section>
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Recategorize the “race” factor variable, replacing “Hispanic” with “Latino” using the <code>fct_recode()</code> function.</p>
-<div id="qwebr-insertion-location-11"></div>
+<p>Create a simple plot of ‘age’ vs ‘height’ from sample_data.</p>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1579,7 +1592,7 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the fct_recode() function with the ‘race’ column and specify that “Latino” should replace “Hispanic”.</p>
+<p>Hint: Use the plot() function with two arguments from your data frame.</p>
 </div>
 </div>
 </div>
@@ -1595,7 +1608,7 @@ Hint
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-12"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1606,13 +1619,13 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-13"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1620,9 +1633,15 @@ Answer
 </section>
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Reclassify the “religion” variable into two categories: “Christian” and “Non-Christian” by creating a new factor variable.</p>
-<div id="qwebr-insertion-location-14"></div>
+<p>Using the $ Operator: Extract the ‘age’ column from sample_data using the $ operator. Assign it to a new stand-alone vector called age</p>
+<div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>::: {.callout-tip collapse=“true” icon=“false”}</p>
+</section>
+</section>
+<section id="hint-6" class="level2">
+<h2 class="anchored" data-anchor-id="hint-6">Hint</h2>
+<p>The $ operator is used to select a single column from a data frame.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1635,28 +1654,33 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You might need to manually recode the ‘religion’ levels into ‘Christian’ and ‘NonChristian’. Think about using a function that allows specifying conditions for recoding.</p>
+<p>Start with age &lt;- and use syntax like my_data_frame$column_name</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-15"></div>
+<div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Using the $ operator to reference the vector (variable) age in the dataframe sample_data, create a new object called thirties that takes on only the age values of survey respondents greater than or equal to 30.</p>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1668,20 +1692,10 @@ Hint
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use bracket indexing. The vector sample_data$age should appear twice in the correct code!</p>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Currently a frequency table of the variable ‘party’ would look like this:</p>
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Reorder the levels of the “party” factor variable based on their frequencies and then create a frequency table to view the number of respondents associated with each party.</p>
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1694,12 +1708,36 @@ Hint
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the fct_infreq() function to reorder the levels of the ‘party’ variable in ‘opinion_data’ based on their frequencies.</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<p>This time, extract the entire dataset (all columns, including weight and city info) for the group of respondent 30 and over. Call this object thirties_data</p>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1708,26 +1746,42 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-19"></div>
+<p>Use bracket indexing. You will need to specify rows you are interested in, and leave the column field blank to return ALL columns of data</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-20"></div>
+<div id="qwebr-insertion-location-19"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
