@@ -2,6 +2,9 @@
 
 Tutorials for Ellen Seljan's DSCI 140 class
 
+Website with tutorials: https://lewis-and-clark-data-science.github.io/DSCI-140-Web-Tutorials/
+
+
 Extensions used:
 
 -   Webr
