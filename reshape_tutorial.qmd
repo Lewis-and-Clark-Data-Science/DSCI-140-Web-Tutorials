@@ -1,0 +1,307 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+title: "Data Transformation in R"
+---
+
+```{webr-r}
+#| context: setup
+#| label: input data and seeds
+
+library(tidyverse)
+
+set.seed(123)  # Setting seed for reproducibility
+climate_data <- tibble(
+  country = rep(c("Freedonia", "Sylvania", "Zubrowka", "Borduria"), each = 4),
+  year = rep(2020:2023, 4),
+  carbon_emission = round(runif(16, 4, 12), 2), # In metric tons per capita
+  temperature_change = round(runif(16, 0.5, 3.0), 2), # In degree Celsius compared to the 20th-century average
+  treaty_participation = sample(c(TRUE, FALSE), 16, replace = TRUE)
+)
+
+climate_data_longer <- climate_data |>
+  pivot_longer(cols = c(carbon_emission, temperature_change), 
+               names_to = "measurement", 
+               values_to = "value")
+
+# Additional data for join examples
+treaty_data <- tibble(
+  country = c("Freedonia", "Sylvania", "Zubrowka", "Elbonia"),
+  treaty_signed = c(TRUE, TRUE, FALSE, TRUE)
+)
+
+new_data <- tibble(
+  country = rep("Elbonia", 4),
+  year = 2020:2023,
+  carbon_emission = round(runif(4, 4, 12), 2),
+  temperature_change = round(runif(4, 0.5, 3.0), 2),
+  treaty_participation = sample(c(TRUE, FALSE), 4, replace = TRUE)
+)
+
+
+
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+In this tutorial, we'll explore several critical tidverse functions for data transformation with environmental data. The data represents fictional measurements from different countries concerning carbon emissions, temperature changes, and participation in various environmental treaties.
+
+Here are the functions you will need to use:
+
+1.  `bind_rows()`: This function is used to combine two or more data frames by row, binding them together. Syntax: `combined_data <- bind_rows(df1, df2)`
+
+2.  `pivot_longer`: Reshape data when variables are spread across columns. Syntax: `pivot_longer(data, cols_to_pivot, names_to="name", values_to="value")`
+
+3.  `pivot_wider`: Reshape data when you need to spread rows across new columns. Syntax: `pivot_wider(data, names_from = "category", values_from = "amount")`
+
+4.  `left_join()`: Joins two datasets, retaining observations from the first (left) dataframe. Syntax: `left_join(df1, df2, by = "key_variable")`
+
+5.  `anti_join()`: Identifies rows in one data frame that do not have a corresponding match in another data frame. Syntax: `result <- anti_join(df1, df2, by = "key_variable")`
+
+## Our Dataset
+
+Let's create our synthetic dataset first.
+
+```{webr-r}
+#| context: setup
+
+# Creating the dataset
+set.seed(123)  # Setting seed for reproducibility
+climate_data <- tibble(
+  country = rep(c("Freedonia", "Sylvania", "Zubrowka", "Borduria"), each = 4),
+  year = rep(2020:2023, 4),
+  carbon_emission = round(runif(16, 4, 12), 2), # In metric tons per capita
+  temperature_change = round(runif(16, 0.5, 3.0), 2), # In degree Celsius compared to the 20th-century average
+  treaty_participation = sample(c(TRUE, FALSE), 16, replace = TRUE)
+)
+
+climate_data_longer <- climate_data |>
+  pivot_longer(cols = c(carbon_emission, temperature_change), 
+               names_to = "measurement", 
+               values_to = "value")
+
+# Additional data for join examples
+treaty_data <- tibble(
+  country = c("Freedonia", "Sylvania", "Zubrowka", "Elbonia"),
+  treaty_signed = c(TRUE, TRUE, FALSE, TRUE)
+)
+
+new_data <- tibble(
+  country = rep("Elbonia", 4),
+  year = 2020:2023,
+  carbon_emission = round(runif(4, 4, 12), 2),
+  temperature_change = round(runif(4, 0.5, 3.0), 2),
+  treaty_participation = sample(c(TRUE, FALSE), 4, replace = TRUE)
+)
+
+# Preview the initial dataset
+climate_data
+```
+
+This dataset includes fictional information about carbon emissions and temperature changes over four years for various countries, as well as whether they participated in environmental treaties. Here is your first dataeframe, called climate_data_longer:
+
+```{webr-r}
+
+climate_data_longer
+
+```
+
+## Exercises
+
+### Exercise 1: Widen the Data
+
+This data is too long, with multiple variables sharing the same columns. Convert `climate_data_longer` to a wider format, where each column represents a different type of measurement. Use the current measurement variable to create new variable names. Name the wider dataframe climate_data.
+
+```{webr-r}
+# Your code here.  If run successfully, the following code would indicate that your data has
+# 16 observations and 5 variables
+
+str(climate_data)
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+You'll want to use the pivot_wider() function. You will need to specify the names_from and values_from parameters.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# Here's how you start:
+# climate_data_wider <- climate_data_longer |> 
+#   pivot_wider(names_from = _______, values_from = ______)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+climate_data_wider <- climate_data_longer |> 
+  pivot_wider(names_from = measurement, values_from = value)
+```
+:::
+
+### Exercise 2: Lengthen the Data
+
+For practice purposes, can you convert `climate_data` back to its original, longer format, where one column represents the type of measurement (carbon emission or temperature change), and another column represents the values? Call this new data frame climate_data_reversion
+
+```{webr-r}
+# Your code here
+
+str(climate_data_reversion) # should show 32 observations, 5 variables
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+This time, you'll want to use the pivot_longer() function. You need to specify which columns you want to make longer.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# Start with this:
+# climate_data_reversion <- climate_data |> 
+#   pivot_longer(cols = c(______, _____), 
+#                names_to = "______", 
+#                values_to = "______")
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+climate_data_reversion <- climate_data |> 
+  pivot_longer(cols = c(carbon_emission, temperature_change), 
+               names_to = "measurement", 
+               values_to = "value")
+```
+:::
+
+### Exercise 3: Adding Rows
+
+Suppose we have measured data for another country, "Elbonia," and want to add this data to our existing `climate_data`. Use `bind_rows()` to do this.
+
+First, we will create the new data with the following code:
+
+```{webr-r}
+new_data <- tibble(
+  country = rep("Elbonia", 4),
+  year = 2020:2023,
+  carbon_emission = round(runif(4, 4, 12), 2),
+  temperature_change = round(runif(4, 0.5, 3.0), 2),
+  treaty_participation = sample(c(TRUE, FALSE), 4, replace = TRUE)
+)
+
+new_data
+```
+
+Now, bind this new data to `climate_data`.
+
+```{webr-r}
+# Your code here
+
+str(climate_data) # should now have 20 observations
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use bind_rows() to combine the rows of two datasets. Make sure they have the same columns!
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# Here's how you start:
+# all_climate_data <- bind_rows(____, _____)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+all_climate_data <- bind_rows(climate_data, new_data)
+```
+:::
+
+### Exercise 4: Joining Data
+
+Let's find out which countries in our `climate_data` have signed an environmental treaty using `left_join()`.
+
+```{webr-r}
+# Your code here
+
+str(climate_treaty_info) # If run successfully you sould have more than 5 variables
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+You can use left_join() to merge data, keeping all records from `climate_data` and joining information from `treaty_data`.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# Here's how you start:
+# climate_treaty_info <- left_join(____, ______, by = "______")
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+climate_treaty_info <- left_join(climate_data, treaty_data, by = "country")
+```
+:::
+
+### Exercise 5: Anti-Join
+
+Now, identify which countries listed in `treaty_data` are not present in `climate_data` using `anti_join()`. Save the mismatched countries in an object called missing_countries
+
+```{webr-r}
+# Your code here
+
+str(missing_countries) # should have 1 observation, Elbonia
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+anti_join() will return rows from x where there are no corresponding rows in y that match by the given key.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# Here's how you start:
+# missing_countries <- anti_join(______, ______, by = "_______")
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+missing_countries <- anti_join(treaty_data, climate_data, by = "country")
+```
+:::
+
+## Conclusion
+
+Great work! In this tutorial, you've learned how to use various tidyverse functions to manipulate a climate change dataset. These functions are versatile and can be applied to many data manipulation tasks in R. Keep practicing and exploring their different parameters and capabilities.

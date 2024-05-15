@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSCI 140 Web Tutorials - Introduction to forcats Package</title>
+<title>DSCI 140 Web Tutorials - Introduction to stringr Package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"    # context setup prevents this from being shown in the website\n\nlibrary(tidyverse)\n\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Very Strong Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1,"options":{"label":"load-packages","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"true","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"setup","out-height":"","read-only":"false","classes":""}},{"code":"# Create a sample dataset\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Very Strong Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)","id":2,"options":{"label":"unnamed-chunk-2","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data","id":3,"options":{"label":"unnamed-chunk-3","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nstr(opinion_data$age_group) # this code will run successfully and indicate a factor variable was created if your code is right!","id":4,"options":{"label":"unnamed-chunk-4","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Hint: You might need to categorize the 'age' data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.","id":5,"options":{"label":"unnamed-chunk-5","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    ____ ~ \"______\",\n    ____ & ______ ~ \"______\",\n    ____ ~ \"______\"), \n  age_group = _________(age_group)) ","id":6,"options":{"label":"unnamed-chunk-6","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    age < 40 ~ \"Young\",\n    age >= 40 & age <= 59 ~ \"Middle-Aged\",\n    age >= 60 ~ \"Senior\"), \n  age_group = as.factor(age_group)) # converting the new column to a factor","id":7,"options":{"label":"unnamed-chunk-7","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nlevels(opinion_data$ideology) # if your code worked, you should see the new levels with this line of code","id":8,"options":{"label":"unnamed-chunk-8","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(ideology = fct_expand(______, \"______\"))","id":9,"options":{"label":"unnamed-chunk-9","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(ideology = fct_expand(ideology, \"Libertarian\"))","id":10,"options":{"label":"unnamed-chunk-10","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nlevels(opinion_data$race) # if your code worked, the recoded levels should appear here","id":11,"options":{"label":"unnamed-chunk-11","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(race = ________(race, \"______\" = \"______\"))```","id":12,"options":{"label":"unnamed-chunk-12","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(race = fct_recode(race, \"Latino\" = \"Hispanic\"))","id":13,"options":{"label":"unnamed-chunk-13","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\nlevels(opinion_data$religion) # Only two levels should appear if done correctly","id":14,"options":{"label":"unnamed-chunk-14","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"\nopinion_data <- opinion_data |>\n  mutate(religion = _______(_______, \n                                  Christian = c(\"Catholic\", \"Protestant\"),\n                                  NonChristian = c(\"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\")))","id":15,"options":{"label":"unnamed-chunk-15","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(religion = fct_collapse(religion, \n                                  Christian = c(\"Catholic\", \"Protestant\"),\n                                  NonChristian = c(\"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\")))","id":16,"options":{"label":"unnamed-chunk-16","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"count(opinion_data, party)","id":17,"options":{"label":"unnamed-chunk-17","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# Your code here\n\ncount(opinion_data, party) # the table should appear in a different order if successfully coded","id":18,"options":{"label":"unnamed-chunk-18","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"# To reorder:\nopinion_data <- opinion_data |> \n   mutate(party = fct_infreq(_____))\n\n# To create a frequency table:\ncount(opinion_data, ______)","id":19,"options":{"label":"unnamed-chunk-19","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}},{"code":"opinion_data <- opinion_data |> \n  mutate(party = fct_infreq(party))\n\n# Create frequency table\ncount(opinion_data, party)","id":20,"options":{"label":"unnamed-chunk-20","comment":"","editor-font-scale":1,"dpi":72,"message":"true","editor-max-height":"","fig-width":7,"output":"true","editor-quick-suggestions":"false","out-width":"700px","autorun":"false","fig-height":5,"warning":"true","fig-cap":"","results":"markup","context":"interactive","out-height":"","read-only":"false","classes":""}}];
+globalThis.qwebrCellDetails = [{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-1","output":"true","context":"setup","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"true","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":1,"code":"library(tidyverse)\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))\n\n\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-2","output":"true","context":"setup","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"true","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":2,"code":"\n# Create a sample dataset\n\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-3","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":3,"code":"\ncensus"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-4","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":4,"code":"# Your code here\n\nstr(census$description_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-5","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":5,"code":"census$description_lower <- str_to_lower(census$_____)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-6","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":6,"code":"census$description_lower <- str_to_lower(census$Descriptions)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-7","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":7,"code":"# Your code here\n\nstr(census$county) # if your code worked, you should see your new county variable with this code"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-8","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":8,"code":"census$county <- str_split(___$___, pattern = \",\")[,_____]"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-9","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":9,"code":"census$county <- str_split(census$Descriptions, pattern = \",\")[,2]"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-10","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":10,"code":"# Your code here\n\nstr(census$description_short) # if your code worked, this code will show you the structure of your new variable"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-11","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":11,"code":"census$description_short <- str_remove(__$___, \"_____\")"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-12","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":12,"code":"census$description_short <- str_remove(census$Descriptions, \"County, Oregon\")"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-13","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":13,"code":"# Your code here\n\nstr(census$fips_tract) # The ID number should be shorter and start with 0"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-14","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":14,"code":"\ncensus$fips_tract <- str_sub(____, ____, ____)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-15","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":15,"code":"census$fips_tract <- str_sub(census$Identifiers, 10, -1)"}];
 
 </script>
 <script type="module">
@@ -1130,12 +1130,20 @@ globalThis.qwebrExecuteCode = async function (
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./Factor Tutorial.html" aria-current="page"> 
+    <a class="nav-link" href="./intro_R_tutorial.html"> 
+<span class="menu-text">Introduction to Base R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./factor_tutorial.html"> 
 <span class="menu-text">Introduction to forcats Package</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./intro_R_tutorial.html"> 
-<span class="menu-text">Introduction to Base R</span></a>
+    <a class="nav-link" href="./reshape_tutorial.html"> 
+<span class="menu-text">Data Transformation in R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./string_tutorial.html" aria-current="page"> 
+<span class="menu-text">Introduction to stringr Package</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -1164,7 +1172,6 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1401,7 +1408,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to forcats Package</h1>
+<h1 class="title">Introduction to stringr Package</h1>
 </div>
 
 
@@ -1422,24 +1429,22 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>In this tutorial, you will learn how to work with categorical data using the forcats package in the tidyverse. Categorical data is essential in data analysis, and forcats provides powerful tools for managing factors.</p>
+<p>In this tutorial, you will delve into the manipulation of text data with the <code>stringr</code> package in the tidyverse. Text data is ubiquitous and manipulating strings efficiently is a fundamental skill in data analysis. <code>stringr</code> provides a cohesive set of functions designed to make string manipulation easy and consistent.</p>
 <section id="functions-in-focus" class="level3">
 <h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
-<p>Before we dive into the exercises, let’s introduce the key functions we will be working with and provide some guidance on their syntax:</p>
+<p>Let’s familiarize ourselves with the essential functions from <code>stringr</code> that we’ll explore in this tutorial, along with their syntax:</p>
 <ol type="1">
-<li><p><code>as.factor()</code>: This function can convert a variable in another format into a factor variable. Syntax: `as.factor(nonfactor_variable)</p></li>
-<li><p><code>fct_expand()</code>: This function is used to add new levels to a factor variable. Syntax: <code>fct_expand(factor_variable, "new_levels")</code></p></li>
-<li><p><code>fct_collapse()</code>: Use this function to group levels in a factor variable into broader categories. Syntax: <code>fct_collapse(factor_variable, new_levels=c("old_leve1", "old_level2"))</code></p></li>
-<li><p><code>fct_recode()</code>: This function allows you to recode levels in a factor variable. Syntax: <code>fct_recode(factor_variable, new_level="old_level")</code></p></li>
-<li><p><code>fct_lump_n()</code>: Use <code>fct_lump_n()</code> to lump levels in a factor variable into broader categories. Syntax: <code>fct_lump(factor_variable, n=X)</code></p></li>
-<li><p><code>fct_infreq()</code>: Use <code>fct_infreq()</code> to reorder the levels of the factor variable to follow the frequency of observations for different factor levels. Syntax: <code>fct_infreq(factor_variable</code></p></li>
+<li><p><code>str_sub()</code>: This function allows you to extract substrings in a character vector. Syntax: <code>str_sub(string, start_position, end_position)</code></p></li>
+<li><p><code>str_to_lower()</code>: Use this function to transform text to all lowercase. Syntax: <code>str_to_lower(string)</code></p></li>
+<li><p><code>str_split()</code>: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. Syntax: <code>str_split(string, pattern, simplify = TRUE)</code></p></li>
+<li><p><code>str_remove()</code>: Use <code>str_remove()</code> to eliminate the first instance of a pattern in a string. Syntax: <code>str_remove(string, pattern)</code></p></li>
 </ol>
-<p>Now, let’s proceed to the exercises!</p>
+<p>With these tools at your disposal, you’ll be able to tackle a wide array of text processing tasks. Let’s proceed to the exercises and start putting these functions to work!</p>
 </section>
 </section>
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
-<p>We will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.</p>
+<p>We will work with a dataset that includes variables found in the US Census.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Here is a preview of the data you will be working with:</p>
@@ -1451,7 +1456,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a new variable called age_group that groups the “age” variable into three categories: “Young” (under 40), “Middle-Aged” (40-59), and “Senior” (60 and above). Make this new variable a factor variable.</p>
+<p>Create a variable called description_lower that converts Descriptions in the census data frame to lowercase using str_to_lower().</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1466,8 +1471,7 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the str_to_lower function on the ‘Descriptions’ column of ‘census’.</p>
 </div>
 </div>
 </div>
@@ -1483,7 +1487,7 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1500,7 +1504,7 @@ Answer
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1508,8 +1512,8 @@ Answer
 </section>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Use the <code>fct_expand()</code> function to add one new level, “Libertarian”, to the “ideology” factor variable.</p>
-<div id="qwebr-insertion-location-8"></div>
+<p>Split the Descriptions variable in the census data frame into separate elements using str_split() based on the comma delimiter. In particular, create a new variable called county that extracts the county information (which appears after the first comma).</p>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1523,7 +1527,7 @@ Hint
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the fct_expand() function on the ‘ideology’ column of ‘opinion_data’. Don’t forget to assign the new levels you want to add.</p>
+<p>Use the str_split function and specify the comma as the pattern. Extract the second column using index notation.</p>
 </div>
 </div>
 </div>
@@ -1539,7 +1543,7 @@ Hint
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1556,7 +1560,7 @@ Answer
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1564,8 +1568,8 @@ Answer
 </section>
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Recategorize the “race” factor variable, replacing “Hispanic” with “Latino” using the <code>fct_recode()</code> function.</p>
-<div id="qwebr-insertion-location-11"></div>
+<p>Create a new variable called description_short that removes the phrase “County, Oregon” from all Descriptions in the census data frame using str_remove().</p>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1579,7 +1583,7 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the fct_recode() function with the ‘race’ column and specify that “Latino” should replace “Hispanic”.</p>
+<p>The str_remove function needs a pattern to match what should be removed.</p>
 </div>
 </div>
 </div>
@@ -1595,7 +1599,7 @@ Hint
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-12"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1612,7 +1616,7 @@ Answer
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-13"></div>
+<div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1620,8 +1624,8 @@ Answer
 </section>
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Reclassify the “religion” variable into two categories: “Christian” and “Non-Christian” by creating a new factor variable.</p>
-<div id="qwebr-insertion-location-14"></div>
+<p>The Identifier variable is a code used by the postal service. This particlar ID number more information than necessary to identify a census tract. Create a variable called fips_tract that extracts the component of the ID number that exists from the 10th character to the last character using str_sub().</p>
+<div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1635,7 +1639,7 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You might need to manually recode the ‘religion’ levels into ‘Christian’ and ‘NonChristian’. Think about using a function that allows specifying conditions for recoding.</p>
+<p>Use str_sub(). -1 will stand in for the last character.</p>
 </div>
 </div>
 </div>
@@ -1651,7 +1655,7 @@ Hint
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-15"></div>
+<div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1662,72 +1666,13 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Currently a frequency table of the variable ‘party’ would look like this:</p>
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Reorder the levels of the “party” factor variable based on their frequencies and then create a frequency table to view the number of respondents associated with each party.</p>
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the fct_infreq() function to reorder the levels of the ‘party’ variable in ‘opinion_data’ based on their frequencies.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-19"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-20"></div>
+<div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>

@@ -1,0 +1,207 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+title: "Introduction to stringr Package"
+---
+
+```{webr-r}
+#| context: setup
+library(tidyverse)
+
+census <- data.frame(Identifiers=c("1400000US41003000500", "1400000US41003000600", "1400000US41003000900", 
+                 "1400000US41003001001", "1400000US41003001002", "1400000US41003001101", 
+                 "1400000US41003001102"), Descriptions=c("Census Tract 5, Benton County, Oregon", "Census Tract 6, Benton County, Oregon", 
+                  "Census Tract 9, Benton County, Oregon", "Census Tract 10.01, Benton County, Oregon", 
+                  "Census Tract 10.02, Benton County, Oregon", "Census Tract 11.01, Benton County, Oregon", 
+                  "Census Tract 11.02, Benton County, Oregon"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))
+
+
+
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Welcome
+
+In this tutorial, you will delve into the manipulation of text data with the `stringr` package in the tidyverse. Text data is ubiquitous and manipulating strings efficiently is a fundamental skill in data analysis. `stringr` provides a cohesive set of functions designed to make string manipulation easy and consistent.
+
+### Functions in Focus
+
+Let's familiarize ourselves with the essential functions from `stringr` that we'll explore in this tutorial, along with their syntax:
+
+1.  `str_sub()`: This function allows you to extract substrings in a character vector. Syntax: `str_sub(string, start_position, end_position)`
+
+2.  `str_to_lower()`: Use this function to transform text to all lowercase. Syntax: `str_to_lower(string)`
+
+3.  `str_split()`: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. Syntax: `str_split(string, pattern, simplify = TRUE)`
+
+4.  `str_remove()`: Use `str_remove()` to eliminate the first instance of a pattern in a string. Syntax: `str_remove(string, pattern)`
+
+With these tools at your disposal, you'll be able to tackle a wide array of text processing tasks. Let's proceed to the exercises and start putting these functions to work!
+
+## Our Dataset
+
+We will work with a dataset that includes variables found in the US Census.
+
+```{webr-r}
+#| context: setup
+
+# Create a sample dataset
+
+
+census <- data.frame(Identifiers=c("1400000US41003000500", "1400000US41003000600", "1400000US41003000900", 
+                 "1400000US41003001001", "1400000US41003001002", "1400000US41003001101", 
+                 "1400000US41003001102"), Descriptions=c("Census Tract 5, Benton County, Oregon", "Census Tract 6, Benton County, Oregon", 
+                  "Census Tract 9, Benton County, Oregon", "Census Tract 10.01, Benton County, Oregon", 
+                  "Census Tract 10.02, Benton County, Oregon", "Census Tract 11.01, Benton County, Oregon", 
+                  "Census Tract 11.02, Benton County, Oregon"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))
+
+```
+
+Here is a preview of the data you will be working with:
+
+```{webr-r}
+
+census
+```
+
+## Exercises
+
+Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.
+
+### Exercise 1
+
+Create a variable called description_lower that converts Descriptions in the census data frame to lowercase using str_to_lower().
+
+```{webr-r}
+# Your code here
+
+str(census$description_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the str_to_lower function on the 'Descriptions' column of 'census'.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+census$description_lower <- str_to_lower(census$_____)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+census$description_lower <- str_to_lower(census$Descriptions)
+```
+:::
+
+### Exercise 2
+
+Split the Descriptions variable in the census data frame into separate elements using str_split() based on the comma delimiter. In particular, create a new variable called county that extracts the county information (which appears after the first comma).
+
+```{webr-r}
+# Your code here
+
+str(census$county) # if your code worked, you should see your new county variable with this code
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the str_split function and specify the comma as the pattern. Extract the second column using index notation.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+census$county <- str_split(___$___, pattern = ",")[,_____]
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+census$county <- str_split(census$Descriptions, pattern = ",")[,2]
+```
+:::
+
+### Exercise 3
+
+Create a new variable called description_short that removes the phrase "County, Oregon" from all Descriptions in the census data frame using str_remove().
+
+```{webr-r}
+# Your code here
+
+str(census$description_short) # if your code worked, this code will show you the structure of your new variable
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+The str_remove function needs a pattern to match what should be removed.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+census$description_short <- str_remove(__$___, "_____")
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+census$description_short <- str_remove(census$Descriptions, "County, Oregon")
+
+```
+:::
+
+### Exercise 4
+
+The Identifier variable is a code used by the postal service. This particlar ID number more information than necessary to identify a census tract. Create a variable called fips_tract that extracts the component of the ID number that exists from the 10th character to the last character using str_sub().
+
+```{webr-r}
+# Your code here
+
+str(census$fips_tract) # The ID number should be shorter and start with 0
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use str_sub(). -1 will stand in for the last character.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+
+census$fips_tract <- str_sub(____, ____, ____)
+
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+census$fips_tract <- str_sub(census$Identifiers, 10, -1)
+
+```
+:::
+
+Congratulations, you finished this tutorial!

@@ -10,6 +10,8 @@ title: "Introduction to Base R"
 ```{webr-r}
 #| label: input data
 #| context:setup
+
+library(tidyverse)
 sample_data <- data.frame(
   id = 1:10,
   city = factor(c("New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose")),
@@ -59,18 +61,6 @@ Dataframes can be indexed by row and column.
 ## Our Dataset
 
 We will work with a dataset that measures individual's cities, heights, and weights.
-
-```{webr-r}
-#| context:setup
-# Create a sample dataset
-sample_data <- data.frame(
-  id = 1:10,
-  city = factor(c("New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose")),
-  age = c(23, 30, 25, 28, 22, 32, 27, 26, 31, 29),
-  height = c(170, 165, 180, 158, 175, 160, 172, 167, 182, 168)
-)
-
-```
 
 Here is a preview of the data you will be working with:
 
@@ -214,6 +204,8 @@ age # This should print the vector if done correctly
 
 The $ operator is used to select a single column from a data frame.
 
+:::
+
 ::: {.callout-tip collapse="true" icon="false"}
 
 ## Hint
@@ -301,7 +293,7 @@ Use bracket indexing. You will need to specify rows you are interested in, and l
 
 ## Solution
 ``` {webr-r}
-# thirties_data <- sample_data[sample_data$age >= 30,]
+thirties_data <- sample_data[sample_data$age >= 30,]
 ```
 :::
 

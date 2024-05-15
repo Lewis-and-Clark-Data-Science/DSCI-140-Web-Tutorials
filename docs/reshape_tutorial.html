@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSCI 140 Web Tutorials - Introduction to Base R</title>
+<title>DSCI 140 Web Tutorials - Data Transformation in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"comment":"","dpi":72,"autorun":"true","label":"input data","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"setup","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"\nlibrary(tidyverse)\nsample_data <- data.frame(\n  id = 1:10,\n  city = factor(c(\"New York\", \"Los Angeles\", \"Chicago\", \"Houston\", \"Phoenix\", \"Philadelphia\", \"San Antonio\", \"San Diego\", \"Dallas\", \"San Jose\")),\n  age = c(23, 30, 25, 28, 22, 32, 27, 26, 31, 29),\n  height = c(170, 165, 180, 158, 175, 160, 172, 167, 182, 168)\n)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-2","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"\nsample_data","id":2},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-3","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# Your code here\n\nnumbers \n# this code will run successfully and indicate a vector \n# was created if your code is right!","id":3},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-4","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"\nnumbers <- c(1:10) #numbers<- c(1,2,3,4,5,6,7,8,9,10) also works!","id":4},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-5","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# Your code here\n\n # if your code worked, you should see that no cities \n # has more than one data point and the mean age is 27.3","id":5},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-6","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"summary(____)","id":6},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-7","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"summary(sample_data)","id":7},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-8","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# Your code here\n\n# if your code worked a scatter plot should appear!","id":8},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-9","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"#The syntax is \nplot(data_frame$column1, data_frame$column2)","id":9},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-10","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"plot(sample_data$age, sample_data$height)","id":10},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-11","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# Your code here\n\nage # This should print the vector if done correctly","id":11},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-12","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":" age <- sample_data$age","id":12},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-13","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# Your code here\n\nthirties # this will print ages if successfully coded","id":13},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-14","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# thirties <- sample_data$age[___ >= 30]","id":14},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-15","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"thirties <- sample_data$age[sample_data$age>= 30]","id":15},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-16","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# Your code here\n\nthirties_data # this will print ages if successfully coded","id":16},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-17","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"# thirties_data <- sample_data[___ >= 30,]","id":17},{"options":{"comment":"","dpi":72,"autorun":"false","label":"unnamed-chunk-18","editor-max-height":"","classes":"","editor-font-scale":1,"fig-width":7,"read-only":"false","output":"true","context":"interactive","out-width":"700px","warning":"true","out-height":"","results":"markup","editor-quick-suggestions":"false","fig-height":5,"message":"true","fig-cap":""},"code":"thirties_data <- sample_data[sample_data$age >= 30,]","id":18}];
+globalThis.qwebrCellDetails = [{"code":"\nlibrary(tidyverse)\n\nset.seed(123)  # Setting seed for reproducibility\nclimate_data <- tibble(\n  country = rep(c(\"Freedonia\", \"Sylvania\", \"Zubrowka\", \"Borduria\"), each = 4),\n  year = rep(2020:2023, 4),\n  carbon_emission = round(runif(16, 4, 12), 2), # In metric tons per capita\n  temperature_change = round(runif(16, 0.5, 3.0), 2), # In degree Celsius compared to the 20th-century average\n  treaty_participation = sample(c(TRUE, FALSE), 16, replace = TRUE)\n)\n\nclimate_data_longer <- climate_data |>\n  pivot_longer(cols = c(carbon_emission, temperature_change), \n               names_to = \"measurement\", \n               values_to = \"value\")\n\n# Additional data for join examples\ntreaty_data <- tibble(\n  country = c(\"Freedonia\", \"Sylvania\", \"Zubrowka\", \"Elbonia\"),\n  treaty_signed = c(TRUE, TRUE, FALSE, TRUE)\n)\n\nnew_data <- tibble(\n  country = rep(\"Elbonia\", 4),\n  year = 2020:2023,\n  carbon_emission = round(runif(4, 4, 12), 2),\n  temperature_change = round(runif(4, 0.5, 3.0), 2),\n  treaty_participation = sample(c(TRUE, FALSE), 4, replace = TRUE)\n)\n\n\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1,"options":{"fig-height":5,"out-height":"","label":"input data and seeds","comment":"","editor-quick-suggestions":"false","context":"setup","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"true","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"\n# Creating the dataset\nset.seed(123)  # Setting seed for reproducibility\nclimate_data <- tibble(\n  country = rep(c(\"Freedonia\", \"Sylvania\", \"Zubrowka\", \"Borduria\"), each = 4),\n  year = rep(2020:2023, 4),\n  carbon_emission = round(runif(16, 4, 12), 2), # In metric tons per capita\n  temperature_change = round(runif(16, 0.5, 3.0), 2), # In degree Celsius compared to the 20th-century average\n  treaty_participation = sample(c(TRUE, FALSE), 16, replace = TRUE)\n)\n\nclimate_data_longer <- climate_data |>\n  pivot_longer(cols = c(carbon_emission, temperature_change), \n               names_to = \"measurement\", \n               values_to = \"value\")\n\n# Additional data for join examples\ntreaty_data <- tibble(\n  country = c(\"Freedonia\", \"Sylvania\", \"Zubrowka\", \"Elbonia\"),\n  treaty_signed = c(TRUE, TRUE, FALSE, TRUE)\n)\n\nnew_data <- tibble(\n  country = rep(\"Elbonia\", 4),\n  year = 2020:2023,\n  carbon_emission = round(runif(4, 4, 12), 2),\n  temperature_change = round(runif(4, 0.5, 3.0), 2),\n  treaty_participation = sample(c(TRUE, FALSE), 4, replace = TRUE)\n)\n\n# Preview the initial dataset\nclimate_data","id":2,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-2","comment":"","editor-quick-suggestions":"false","context":"setup","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"true","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"\nclimate_data_longer","id":3,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-3","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Your code here.  If run successfully, the following code would indicate that your data has\n# 16 observations and 5 variables\n\nstr(climate_data)","id":4,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-4","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Here's how you start:\n# climate_data_wider <- climate_data_longer |> \n#   pivot_wider(names_from = _______, values_from = ______)","id":5,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-5","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"climate_data_wider <- climate_data_longer |> \n  pivot_wider(names_from = measurement, values_from = value)","id":6,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-6","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Your code here\n\nstr(climate_data_reversion) # should show 32 observations, 5 variables","id":7,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-7","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Start with this:\n# climate_data_reversion <- climate_data |> \n#   pivot_longer(cols = c(______, _____), \n#                names_to = \"______\", \n#                values_to = \"______\")","id":8,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-8","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"climate_data_reversion <- climate_data |> \n  pivot_longer(cols = c(carbon_emission, temperature_change), \n               names_to = \"measurement\", \n               values_to = \"value\")","id":9,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-9","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"new_data <- tibble(\n  country = rep(\"Elbonia\", 4),\n  year = 2020:2023,\n  carbon_emission = round(runif(4, 4, 12), 2),\n  temperature_change = round(runif(4, 0.5, 3.0), 2),\n  treaty_participation = sample(c(TRUE, FALSE), 4, replace = TRUE)\n)\n\nnew_data","id":10,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-10","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Your code here\n\nstr(climate_data) # should now have 20 observations","id":11,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-11","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Here's how you start:\n# all_climate_data <- bind_rows(____, _____)","id":12,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-12","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"all_climate_data <- bind_rows(climate_data, new_data)","id":13,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-13","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Your code here\n\nstr(climate_treaty_info) # If run successfully you sould have more than 5 variables","id":14,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-14","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Here's how you start:\n# climate_treaty_info <- left_join(____, ______, by = \"______\")","id":15,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-15","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"climate_treaty_info <- left_join(climate_data, treaty_data, by = \"country\")","id":16,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-16","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Your code here\n\nstr(missing_countries) # should have 1 observation, Elbonia","id":17,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-17","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"# Here's how you start:\n# missing_countries <- anti_join(______, ______, by = \"_______\")","id":18,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-18","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}},{"code":"missing_countries <- anti_join(treaty_data, climate_data, by = \"country\")","id":19,"options":{"fig-height":5,"out-height":"","label":"unnamed-chunk-19","comment":"","editor-quick-suggestions":"false","context":"interactive","fig-width":7,"fig-cap":"","out-width":"700px","warning":"true","editor-font-scale":1,"message":"true","results":"markup","autorun":"false","read-only":"false","output":"true","editor-max-height":"","classes":"","dpi":72}}];
 
 </script>
 <script type="module">
@@ -1130,7 +1130,7 @@ globalThis.qwebrExecuteCode = async function (
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./intro_R_tutorial.html" aria-current="page"> 
+    <a class="nav-link" href="./intro_R_tutorial.html"> 
 <span class="menu-text">Introduction to Base R</span></a>
   </li>  
   <li class="nav-item">
@@ -1138,7 +1138,7 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Introduction to forcats Package</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reshape_tutorial.html"> 
+    <a class="nav-link active" href="./reshape_tutorial.html" aria-current="page"> 
 <span class="menu-text">Data Transformation in R</span></a>
   </li>  
   <li class="nav-item">
@@ -1161,21 +1161,17 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
-  <ul class="collapse">
-  <li><a href="#functions-in-focus" id="toc-functions-in-focus" class="nav-link" data-scroll-target="#functions-in-focus">Functions in Focus</a></li>
-  </ul></li>
-  <li><a href="#bracket-indexing-review" id="toc-bracket-indexing-review" class="nav-link" data-scroll-target="#bracket-indexing-review">Bracket Indexing Review</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#our-dataset" id="toc-our-dataset" class="nav-link" data-scroll-target="#our-dataset">Our Dataset</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#exercise-1-creating-a-vector" id="toc-exercise-1-creating-a-vector" class="nav-link" data-scroll-target="#exercise-1-creating-a-vector">Exercise 1: Creating a Vector</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-1-widen-the-data" id="toc-exercise-1-widen-the-data" class="nav-link" data-scroll-target="#exercise-1-widen-the-data">Exercise 1: Widen the Data</a></li>
+  <li><a href="#exercise-2-lengthen-the-data" id="toc-exercise-2-lengthen-the-data" class="nav-link" data-scroll-target="#exercise-2-lengthen-the-data">Exercise 2: Lengthen the Data</a></li>
+  <li><a href="#exercise-3-adding-rows" id="toc-exercise-3-adding-rows" class="nav-link" data-scroll-target="#exercise-3-adding-rows">Exercise 3: Adding Rows</a></li>
+  <li><a href="#exercise-4-joining-data" id="toc-exercise-4-joining-data" class="nav-link" data-scroll-target="#exercise-4-joining-data">Exercise 4: Joining Data</a></li>
+  <li><a href="#exercise-5-anti-join" id="toc-exercise-5-anti-join" class="nav-link" data-scroll-target="#exercise-5-anti-join">Exercise 5: Anti-Join</a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -1411,7 +1407,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Base R</h1>
+<h1 class="title">Data Transformation in R</h1>
 </div>
 
 
@@ -1430,47 +1426,33 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>Welcome to this interactive tutorial for students new to base R. You’ll learn about creating vectors, data frames, summarizing data, understanding data structures, and basic plotting. This tutorial also introduces the use of the $ operator to reference variables in dataframes.</p>
-<section id="functions-in-focus" class="level3">
-<h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
-<p>Before we dive into the exercises, let’s introduce the key functions we will be working with and provide some guidance on their syntax: 1. <code>c()</code>: This function is used for combining values into a vector. It is a fundamental function in R, often used in data analysis for creating vectors which can be used as input for other functions or for data manipulation.</p>
-<p>Syntax: <code>c(element1, element2, ...)</code></p>
-<ol start="2" type="1">
-<li>summary(): This function provides statistical summaries of the contents of an R object, such as mean, median, min, max, and quartiles for numeric data, or frequency counts for factors. It’s a quick way to get an overview of your data.</li>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this tutorial, we’ll explore several critical tidverse functions for data transformation with environmental data. The data represents fictional measurements from different countries concerning carbon emissions, temperature changes, and participation in various environmental treaties.</p>
+<p>Here are the functions you will need to use:</p>
+<ol type="1">
+<li><p><code>bind_rows()</code>: This function is used to combine two or more data frames by row, binding them together. Syntax: <code>combined_data &lt;- bind_rows(df1, df2)</code></p></li>
+<li><p><code>pivot_longer</code>: Reshape data when variables are spread across columns. Syntax: <code>pivot_longer(data, cols_to_pivot, names_to="name", values_to="value")</code></p></li>
+<li><p><code>pivot_wider</code>: Reshape data when you need to spread rows across new columns. Syntax: <code>pivot_wider(data, names_from = "category", values_from = "amount")</code></p></li>
+<li><p><code>left_join()</code>: Joins two datasets, retaining observations from the first (left) dataframe. Syntax: <code>left_join(df1, df2, by = "key_variable")</code></p></li>
+<li><p><code>anti_join()</code>: Identifies rows in one data frame that do not have a corresponding match in another data frame. Syntax: <code>result &lt;- anti_join(df1, df2, by = "key_variable")</code></p></li>
 </ol>
-<p>Syntax when used with a dataframe: <code>summary(df)</code></p>
-<ol start="3" type="1">
-<li><code>plot()</code>: This function is used for creating basic types of graphs such as scatterplots, line plots, histograms, etc. It’s a versatile function for quick and easy visualization of data in a dataframe.</li>
-</ol>
-<p>Syntax for a simple scatter plot: <code>plot(df$column1, df$column2)</code> (plotting data from two columns of df against each other) These functions are essential building blocks in R for data manipulation and analysis. They provide foundational capabilities for handling, exploring, and visualizing data.</p>
-</section>
-</section>
-<section id="bracket-indexing-review" class="level2">
-<h2 class="anchored" data-anchor-id="bracket-indexing-review">Bracket Indexing Review</h2>
-<p>Indexing in base R is a fundamental concept for accessing and manipulating elements within vectors and dataframes. It primarily uses brackets <code>[]</code> to specify the elements you want to extract or modify.</p>
-<p>For Vectors: - Indexing by Position: You can access elements of a vector by their position. For instance, if <code>v</code> is a vector, <code>v[2]</code> will give you the second element of v. - Logical Indexing: You can also use logical vectors to index. If <code>v</code> is a vector <code>v[v&gt;3]</code> will return elements of <code>v</code> greater than 3.</p>
-<p>For Dataframes: Dataframes can be indexed by row and column.</p>
-<ul>
-<li>Indexing by Position: To access specific elements, you can specify the row and column numbers. For instance, <code>df[2, 3]</code> will give you the element in the second row and third column of the dataframe <code>df</code>.</li>
-<li>Logical Indexing: Similar to vectors, you can use logical statements for indexing. For example, <code>df[df$column_name &gt; 10, ]</code> will give you all rows of <code>df</code> where the values in <code>column_name</code> are greater than 10.</li>
-</ul>
 </section>
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
-<p>We will work with a dataset that measures individual’s cities, heights, and weights.</p>
-<p>Here is a preview of the data you will be working with:</p>
+<p>Let’s create our synthetic dataset first.</p>
 <div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This dataset includes fictional information about carbon emissions and temperature changes over four years for various countries, as well as whether they participated in environmental treaties. Here is your first dataeframe, called climate_data_longer:</p>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>Here are some practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
-<section id="exercise-1-creating-a-vector" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1-creating-a-vector">Exercise 1: Creating a Vector</h3>
-<p>Create a vector named numbers containing the first ten numbers.</p>
-<div id="qwebr-insertion-location-3"></div>
+<section id="exercise-1-widen-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-widen-the-data">Exercise 1: Widen the Data</h3>
+<p>This data is too long, with multiple variables sharing the same columns. Convert <code>climate_data_longer</code> to a wider format, where each column represents a different type of measurement. Use the current measurement variable to create new variable names. Name the wider dataframe climate_data.</p>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -1484,7 +1466,7 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the c() function to combine individual numbers into a vector</p>
+<p>You’ll want to use the pivot_wider() function. You will need to specify the names_from and values_from parameters.</p>
 </div>
 </div>
 </div>
@@ -1500,7 +1482,8 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The syntax for creating a vector generally looks like: c(1, 2, 3, …). You could also use a colon as a shortcut!</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
@@ -1510,22 +1493,22 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Exercise 2: Summarizing Data. Apply the summary() function to sample_data.</p>
-<div id="qwebr-insertion-location-5"></div>
+<section id="exercise-2-lengthen-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-lengthen-the-data">Exercise 2: Lengthen the Data</h3>
+<p>For practice purposes, can you convert <code>climate_data</code> back to its original, longer format, where one column represents the type of measurement (carbon emission or temperature change), and another column represents the values? Call this new data frame climate_data_reversion</p>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1539,7 +1522,7 @@ Hint
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Call summary() on your data frame, which is named sample_data</p>
+<p>This time, you’ll want to use the pivot_longer() function. You need to specify which columns you want to make longer.</p>
 </div>
 </div>
 </div>
@@ -1555,7 +1538,7 @@ Hint
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1566,22 +1549,26 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Create a simple plot of ‘age’ vs ‘height’ from sample_data.</p>
-<div id="qwebr-insertion-location-8"></div>
+<section id="exercise-3-adding-rows" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-adding-rows">Exercise 3: Adding Rows</h3>
+<p>Suppose we have measured data for another country, “Elbonia,” and want to add this data to our existing <code>climate_data</code>. Use <code>bind_rows()</code> to do this.</p>
+<p>First, we will create the new data with the following code:</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Now, bind this new data to <code>climate_data</code>.</p>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1595,7 +1582,7 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hint: Use the plot() function with two arguments from your data frame.</p>
+<p>Use bind_rows() to combine the rows of two datasets. Make sure they have the same columns!</p>
 </div>
 </div>
 </div>
@@ -1611,7 +1598,7 @@ Hint
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1622,22 +1609,22 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Using the $ Operator: Extract the ‘age’ column from sample_data using the $ operator. Assign it to a new stand-alone vector called age</p>
-<div id="qwebr-insertion-location-11"></div>
+<section id="exercise-4-joining-data" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4-joining-data">Exercise 4: Joining Data</h3>
+<p>Let’s find out which countries in our <code>climate_data</code> have signed an environmental treaty using <code>left_join()</code>.</p>
+<div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1651,7 +1638,7 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The $ operator is used to select a single column from a data frame.</p>
+<p>You can use left_join() to merge data, keeping all records from <code>climate_data</code> and joining information from <code>treaty_data</code>.</p>
 </div>
 </div>
 </div>
@@ -1667,7 +1654,8 @@ Hint
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Start with age &lt;- and use syntax like my_data_frame$column_name</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
@@ -1677,22 +1665,22 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-12"></div>
+<div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Using the $ operator to reference the vector (variable) age in the dataframe sample_data, create a new object called thirties that takes on only the age values of survey respondents greater than or equal to 30.</p>
-<div id="qwebr-insertion-location-13"></div>
+<section id="exercise-5-anti-join" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5-anti-join">Exercise 5: Anti-Join</h3>
+<p>Now, identify which countries listed in <code>treaty_data</code> are not present in <code>climate_data</code> using <code>anti_join()</code>. Save the mismatched countries in an object called missing_countries</p>
+<div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -1706,7 +1694,7 @@ Hint
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use bracket indexing. The vector sample_data$age should appear twice in the correct code!</p>
+<p>anti_join() will return rows from x where there are no corresponding rows in y that match by the given key.</p>
 </div>
 </div>
 </div>
@@ -1722,7 +1710,7 @@ Hint
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-14"></div>
+<div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1733,77 +1721,24 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-15"></div>
+<div id="qwebr-insertion-location-19"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-6" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
-<p>This time, extract the entire dataset (all columns, including weight and city info) for the group of respondent 30 and over. Call this object thirties_data</p>
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use bracket indexing. You will need to specify rows you are interested in, and leave the column field blank to return ALL columns of data</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<p>Congratulations, you finished this tutorial!</p>
-
-
 </section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Great work! In this tutorial, you’ve learned how to use various tidyverse functions to manipulate a climate change dataset. These functions are versatile and can be applied to many data manipulation tasks in R. Keep practicing and exploring their different parameters and capabilities.</p>
+
+
 </section>
 
 </main> <!-- /main -->

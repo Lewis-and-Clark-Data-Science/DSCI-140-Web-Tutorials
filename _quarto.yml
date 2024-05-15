@@ -6,8 +6,10 @@ website:
   title: "DSCI 140 Web Tutorials"
   navbar:
     left:
-      - Factor Tutorial.qmd
       - intro_R_tutorial.qmd
+      - factor_tutorial.qmd
+      - reshape_tutorial.qmd
+      - string_tutorial.qmd
 
 format:
   html:

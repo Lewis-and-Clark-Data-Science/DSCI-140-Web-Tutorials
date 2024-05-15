@@ -54,6 +54,7 @@ Now, let's proceed to the exercises!
 We will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.
 
 ```{webr-r}
+#| context: setup
 # Create a sample dataset
 opinion_data <- tibble(
   age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), 
@@ -219,7 +220,7 @@ opinion_data <- opinion_data |>
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
-## Hint
+## Answer
 ```{webr-r}
 opinion_data <- opinion_data |> 
   mutate(religion = fct_collapse(religion, 
