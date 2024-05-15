@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-1","output":"true","context":"setup","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"true","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":1,"code":"library(tidyverse)\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))\n\n\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-2","output":"true","context":"setup","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"true","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":2,"code":"\n# Create a sample dataset\n\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-3","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":3,"code":"\ncensus"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-4","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":4,"code":"# Your code here\n\nstr(census$description_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-5","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":5,"code":"census$description_lower <- str_to_lower(census$_____)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-6","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":6,"code":"census$description_lower <- str_to_lower(census$Descriptions)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-7","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":7,"code":"# Your code here\n\nstr(census$county) # if your code worked, you should see your new county variable with this code"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-8","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":8,"code":"census$county <- str_split(___$___, pattern = \",\")[,_____]"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-9","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":9,"code":"census$county <- str_split(census$Descriptions, pattern = \",\")[,2]"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-10","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":10,"code":"# Your code here\n\nstr(census$description_short) # if your code worked, this code will show you the structure of your new variable"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-11","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":11,"code":"census$description_short <- str_remove(__$___, \"_____\")"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-12","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":12,"code":"census$description_short <- str_remove(census$Descriptions, \"County, Oregon\")"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-13","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":13,"code":"# Your code here\n\nstr(census$fips_tract) # The ID number should be shorter and start with 0"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-14","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":14,"code":"\ncensus$fips_tract <- str_sub(____, ____, ____)"},{"options":{"dpi":72,"fig-height":5,"fig-width":7,"message":"true","label":"unnamed-chunk-15","output":"true","context":"interactive","editor-max-height":"","classes":"","warning":"true","results":"markup","comment":"","autorun":"false","editor-quick-suggestions":"false","read-only":"false","fig-cap":"","out-width":"700px","editor-font-scale":1,"out-height":""},"id":15,"code":"census$fips_tract <- str_sub(census$Identifiers, 10, -1)"}];
+globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))\n\n\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"true","editor-max-height":"","warning":"true","context":"setup","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-1","editor-font-scale":1}},{"code":"\ncensus","id":2,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-2","editor-font-scale":1}},{"code":"# Your code here\n\nstr(census$description_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created","id":3,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-3","editor-font-scale":1}},{"code":"census$description_lower <- str_to_lower(census$_____)","id":4,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-4","editor-font-scale":1}},{"code":"census$description_lower <- str_to_lower(census$Descriptions)","id":5,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-5","editor-font-scale":1}},{"code":"# Your code here\n\nstr(census$county) # if your code worked, you should see your new county variable with this code","id":6,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-6","editor-font-scale":1}},{"code":"census$county <- str_split(___$___, pattern = \",\")[,_____]","id":7,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-7","editor-font-scale":1}},{"code":"census$county <- str_split(census$Descriptions, pattern = \",\")[,2]","id":8,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-8","editor-font-scale":1}},{"code":"# Your code here\n\nstr(census$description_short) # if your code worked, this code will show you the structure of your new variable","id":9,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-9","editor-font-scale":1}},{"code":"census$description_short <- str_remove(__$___, \"_____\")","id":10,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-10","editor-font-scale":1}},{"code":"census$description_short <- str_remove(census$Descriptions, \"County, Oregon\")","id":11,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-11","editor-font-scale":1}},{"code":"# Your code here\n\nstr(census$fips_tract) # The ID number should be shorter and start with 0","id":12,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-12","editor-font-scale":1}},{"code":"\ncensus$fips_tract <- str_sub(____, ____, ____)","id":13,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-13","editor-font-scale":1}},{"code":"census$fips_tract <- str_sub(census$Identifiers, 10, -1)","id":14,"options":{"output":"true","classes":"","results":"markup","fig-height":5,"dpi":72,"out-height":"","autorun":"false","editor-max-height":"","warning":"true","context":"interactive","editor-quick-suggestions":"false","out-width":"700px","fig-width":7,"fig-cap":"","message":"true","read-only":"false","comment":"","label":"unnamed-chunk-14","editor-font-scale":1}}];
 
 </script>
 <script type="module">
@@ -1445,10 +1445,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
 <p>We will work with a dataset that includes variables found in the US Census.</p>
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Here is a preview of the data you will be working with:</p>
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="exercises" class="level2">
@@ -1457,7 +1455,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
 <p>Create a variable called description_lower that converts Descriptions in the census data frame to lowercase using str_to_lower().</p>
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -1487,7 +1485,7 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1504,7 +1502,7 @@ Answer
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1513,7 +1511,7 @@ Answer
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
 <p>Split the Descriptions variable in the census data frame into separate elements using str_split() based on the comma delimiter. In particular, create a new variable called county that extracts the county information (which appears after the first comma).</p>
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1543,7 +1541,7 @@ Hint
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-8"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1560,7 +1558,7 @@ Answer
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1569,7 +1567,7 @@ Answer
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
 <p>Create a new variable called description_short that removes the phrase “County, Oregon” from all Descriptions in the census data frame using str_remove().</p>
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1599,7 +1597,7 @@ Hint
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-11"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1616,7 +1614,7 @@ Answer
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-12"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1625,7 +1623,7 @@ Answer
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
 <p>The Identifier variable is a code used by the postal service. This particlar ID number more information than necessary to identify a census tract. Create a variable called fips_tract that extracts the component of the ID number that exists from the 10th character to the last character using str_sub().</p>
-<div id="qwebr-insertion-location-13"></div>
+<div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1655,7 +1653,7 @@ Hint
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-14"></div>
+<div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1672,7 +1670,7 @@ Answer
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-15"></div>
+<div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>

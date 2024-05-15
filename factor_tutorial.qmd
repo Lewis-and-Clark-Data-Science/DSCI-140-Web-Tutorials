@@ -53,21 +53,6 @@ Now, let's proceed to the exercises!
 
 We will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.
 
-```{webr-r}
-#| context: setup
-# Create a sample dataset
-opinion_data <- tibble(
-  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), 
-  ideology = factor(c("Liberal", "Conservative", "Moderate", "Liberal", "Conservative", "Moderate", "Liberal", "Moderate", "Conservative", "Liberal", "Moderate", "Conservative", "Liberal", "Conservative", "Moderate", "Liberal")), 
-  race = factor(c("White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "Black")), # race for new entry
-  gender = factor(c("Male", "Female", "Male", "Male", "Female", "Female", "Male", "Male", "Female", "Male", "Female", "Male", "Male", "Female", "Female", "Female")), 
-  party = factor(c("Strong Republican", "Weak Republican", "Strong Democrat", "Strong Republican", "Weak Republican", "Weak Democrat", "Weak Republican", "Strong Democrat", "Weak Democrat", "Strong Republican", "Strong Republican", "Strong Republican", "Weak Democrat", "Strong Democrat", "Weak Republican", "Very Strong Democrat"), levels = c("Strong Republican", "Weak Republican", "Strong Democrat", "Weak Democrat", "Very Strong Democrat")),
-  religion = factor(c("Catholic", "Protestant", "Atheist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Protestant")), 
-  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) 
-)
-
-```
-
 Here is a preview of the data you will be working with:
 
 ```{webr-r}

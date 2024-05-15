@@ -11,7 +11,7 @@
     "href": "factor_tutorial.html#our-dataset",
     "title": "Introduction to forcats Package",
     "section": "Our Dataset",
-    "text": "Our Dataset\nWe will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere is a preview of the data you will be working with:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Our Dataset\nWe will work with a dataset that includes variables typically found in public opinion polls, such as age, ideology, race, gender, political party, religious denomination, and whether they voted.\nHere is a preview of the data you will be working with:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "factor_tutorial.html#exercises",
@@ -60,7 +60,7 @@
     "href": "reshape_tutorial.html#our-dataset",
     "title": "Data Transformation in R",
     "section": "Our Dataset",
-    "text": "Our Dataset\nLet’s create our synthetic dataset first.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThis dataset includes fictional information about carbon emissions and temperature changes over four years for various countries, as well as whether they participated in environmental treaties. Here is your first dataeframe, called climate_data_longer:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Our Dataset\nLet’s create our synthetic dataset first.\nThis dataset includes fictional information about carbon emissions and temperature changes over four years for various countries, as well as whether they participated in environmental treaties. Here is your first dataeframe, called climate_data_longer:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "reshape_tutorial.html#exercises",
@@ -88,7 +88,7 @@
     "href": "string_tutorial.html#our-dataset",
     "title": "Introduction to stringr Package",
     "section": "Our Dataset",
-    "text": "Our Dataset\nWe will work with a dataset that includes variables found in the US Census.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nHere is a preview of the data you will be working with:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Our Dataset\nWe will work with a dataset that includes variables found in the US Census.\nHere is a preview of the data you will be working with:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "string_tutorial.html#exercises",

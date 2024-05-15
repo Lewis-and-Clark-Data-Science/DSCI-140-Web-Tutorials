@@ -66,42 +66,6 @@ Here are the functions you will need to use:
 
 Let's create our synthetic dataset first.
 
-```{webr-r}
-#| context: setup
-
-# Creating the dataset
-set.seed(123)  # Setting seed for reproducibility
-climate_data <- tibble(
-  country = rep(c("Freedonia", "Sylvania", "Zubrowka", "Borduria"), each = 4),
-  year = rep(2020:2023, 4),
-  carbon_emission = round(runif(16, 4, 12), 2), # In metric tons per capita
-  temperature_change = round(runif(16, 0.5, 3.0), 2), # In degree Celsius compared to the 20th-century average
-  treaty_participation = sample(c(TRUE, FALSE), 16, replace = TRUE)
-)
-
-climate_data_longer <- climate_data |>
-  pivot_longer(cols = c(carbon_emission, temperature_change), 
-               names_to = "measurement", 
-               values_to = "value")
-
-# Additional data for join examples
-treaty_data <- tibble(
-  country = c("Freedonia", "Sylvania", "Zubrowka", "Elbonia"),
-  treaty_signed = c(TRUE, TRUE, FALSE, TRUE)
-)
-
-new_data <- tibble(
-  country = rep("Elbonia", 4),
-  year = 2020:2023,
-  carbon_emission = round(runif(4, 4, 12), 2),
-  temperature_change = round(runif(4, 0.5, 3.0), 2),
-  treaty_participation = sample(c(TRUE, FALSE), 4, replace = TRUE)
-)
-
-# Preview the initial dataset
-climate_data
-```
-
 This dataset includes fictional information about carbon emissions and temperature changes over four years for various countries, as well as whether they participated in environmental treaties. Here is your first dataeframe, called climate_data_longer:
 
 ```{webr-r}

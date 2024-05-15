@@ -45,21 +45,6 @@ With these tools at your disposal, you'll be able to tackle a wide array of text
 
 We will work with a dataset that includes variables found in the US Census.
 
-```{webr-r}
-#| context: setup
-
-# Create a sample dataset
-
-
-census <- data.frame(Identifiers=c("1400000US41003000500", "1400000US41003000600", "1400000US41003000900", 
-                 "1400000US41003001001", "1400000US41003001002", "1400000US41003001101", 
-                 "1400000US41003001102"), Descriptions=c("Census Tract 5, Benton County, Oregon", "Census Tract 6, Benton County, Oregon", 
-                  "Census Tract 9, Benton County, Oregon", "Census Tract 10.01, Benton County, Oregon", 
-                  "Census Tract 10.02, Benton County, Oregon", "Census Tract 11.01, Benton County, Oregon", 
-                  "Census Tract 11.02, Benton County, Oregon"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))
-
-```
-
 Here is a preview of the data you will be working with:
 
 ```{webr-r}
