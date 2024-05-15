@@ -10,4 +10,3 @@ Extensions used:
 -   Webr
 
     -   To install, type quarto add coatless/quarto-webr into the terminal. <https://github.com/coatless/quarto-webr>
-- 
