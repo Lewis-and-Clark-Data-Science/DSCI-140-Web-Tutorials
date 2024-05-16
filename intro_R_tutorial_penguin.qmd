@@ -1,0 +1,260 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+title: "Introduction to Base R Penguin dataset"
+---
+
+```{webr-r}
+#| label: input data
+#| context:setup
+
+library(tidyverse)
+library("palmerpenguins")
+penguin<- tibble(penguins$species, penguins$bill_length_mm, penguins$body_mass_g)
+penguin_sample<- na.omit(penguin)
+penguin_sample<- rename(penguin_sample, Species =`penguins$species`, bill_length = `penguins$bill_length_mm`, body_mass = `penguins$body_mass_g` )
+
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Welcome
+
+Welcome to this interactive tutorial for students new to base R. You'll learn about creating vectors, data frames, summarizing data, understanding data structures, and basic plotting. This tutorial also introduces the use of the \$ operator to reference variables in dataframes.
+
+### Functions in Focus
+
+Before we dive into the exercises, let's introduce the key functions we will be working with and provide some guidance on their syntax: 1. `c()`: This function is used for combining values into a vector. It is a fundamental function in R, often used in data analysis for creating vectors which can be used as input for other functions or for data manipulation.
+
+Syntax: `c(element1, element2, ...)`
+
+2.  summary(): This function provides statistical summaries of the contents of an R object, such as mean, median, min, max, and quartiles for numeric data, or frequency counts for factors. It's a quick way to get an overview of your data.
+
+Syntax when used with a dataframe: `summary(df)`
+
+3.  `plot()`: This function is used for creating basic types of graphs such as scatterplots, line plots, histograms, etc. It's a versatile function for quick and easy visualization of data in a dataframe.
+
+Syntax for a simple scatter plot: `plot(df$column1, df$column2)` (plotting data from two columns of df against each other) These functions are essential building blocks in R for data manipulation and analysis. They provide foundational capabilities for handling, exploring, and visualizing data.
+
+## Bracket Indexing Review
+
+Indexing in base R is a fundamental concept for accessing and manipulating elements within vectors and dataframes. It primarily uses brackets `[]` to specify the elements you want to extract or modify.
+
+For Vectors: - Indexing by Position: You can access elements of a vector by their position. For instance, if `v` is a vector, `v[2]` will give you the second element of v. - Logical Indexing: You can also use logical vectors to index. If `v` is a vector `v[v>3]` will return elements of `v` greater than 3.
+
+For Dataframes: Dataframes can be indexed by row and column.
+
+-   Indexing by Position: To access specific elements, you can specify the row and column numbers. For instance, `df[2, 3]` will give you the element in the second row and third column of the dataframe `df`.
+-   Logical Indexing: Similar to vectors, you can use logical statements for indexing. For example, `df[df$column_name > 10, ]` will give you all rows of `df` where the values in `column_name` are greater than 10.
+
+## Our Dataset
+
+We will work with a dataset with size measurements for 3 different species of penguins on islands in the Palmer Archipelago, Antarctica. We'll be focusing on the measurements for bill length (mm) and body mass (g). Here's more [information](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html) about the [data set](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html)!
+
+Here is a preview of the data you will be working with:
+
+```{webr-r}
+penguin_sample
+```
+
+## Exercises
+
+Here are some practice exercises. You can click for hints for each problem. The last hint will be the solution.
+
+### Exercise 1: Creating a Vector
+
+Create a vector named numbers containing the first ten numbers.
+
+```{webr-r}
+# Your code here
+
+numbers 
+# this code will run successfully and indicate a vector 
+# was created if your code is right!
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the c() function to combine individual numbers into a vector
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+The syntax for creating a vector generally looks like: c(1, 2, 3, ...). You could also use a colon as a shortcut!
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+```{webr-r}
+
+numbers <- c(1:10) #numbers<- c(1,2,3,4,5,6,7,8,9,10) also works!
+```
+:::
+
+### Exercise 2
+
+Exercise 2: Summarizing Data. Apply the summary() function to sample_data.
+
+```{webr-r}
+# Your code here
+
+ # if your code worked, you should see that there are 
+ # 151 penguins of Adelie species and the mean Bill length is 43.92mm
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Call summary() on your data frame, which is named sample_data
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+summary(____)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+```{webr-r}
+summary(penguin_sample)
+```
+:::
+
+### Exercise 3
+
+Create a simple plot of 'bill_length' vs 'body_mass' from penguin_sample.
+
+```{webr-r}
+# Your code here
+
+# if your code worked a scatter plot should appear!
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Hint: Use the plot() function with two arguments from your data frame.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+#The syntax is 
+plot(data_frame$column1, data_frame$column2)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+```{webr-r}
+plot(penguin_sample$bill_length, penguin_sample$body_mass)
+```
+:::
+
+### Exercise 4
+
+Using the \$ Operator: Extract the 'bill_length' column from penguin_sample using the \$ operator. Assign it to a new stand-alone vector called 'bill_length'
+
+```{webr-r}
+# Your code here
+
+bill_length # This should print the vector if done correctly
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+The \$ operator is used to select a single column from a data frame.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Start with age \<- and use syntax like my_data_frame\$column_name
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+```{webr-r}
+ bill_length <- penguin_sample$bill_length
+```
+:::
+
+### Exercise 5
+
+Using the \$ operator to reference the vector (variable) bill_length in the dataframe penguin_sample, create a new object called 'long_bill' that takes on only the bill length values of survey respondents greater than or equal to 50mm.
+
+```{webr-r}
+# Your code here
+
+long_bill # this will print bill lengths over 50 if successfully coded
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use bracket indexing. The vector penguin_sample\$bill_length should appear twice in the correct code!
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# long_bill <- penguin_sample$bill_length[___ >= 50]
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+```{webr-r}
+long_bill <- penguin_sample$bill_length[penguin_sample$bill_length>= 50]
+```
+:::
+
+### Exercise 6
+
+This time, extract the entire dataset (all columns, including body mass and species info) for the group of penguins with a bill length over 50mm. Call this object long_bill_data
+
+```{webr-r}
+# Your code here
+
+long_bill_data # this will print only penguins with a bill length over 50mm if successfully coded
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use bracket indexing. You will need to specify rows you are interested in, and leave the column field blank to return ALL columns of data
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+# long_bill_data <- penguin_sample[___ >= 50,]
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+```{webr-r}
+long_bill_data <- penguin_sample[penguin_sample$bill_length >= 50,]
+```
+:::
+
+Congratulations, you finished this tutorial!

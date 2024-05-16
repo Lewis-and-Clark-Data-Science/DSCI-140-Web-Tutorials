@@ -161,7 +161,7 @@ The Identifier variable is a code used by the postal service. This particlar ID 
 ```{webr-r}
 # Your code here
 
-str(census$fips_tract) # The ID number should be shorter and start with 0
+str(census$fips_tract) # The ID number should be shorter and start with 4
 ```
 
 ::: {.callout-tip collapse="true" icon="false"}

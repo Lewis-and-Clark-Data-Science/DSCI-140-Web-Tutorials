@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSCI 140 Web Tutorials - Introduction to stringr Package</title>
+<title>DSCI 140 Web Tutorials - Introduction to stringr Package - Penguin dataset</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))\n\n\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"true","label":"unnamed-chunk-1","context":"setup","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":1},{"code":"\ncensus","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-2","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":2},{"code":"# Your code here\n\nstr(census$description_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-3","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":3},{"code":"census$description_lower <- str_to_lower(census$_____)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-4","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":4},{"code":"census$description_lower <- str_to_lower(census$Descriptions)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-5","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":5},{"code":"# Your code here\n\nstr(census$county) # if your code worked, you should see your new county variable with this code","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-6","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":6},{"code":"census$county <- str_split(___$___, pattern = \",\")[,_____]","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-7","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":7},{"code":"census$county <- str_split(census$Descriptions, pattern = \",\")[,2]","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-8","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":8},{"code":"# Your code here\n\nstr(census$description_short) # if your code worked, this code will show you the structure of your new variable","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-9","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":9},{"code":"census$description_short <- str_remove(__$___, \"_____\")","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-10","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":10},{"code":"census$description_short <- str_remove(census$Descriptions, \"County, Oregon\")","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-11","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":11},{"code":"# Your code here\n\nstr(census$fips_tract) # The ID number should be shorter and start with 0","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-12","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":12},{"code":"\ncensus$fips_tract <- str_sub(____, ____, ____)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-13","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":13},{"code":"census$fips_tract <- str_sub(census$Identifiers, 10, -1)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-14","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":14}];
+globalThis.qwebrCellDetails = [{"options":{"autorun":"true","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"input data","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"setup","classes":"","comment":"","out-width":"700px","out-height":""},"id":1,"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\n\npenguin<- tibble(penguins$species, penguins$island, penguins$bill_length_mm, penguins$body_mass_g, penguins$year)\npenguin_sample<- na.omit(penguin)\npenguin_sample<- rename(penguin_sample, species =`penguins$species`, location = `penguins$island`, bill_length = `penguins$bill_length_mm`, body_mass = `penguins$body_mass_g`, year = `penguins$year`)\npenguin_sample$location<- paste(penguin_sample$location,\"Palmer Archipelago, Antarctica\", sep=\", \")\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-2","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":2,"code":"penguin_sample"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-3","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":3,"code":"# Your code here\n\nstr(penguin_sample$location_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-4","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":4,"code":"penguin_sample$location_lower <- str_to_lower(penguin_sample$_____)"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-5","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":5,"code":"penguin_sample$location_lower <- str_to_lower(penguin_sample$location)"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-6","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":6,"code":"# Your code here\n\nstr(penguin_sample$island) # if your code worked, you should see your new island variable with this code"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-7","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":7,"code":"penguin_sample$island <- str_split(___$___, pattern = \",\", simplify=TRUE)[,_____]"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-8","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":8,"code":"penguin_sample$island <- str_split(penguin_sample$location, pattern = \",\", simplify=TRUE)[,1]"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-9","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":9,"code":"# Your code here\n\nstr(penguin_sample$location_short) # if your code worked, this code will show you the structure of your new variable"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-10","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":10,"code":"penguin_sample$location_short <- str_remove(__$___, \"_____\")"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-11","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":11,"code":"penguin_sample$location_short <- str_remove(penguin_sample$location, \", Antarctica\")"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-12","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":12,"code":"# Your code here\n\nstr(penguin_sample$year_short) # The year should only display the last two numbers"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-13","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":13,"code":"\npenguin_sample$year_short <- str_sub(____, ____, ____)"},{"options":{"autorun":"false","warning":"true","fig-width":7,"editor-max-height":"","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","output":"true","read-only":"false","label":"unnamed-chunk-14","fig-height":5,"results":"markup","message":"true","editor-font-scale":1,"context":"interactive","classes":"","comment":"","out-width":"700px","out-height":""},"id":14,"code":"penguin_sample$year_short <- str_sub(penguin_sample$year, 3, -1)"}];
 
 </script>
 <script type="module">
@@ -1134,6 +1134,10 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Introduction to Base R</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./intro_R_tutorial_penguin.html"> 
+<span class="menu-text">Introduction to Base R</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./factor_tutorial.html"> 
 <span class="menu-text">Introduction to forcats Package</span></a>
   </li>  
@@ -1142,8 +1146,12 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Data Transformation in R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./string_tutorial.html" aria-current="page"> 
+    <a class="nav-link" href="./string_tutorial.html"> 
 <span class="menu-text">Introduction to stringr Package</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./string_tutorial_penguin.html" aria-current="page"> 
+<span class="menu-text">Introduction to stringr Package - Penguin dataset</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -1408,7 +1416,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to stringr Package</h1>
+<h1 class="title">Introduction to stringr Package - Penguin dataset</h1>
 </div>
 
 
@@ -1436,7 +1444,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <ol type="1">
 <li><p><code>str_sub()</code>: This function allows you to extract substrings in a character vector. Syntax: <code>str_sub(string, start_position, end_position)</code></p></li>
 <li><p><code>str_to_lower()</code>: Use this function to transform text to all lowercase. Syntax: <code>str_to_lower(string)</code></p></li>
-<li><p><code>str_split()</code>: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. Syntax: <code>str_split(string, pattern, simplify = TRUE)</code></p></li>
+<li><p><code>str_split()</code>: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. This will allow you to extract specific pieces using index notations. Syntax: <code>str_split(string, pattern, simplify = TRUE)</code></p></li>
 <li><p><code>str_remove()</code>: Use <code>str_remove()</code> to eliminate the first instance of a pattern in a string. Syntax: <code>str_remove(string, pattern)</code></p></li>
 </ol>
 <p>With these tools at your disposal, you’ll be able to tackle a wide array of text processing tasks. Let’s proceed to the exercises and start putting these functions to work!</p>
@@ -1444,7 +1452,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
-<p>We will work with a dataset that includes variables found in the US Census.</p>
+<p>We will work with a dataset with size measurements for 3 different species of penguins on islands in the Palmer Archipelago, Antarctica. We’ll be focusing on the measurements for bill length (mm), body mass (g), as well as the location and year the data was taken. Here’s more <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">information</a> about the <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">data set</a>!</p>
 <p>Here is a preview of the data you will be working with:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -1454,7 +1462,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a variable called description_lower that converts Descriptions in the census data frame to lowercase using str_to_lower().</p>
+<p>Create a variable called location_lower that converts location in the penguin_sample data frame to lowercase using str_to_lower().</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1469,7 +1477,7 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_to_lower function on the ‘Descriptions’ column of ‘census’.</p>
+<p>Use the str_to_lower function on the ‘location’ column of ‘penguin_sample’.</p>
 </div>
 </div>
 </div>
@@ -1510,7 +1518,7 @@ Answer
 </section>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Split the Descriptions variable in the census data frame into separate elements using str_split() based on the comma delimiter. In particular, create a new variable called county that extracts the county information (which appears after the first comma).</p>
+<p>Split the Island variable in the census data frame into separate elements using str_split() based on the comma delimiter. In particular, create a new variable called ‘island’ that extracts the only the island name (without Palmer Archipelago, Antarctica). Note that the island appears before the first comma.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1525,7 +1533,7 @@ Hint
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_split function and specify the comma as the pattern. Extract the second column using index notation.</p>
+<p>Use the str_split function and specify the comma as the pattern. Extract the first column using index notation.</p>
 </div>
 </div>
 </div>
@@ -1566,7 +1574,7 @@ Answer
 </section>
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Create a new variable called description_short that removes the phrase “County, Oregon” from all Descriptions in the census data frame using str_remove().</p>
+<p>Create a new variable called location_short that removes the phrase “Antarctica” from all locations in the penguin_sample data frame using str_remove().</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1622,7 +1630,7 @@ Answer
 </section>
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>The Identifier variable is a code used by the postal service. This particlar ID number more information than necessary to identify a census tract. Create a variable called fips_tract that extracts the component of the ID number that exists from the 10th character to the last character using str_sub().</p>
+<p>Create a variable called year_short that extracts the last two characters of the year using str_sub().</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSCI 140 Web Tutorials - Introduction to stringr Package</title>
+<title>DSCI 140 Web Tutorials - Introduction to Base R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))\n\n\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"true","label":"unnamed-chunk-1","context":"setup","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":1},{"code":"\ncensus","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-2","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":2},{"code":"# Your code here\n\nstr(census$description_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-3","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":3},{"code":"census$description_lower <- str_to_lower(census$_____)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-4","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":4},{"code":"census$description_lower <- str_to_lower(census$Descriptions)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-5","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":5},{"code":"# Your code here\n\nstr(census$county) # if your code worked, you should see your new county variable with this code","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-6","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":6},{"code":"census$county <- str_split(___$___, pattern = \",\")[,_____]","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-7","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":7},{"code":"census$county <- str_split(census$Descriptions, pattern = \",\")[,2]","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-8","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":8},{"code":"# Your code here\n\nstr(census$description_short) # if your code worked, this code will show you the structure of your new variable","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-9","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":9},{"code":"census$description_short <- str_remove(__$___, \"_____\")","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-10","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":10},{"code":"census$description_short <- str_remove(census$Descriptions, \"County, Oregon\")","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-11","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":11},{"code":"# Your code here\n\nstr(census$fips_tract) # The ID number should be shorter and start with 0","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-12","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":12},{"code":"\ncensus$fips_tract <- str_sub(____, ____, ____)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-13","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":13},{"code":"census$fips_tract <- str_sub(census$Identifiers, 10, -1)","options":{"editor-max-height":"","dpi":72,"warning":"true","message":"true","out-height":"","comment":"","editor-font-scale":1,"classes":"","fig-height":5,"read-only":"false","fig-cap":"","results":"markup","fig-width":7,"autorun":"false","label":"unnamed-chunk-14","context":"interactive","output":"true","editor-quick-suggestions":"false","out-width":"700px"},"id":14}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"input data","dpi":72,"context":"setup","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"true","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\npenguin<- tibble(penguins$species, penguins$bill_length_mm, penguins$body_mass_g)\npenguin_sample<- na.omit(penguin)\npenguin_sample<- rename(penguin_sample, Species =`penguins$species`, bill_length = `penguins$bill_length_mm`, body_mass = `penguins$body_mass_g` )\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-2","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"penguin_sample"},{"id":3,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-3","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# Your code here\n\nnumbers \n# this code will run successfully and indicate a vector \n# was created if your code is right!"},{"id":4,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-4","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"\nnumbers <- c(1:10) #numbers<- c(1,2,3,4,5,6,7,8,9,10) also works!"},{"id":5,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-5","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# Your code here\n\n # if your code worked, you should see that there are \n # 151 penguins of Adelie species and the mean Bill length is 43.92mm"},{"id":6,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-6","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"summary(____)"},{"id":7,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-7","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"summary(penguin_sample)"},{"id":8,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-8","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# Your code here\n\n# if your code worked a scatter plot should appear!"},{"id":9,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-9","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"#The syntax is \nplot(data_frame$column1, data_frame$column2)"},{"id":10,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-10","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"plot(penguin_sample$bill_length, penguin_sample$body_mass)"},{"id":11,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-11","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# Your code here\n\nbill_length # This should print the vector if done correctly"},{"id":12,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-12","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":" bill_length <- penguin_sample$bill_length"},{"id":13,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-13","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# Your code here\n\nlong_bill # this will print bill lengths over 50 if successfully coded"},{"id":14,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-14","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# long_bill <- penguin_sample$bill_length[___ >= 50]"},{"id":15,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-15","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"long_bill <- penguin_sample$bill_length[penguin_sample$bill_length>= 50]"},{"id":16,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-16","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# Your code here\n\nlong_bill_data # this will print only penguins with a bill length over 50mm if successfully coded"},{"id":17,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-17","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"# long_bill_data <- penguin_sample[___ >= 50,]"},{"id":18,"options":{"comment":"","output":"true","fig-height":5,"results":"markup","fig-cap":"","label":"unnamed-chunk-18","dpi":72,"context":"interactive","out-height":"","warning":"true","read-only":"false","classes":"","autorun":"false","fig-width":7,"message":"true","editor-quick-suggestions":"false","out-width":"700px","editor-max-height":"","editor-font-scale":1},"code":"long_bill_data <- penguin_sample[penguin_sample$bill_length >= 50,]"}];
 
 </script>
 <script type="module">
@@ -1142,7 +1142,7 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Data Transformation in R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./string_tutorial.html" aria-current="page"> 
+    <a class="nav-link" href="./string_tutorial.html"> 
 <span class="menu-text">Introduction to stringr Package</span></a>
   </li>  
 </ul>
@@ -1165,13 +1165,16 @@ globalThis.qwebrExecuteCode = async function (
   <ul class="collapse">
   <li><a href="#functions-in-focus" id="toc-functions-in-focus" class="nav-link" data-scroll-target="#functions-in-focus">Functions in Focus</a></li>
   </ul></li>
+  <li><a href="#bracket-indexing-review" id="toc-bracket-indexing-review" class="nav-link" data-scroll-target="#bracket-indexing-review">Bracket Indexing Review</a></li>
   <li><a href="#our-dataset" id="toc-our-dataset" class="nav-link" data-scroll-target="#our-dataset">Our Dataset</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-1-creating-a-vector" id="toc-exercise-1-creating-a-vector" class="nav-link" data-scroll-target="#exercise-1-creating-a-vector">Exercise 1: Creating a Vector</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1408,7 +1411,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to stringr Package</h1>
+<h1 class="title">Introduction to Base R</h1>
 </div>
 
 
@@ -1429,32 +1432,44 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>In this tutorial, you will delve into the manipulation of text data with the <code>stringr</code> package in the tidyverse. Text data is ubiquitous and manipulating strings efficiently is a fundamental skill in data analysis. <code>stringr</code> provides a cohesive set of functions designed to make string manipulation easy and consistent.</p>
+<p>Welcome to this interactive tutorial for students new to base R. You’ll learn about creating vectors, data frames, summarizing data, understanding data structures, and basic plotting. This tutorial also introduces the use of the $ operator to reference variables in dataframes.</p>
 <section id="functions-in-focus" class="level3">
 <h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
-<p>Let’s familiarize ourselves with the essential functions from <code>stringr</code> that we’ll explore in this tutorial, along with their syntax:</p>
-<ol type="1">
-<li><p><code>str_sub()</code>: This function allows you to extract substrings in a character vector. Syntax: <code>str_sub(string, start_position, end_position)</code></p></li>
-<li><p><code>str_to_lower()</code>: Use this function to transform text to all lowercase. Syntax: <code>str_to_lower(string)</code></p></li>
-<li><p><code>str_split()</code>: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. Syntax: <code>str_split(string, pattern, simplify = TRUE)</code></p></li>
-<li><p><code>str_remove()</code>: Use <code>str_remove()</code> to eliminate the first instance of a pattern in a string. Syntax: <code>str_remove(string, pattern)</code></p></li>
+<p>Before we dive into the exercises, let’s introduce the key functions we will be working with and provide some guidance on their syntax: 1. <code>c()</code>: This function is used for combining values into a vector. It is a fundamental function in R, often used in data analysis for creating vectors which can be used as input for other functions or for data manipulation.</p>
+<p>Syntax: <code>c(element1, element2, ...)</code></p>
+<ol start="2" type="1">
+<li>summary(): This function provides statistical summaries of the contents of an R object, such as mean, median, min, max, and quartiles for numeric data, or frequency counts for factors. It’s a quick way to get an overview of your data.</li>
 </ol>
-<p>With these tools at your disposal, you’ll be able to tackle a wide array of text processing tasks. Let’s proceed to the exercises and start putting these functions to work!</p>
+<p>Syntax when used with a dataframe: <code>summary(df)</code></p>
+<ol start="3" type="1">
+<li><code>plot()</code>: This function is used for creating basic types of graphs such as scatterplots, line plots, histograms, etc. It’s a versatile function for quick and easy visualization of data in a dataframe.</li>
+</ol>
+<p>Syntax for a simple scatter plot: <code>plot(df$column1, df$column2)</code> (plotting data from two columns of df against each other) These functions are essential building blocks in R for data manipulation and analysis. They provide foundational capabilities for handling, exploring, and visualizing data.</p>
 </section>
+</section>
+<section id="bracket-indexing-review" class="level2">
+<h2 class="anchored" data-anchor-id="bracket-indexing-review">Bracket Indexing Review</h2>
+<p>Indexing in base R is a fundamental concept for accessing and manipulating elements within vectors and dataframes. It primarily uses brackets <code>[]</code> to specify the elements you want to extract or modify.</p>
+<p>For Vectors: - Indexing by Position: You can access elements of a vector by their position. For instance, if <code>v</code> is a vector, <code>v[2]</code> will give you the second element of v. - Logical Indexing: You can also use logical vectors to index. If <code>v</code> is a vector <code>v[v&gt;3]</code> will return elements of <code>v</code> greater than 3.</p>
+<p>For Dataframes: Dataframes can be indexed by row and column.</p>
+<ul>
+<li>Indexing by Position: To access specific elements, you can specify the row and column numbers. For instance, <code>df[2, 3]</code> will give you the element in the second row and third column of the dataframe <code>df</code>.</li>
+<li>Logical Indexing: Similar to vectors, you can use logical statements for indexing. For example, <code>df[df$column_name &gt; 10, ]</code> will give you all rows of <code>df</code> where the values in <code>column_name</code> are greater than 10.</li>
+</ul>
 </section>
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
-<p>We will work with a dataset that includes variables found in the US Census.</p>
+<p>We will work with a dataset with size measurements for 3 different species of penguins on islands in the Palmer Archipelago, Antarctica. We’ll be focusing on the measurements for bill length (mm) and body mass (g). Here’s more <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">information</a> about the <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">data set</a>!</p>
 <p>Here is a preview of the data you will be working with:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a variable called description_lower that converts Descriptions in the census data frame to lowercase using str_to_lower().</p>
+<p>Here are some practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
+<section id="exercise-1-creating-a-vector" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-creating-a-vector">Exercise 1: Creating a Vector</h3>
+<p>Create a vector named numbers containing the first ten numbers.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1469,7 +1484,7 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_to_lower function on the ‘Descriptions’ column of ‘census’.</p>
+<p>Use the c() function to combine individual numbers into a vector</p>
 </div>
 </div>
 </div>
@@ -1485,8 +1500,7 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The syntax for creating a vector generally looks like: c(1, 2, 3, …). You could also use a colon as a shortcut!</p>
 </div>
 </div>
 </div>
@@ -1496,13 +1510,13 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1510,8 +1524,8 @@ Answer
 </section>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Split the Descriptions variable in the census data frame into separate elements using str_split() based on the comma delimiter. In particular, create a new variable called county that extracts the county information (which appears after the first comma).</p>
-<div id="qwebr-insertion-location-6"></div>
+<p>Exercise 2: Summarizing Data. Apply the summary() function to sample_data.</p>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -1525,7 +1539,7 @@ Hint
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_split function and specify the comma as the pattern. Extract the second column using index notation.</p>
+<p>Call summary() on your data frame, which is named sample_data</p>
 </div>
 </div>
 </div>
@@ -1541,7 +1555,7 @@ Hint
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1552,13 +1566,13 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-8"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1566,8 +1580,8 @@ Answer
 </section>
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Create a new variable called description_short that removes the phrase “County, Oregon” from all Descriptions in the census data frame using str_remove().</p>
-<div id="qwebr-insertion-location-9"></div>
+<p>Create a simple plot of ‘bill_length’ vs ‘body_mass’ from penguin_sample.</p>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1581,7 +1595,7 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The str_remove function needs a pattern to match what should be removed.</p>
+<p>Hint: Use the plot() function with two arguments from your data frame.</p>
 </div>
 </div>
 </div>
@@ -1597,7 +1611,7 @@ Hint
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1608,13 +1622,13 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-11"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1622,8 +1636,8 @@ Answer
 </section>
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>The Identifier variable is a code used by the postal service. This particlar ID number more information than necessary to identify a census tract. Create a variable called fips_tract that extracts the component of the ID number that exists from the 10th character to the last character using str_sub().</p>
-<div id="qwebr-insertion-location-12"></div>
+<p>Using the $ Operator: Extract the ‘bill_length’ column from penguin_sample using the $ operator. Assign it to a new stand-alone vector called ‘bill_length’</p>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
@@ -1637,7 +1651,7 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use str_sub(). -1 will stand in for the last character.</p>
+<p>The $ operator is used to select a single column from a data frame.</p>
 </div>
 </div>
 </div>
@@ -1653,8 +1667,7 @@ Hint
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-13"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Start with age &lt;- and use syntax like my_data_frame$column_name</p>
 </div>
 </div>
 </div>
@@ -1664,13 +1677,125 @@ Hint
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Using the $ operator to reference the vector (variable) bill_length in the dataframe penguin_sample, create a new object called ‘long_bill’ that takes on only the bill length values of survey respondents greater than or equal to 50mm.</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use bracket indexing. The vector penguin_sample$bill_length should appear twice in the correct code!</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<p>This time, extract the entire dataset (all columns, including body mass and species info) for the group of penguins with a bill length over 50mm. Call this object long_bill_data</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use bracket indexing. You will need to specify rows you are interested in, and leave the column field blank to return ALL columns of data</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
