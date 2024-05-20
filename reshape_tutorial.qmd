@@ -86,7 +86,7 @@ This data is too long, with multiple variables sharing the same columns. Convert
 # Your code here.  If run successfully, the following code would indicate that your data has
 # 16 observations and 5 variables
 
-str(climate_data)
+str(climate_data_longer)
 ```
 
 ::: {.callout-tip collapse="true" icon="false"}
@@ -171,12 +171,12 @@ new_data <- tibble(
 new_data
 ```
 
-Now, bind this new data to `climate_data`.
+Now, bind this new data to `climate_data` and call your new data set `all_climate_data`
 
 ```{webr-r}
 # Your code here
 
-str(climate_data) # should now have 20 observations
+str(all_climate_data) # should now have 20 observations
 ```
 
 ::: {.callout-tip collapse="true" icon="false"}
