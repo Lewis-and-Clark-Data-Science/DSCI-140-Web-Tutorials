@@ -62,7 +62,7 @@ opinion_data
 
 ## Exercises
 
-Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.
+Here are 5 practice exercises. You can click for hints and the answer for each problem. 
 
 ### Exercise 1
 

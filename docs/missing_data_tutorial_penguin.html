@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSCI 140 Web Tutorials - Introduction to stringr Package</title>
+<title>DSCI 140 Web Tutorials - Missing Data Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"true","classes":"","fig-cap":"","label":"input data","context":"setup","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\n\npenguin<- tibble(penguins$species, penguins$island, penguins$bill_length_mm, penguins$body_mass_g, penguins$year)\npenguin_sample<- na.omit(penguin)\npenguin_sample<- rename(penguin_sample, species =`penguins$species`, location = `penguins$island`, bill_length = `penguins$bill_length_mm`, body_mass = `penguins$body_mass_g`, year = `penguins$year`)\npenguin_sample$location<- paste(penguin_sample$location,\"Palmer Archipelago, Antarctica\", sep=\", \")\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-2","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample"},{"id":3,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-3","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"# Your code here\n\nstr(penguin_sample$location_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created"},{"id":4,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-4","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample$location_lower <- str_to_lower(penguin_sample$_____)"},{"id":5,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-5","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample$location_lower <- str_to_lower(penguin_sample$location)"},{"id":6,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-6","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"# Your code here\n\nstr(penguin_sample$island) # if your code worked, you should see your new island variable with this code"},{"id":7,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-7","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample$island <- str_split(___$___, pattern = \",\", simplify=TRUE)[,_____]"},{"id":8,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-8","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample$island <- str_split(penguin_sample$location, pattern = \",\", simplify=TRUE)[,1]"},{"id":9,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-9","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"# Your code here\n\nstr(penguin_sample$location_short) # if your code worked, this code will show you the structure of your new variable"},{"id":10,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-10","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample$location_short <- str_remove(__$___, \"_____\")"},{"id":11,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-11","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample$location_short <- str_remove(penguin_sample$location, \", Antarctica\")"},{"id":12,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-12","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"# Your code here\n\nstr(penguin_sample$year_short) # The year should only display the last two numbers"},{"id":13,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-13","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"\npenguin_sample$year_short <- str_sub(____, ____, ____)"},{"id":14,"options":{"editor-max-height":"","output":"true","read-only":"false","out-height":"","out-width":"700px","comment":"","warning":"true","autorun":"false","classes":"","fig-cap":"","label":"unnamed-chunk-14","context":"interactive","editor-quick-suggestions":"false","editor-font-scale":1,"fig-width":7,"dpi":72,"fig-height":5,"results":"markup","message":"true"},"code":"penguin_sample$year_short <- str_sub(penguin_sample$year, 3, -1)"}];
+globalThis.qwebrCellDetails = [{"options":{"classes":"","tidy":"true","context":"setup","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"input data","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"true","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\nlibrary(\"naniar\")\npenguin_eye <- c('NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'grey', 'red', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'brown', 'NA');\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex, 'eye_color'=penguin_eye)\npenguin<- replace_with_na(penguin,replace=list(eye_color='NA'))\n\n\n\n\n#knitr::opts_chunk$set(error = TRUE)\n#knitr::opts_chunk$set(echo = TRUE)","id":1},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-2","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"penguin","id":2},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-3","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"#Your code here\n\n\n#If your code works, you should see there are 114 missing observations in the eye color variable, which is 33% of the all the eye color observations.\n#You should also see that 3 variables have no missing data. ","id":3},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-4","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"miss_var_summary(________)","id":4},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-5","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"miss_var_summary(penguin)","id":5},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-6","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"#Your code here \n\n\n#If your code works, you should see the number of missing eye_color values for each year.\n#You'll see that one year contains only missing values. ","id":6},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-7","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"penguin |> \n  select(___, ____) |>\n  group_by(_____) |>\n  miss_var_summary()","id":7},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-8","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"penguin |> \n  select(year, eye_color) |>\n  group_by(year) |>\n  miss_var_summary()","id":8},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-9","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"# Your code here: \n\n#If your code worked, you should see 3 different missing value graphs titled \"Biscoe\" \"Dream\" and \"Torgersen\". ","id":9},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-10","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"gg_miss_var(penguin, facet=____)","id":10},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-11","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"gg_miss_var(penguin, facet=island)","id":11},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-12","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"# Your code here\n\n\nvis_miss(penguin_year) # If your code works, this code will create a chart with lines marking the locations of `NA` vales.\n\n#You should see black lines for all the NA values, \n#and a gray background representing observations which do NOT contain NA values. \n\n#The chart should be sorted by year, so there should be a black box in the eye_color column that corresponds to the year 2007 when all the values are NA. ","id":12},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-13","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"penguin_year<- arrange(____, ____)","id":13},{"options":{"classes":"","context":"interactive","out-height":"","comment":"","out-width":"700px","results":"markup","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-14","fig-cap":"","output":"true","editor-font-scale":1,"autorun":"false","read-only":"false","message":"true","fig-width":7,"warning":"true","dpi":72,"editor-quick-suggestions":"false"},"code":"penguin_year<- arrange(penguin,year)","id":14}];
 
 </script>
 <script type="module">
@@ -1134,11 +1134,11 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Introduction to Base R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./string_tutorial_penguin.html" aria-current="page"> 
+    <a class="nav-link" href="./string_tutorial_penguin.html"> 
 <span class="menu-text">Introduction to stringr Package</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./missing_data_tutorial_penguin.html"> 
+    <a class="nav-link active" href="./missing_data_tutorial_penguin.html" aria-current="page"> 
 <span class="menu-text">Missing Data Tutorial</span></a>
   </li>  
   <li class="nav-item">
@@ -1412,7 +1412,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to stringr Package</h1>
+<h1 class="title">Missing Data Tutorial</h1>
 </div>
 
 
@@ -1433,42 +1433,41 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>In this tutorial, you will delve into the manipulation of text data with the <code>stringr</code> package in the tidyverse. Text data is ubiquitous and manipulating strings efficiently is a fundamental skill in data analysis. <code>stringr</code> provides a cohesive set of functions designed to make string manipulation easy and consistent.</p>
+<p>In this tutorial, you will learn how to deal with missing data using the <code>naniar</code> package. The <code>naniar</code> package helps visualize where there are missing or ‘NA’ values in a dataset. It allows you to see how many ‘NA’ values there are and where they show up.</p>
 <section id="functions-in-focus" class="level3">
 <h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
-<p>Let’s familiarize ourselves with the essential functions from <code>stringr</code> that we’ll explore in this tutorial, along with their syntax:</p>
+<p>Let’s start by looking at some of our key functions which we’ll use in this exercise.</p>
 <ol type="1">
-<li><code>str_sub()</code>: This function allows you to extract substrings in a character vector.</li>
+<li><code>miss_var_summary()</code>: Creates a summary table of missing values by variable. Includes the <em>number</em> of missing values per variable (called <code>n_miss</code>) and the <em>percentage</em> of missing values per variable (called <code>pct_miss</code>).</li>
 </ol>
-<p>Syntax: <code>str_sub(string, start_position, end_position)</code></p>
+<p>Syntax when used with a dataframe: <code>miss_var_summary(df)</code></p>
 <ol start="2" type="1">
-<li><code>str_to_lower()</code>: Use this function to transform text to all lowercase.</li>
+<li><code>gg_miss_var()</code>: Creates a bar graph of missing values by variable.</li>
 </ol>
-<p>Syntax: <code>str_to_lower(string)</code></p>
+<p>Syntax: <code>gg_miss_var(df)</code></p>
+<ul>
+<li>You can also choose one variable and create a different graph for each aspect of that variable using the syntax <code>gg_miss_var(df, facet=variable)</code> where <code>variable</code> is your chosen variable.</li>
+</ul>
 <ol start="3" type="1">
-<li><code>str_split()</code>: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. This will allow you to extract specific pieces using index notations.</li>
+<li><code>vis_miss()</code>: Creates a visual of missing values by variable by position in the dataset.</li>
 </ol>
-<p>Syntax: <code>str_split(string, pattern, simplify = TRUE)</code></p>
-<ol start="4" type="1">
-<li><code>str_remove()</code>: Use <code>str_remove()</code> to eliminate the first instance of a pattern in a string.</li>
-</ol>
-<p>Syntax: <code>str_remove(string, pattern)</code></p>
-<p>With these tools at your disposal, you’ll be able to tackle a wide array of text processing tasks. Let’s proceed to the exercises and start putting these functions to work!</p>
+<p>Syntax: <code>vis_miss(df)</code></p>
 </section>
 </section>
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
-<p>We will work with a dataset with size measurements for 3 different species of penguins on islands in the Palmer Archipelago, Antarctica. We’ll be focusing on the measurements for bill length (mm), body mass (g), as well as the location and year the data was taken. Here’s more <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">information</a> about the <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">data set</a>!</p>
+<p>We will work with a dataset with measurements for 3 different species of penguins on islands in the Palmer Archipelago, Antarctica. We’ll be focusing on the measurements for species, location, body mass (g), sex, and year the data was taken. For this tutorial, we’ve also added a new column called <code>eye_color</code>. Here’s more <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">information</a> about the <a href="https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html">data set</a>!</p>
 <p>Here is a preview of the data you will be working with:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Notice that there are NA values in our data set. Today we’ll be looking at those NA (or missing) values.</p>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <p>Here are 4 practice exercises. You can click for hints and the answer for each problem.</p>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a variable called <code>location_lower</code> that converts location in the <code>penguin_sample</code> data frame to lowercase using <code>str_to_lower()</code>.</p>
+<p>First, let’s find where we have <code>NA</code> values in our code. Use the command <code>miss_var_summary()</code> to find which variables have missing values and how many missing values each variable contains.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1483,29 +1482,13 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_to_lower function on the ‘location’ column of ‘penguin_sample’.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1514,7 +1497,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -1524,9 +1507,26 @@ Answer
 </section>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Split the Island variable in the <code>penguin_sample</code> data frame into separate elements using <code>str_split()</code> based on the comma delimiter. In particular, create a new variable called <code>island</code> that extracts only the island name (without Palmer Archipelago, Antarctica). Note that the island appears before the first comma.</p>
+<p>You may have noticed that <code>eye_color</code> has the highest number of missing values, so we’ll focus on the missing values in <code>eye_color</code> for this exercise.</p>
+<p>Use <code>miss_var_summary()</code> to display the number of missing <code>eye_color</code> values, separated into individual years. Don’t include any other variables.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the pipe function to select the specific data you want to display.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1539,7 +1539,7 @@ Hint
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_split function and specify the comma as the pattern. Extract the first column using index notation.</p>
+<p>Use the <code>select()</code> function to choose the variables you want to focus on and use the <code>group_by()</code> function to choose how you want to layout the chart.</p>
 </div>
 </div>
 </div>
@@ -1580,7 +1580,7 @@ Answer
 </section>
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Create a new variable called <code>location_short</code> that removes the phrase “Antarctica” from all locations in the <code>penguin_sample</code> data frame using <code>str_remove()</code>.</p>
+<p>Next use <code>gg_miss_var()</code> to create bar graphs that show the number of missing values per variable, by island. Create 3 graphs total, 1 graph for each island.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1595,7 +1595,7 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The str_remove function needs a pattern to match what should be removed.</p>
+<p>Recall the syntax <code>gg_miss_var(df, facet=variable)</code> where <code>variable</code> is your chosen variable.</p>
 </div>
 </div>
 </div>
@@ -1636,7 +1636,9 @@ Answer
 </section>
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Create a variable called <code>year_short</code> that extracts the last two characters of the year using <code>str_sub()</code>.</p>
+<p>Next, let’s look at where the missing values are showing up within the observations in the dataset.</p>
+<p>First, sort the data by year: create a new dataset called <code>penguin_year</code> that has the <code>penguin</code> data sorted by year.</p>
+<p>Then, we’ll input that data into the <code>vis_miss()</code> function to see where the <code>NA</code> values fall when the data is sorted by year.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1651,7 +1653,7 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use str_sub(). -1 will stand in for the last character.</p>
+<p>Use the <code>arrange()</code> function to sort the data by year.</p>
 </div>
 </div>
 </div>

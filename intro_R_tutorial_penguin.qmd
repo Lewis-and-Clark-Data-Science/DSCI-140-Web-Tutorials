@@ -3,7 +3,7 @@ format: html
 editor: visual
 filters: 
   - webr
-title: "Introduction to Base R Penguin dataset"
+title: "Introduction to Base R"
 ---
 
 ```{webr-r}
@@ -26,11 +26,13 @@ Welcome to this interactive tutorial for students new to base R. You'll learn ab
 
 ### Functions in Focus
 
-Before we dive into the exercises, let's introduce the key functions we will be working with and provide some guidance on their syntax: 1. `c()`: This function is used for combining values into a vector. It is a fundamental function in R, often used in data analysis for creating vectors which can be used as input for other functions or for data manipulation.
+Before we dive into the exercises, let's introduce the key functions we will be working with and provide some guidance on their syntax:
+
+1.  `c()`: This function is used for combining values into a vector. It is a fundamental function in R, often used in data analysis for creating vectors which can be used as input for other functions or for data manipulation.
 
 Syntax: `c(element1, element2, ...)`
 
-2.  summary(): This function provides statistical summaries of the contents of an R object, such as mean, median, min, max, and quartiles for numeric data, or frequency counts for factors. It's a quick way to get an overview of your data.
+2.  `summary()`: This function provides statistical summaries of the contents of an R object, such as mean, median, min, max, and quartiles for numeric data, or frequency counts for factors. It's a quick way to get an overview of your data.
 
 Syntax when used with a dataframe: `summary(df)`
 
@@ -42,7 +44,11 @@ Syntax for a simple scatter plot: `plot(df$column1, df$column2)` (plotting data 
 
 Indexing in base R is a fundamental concept for accessing and manipulating elements within vectors and dataframes. It primarily uses brackets `[]` to specify the elements you want to extract or modify.
 
-For Vectors: - Indexing by Position: You can access elements of a vector by their position. For instance, if `v` is a vector, `v[2]` will give you the second element of v. - Logical Indexing: You can also use logical vectors to index. If `v` is a vector `v[v>3]` will return elements of `v` greater than 3.
+For Vectors:
+
+-   Indexing by Position: You can access elements of a vector by their position. For instance, if `v` is a vector, `v[2]` will give you the second element of v.
+
+-   Logical Indexing: You can also use logical vectors to index. If `v` is a vector `v[v>3]` will return elements of `v` greater than 3.
 
 For Dataframes: Dataframes can be indexed by row and column.
 
@@ -61,7 +67,7 @@ penguin_sample
 
 ## Exercises
 
-Here are some practice exercises. You can click for hints for each problem. The last hint will be the solution.
+Here are some practice exercises. You can click for hints and the answer for each problem.
 
 ### Exercise 1: Creating a Vector
 
@@ -98,7 +104,7 @@ numbers <- c(1:10) #numbers<- c(1,2,3,4,5,6,7,8,9,10) also works!
 
 ### Exercise 2
 
-Exercise 2: Summarizing Data. Apply the summary() function to sample_data.
+Exercise 2: Summarizing Data. Apply the `summary()` function to `penguin_sample`.
 
 ```{webr-r}
 # Your code here
@@ -110,7 +116,7 @@ Exercise 2: Summarizing Data. Apply the summary() function to sample_data.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Call summary() on your data frame, which is named sample_data
+Call summary() on your data frame, which is named penguin_sample.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
@@ -131,7 +137,7 @@ summary(penguin_sample)
 
 ### Exercise 3
 
-Create a simple plot of 'bill_length' vs 'body_mass' from penguin_sample.
+Create a simple plot of `bill_length` vs `body_mass` from `penguin_sample`.
 
 ```{webr-r}
 # Your code here
@@ -165,7 +171,7 @@ plot(penguin_sample$bill_length, penguin_sample$body_mass)
 
 ### Exercise 4
 
-Using the \$ Operator: Extract the 'bill_length' column from penguin_sample using the \$ operator. Assign it to a new stand-alone vector called 'bill_length'
+Using the \$ Operator: Extract the `bill_length` column from `penguin_sample` using the \$ operator. Assign it to a new stand-alone vector called `bill_length`.
 
 ```{webr-r}
 # Your code here
@@ -182,7 +188,9 @@ The \$ operator is used to select a single column from a data frame.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Start with age \<- and use syntax like my_data_frame\$column_name
+Start with bill_length \<-
+
+and use syntax like my_data_frame\$column_name
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
@@ -195,7 +203,7 @@ Start with age \<- and use syntax like my_data_frame\$column_name
 
 ### Exercise 5
 
-Using the \$ operator to reference the vector (variable) bill_length in the dataframe penguin_sample, create a new object called 'long_bill' that takes on only the bill length values of survey respondents greater than or equal to 50mm.
+Using the \$ operator to reference the vector (variable) `bill_length` in the dataframe `penguin_sample`, create a new object called `long_bill` that takes on only the bill length values of survey respondents greater than or equal to 50mm.
 
 ```{webr-r}
 # Your code here
@@ -227,7 +235,7 @@ long_bill <- penguin_sample$bill_length[penguin_sample$bill_length>= 50]
 
 ### Exercise 6
 
-This time, extract the entire dataset (all columns, including body mass and species info) for the group of penguins with a bill length over 50mm. Call this object long_bill_data
+This time, extract the entire dataset (all columns, including body mass and species info) for the group of penguins with a bill length over 50mm. Call this object `long_bill_data`.
 
 ```{webr-r}
 # Your code here

@@ -1,0 +1,222 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+title: "Missing Data Tutorial"
+---
+
+```{webr-r}
+#| context: setup
+#| label: input data
+#| tidy:true
+
+library(tidyverse)
+library("palmerpenguins")
+library("naniar")
+penguin_eye <- c('NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'grey', 'red', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'brown', 'NA');
+
+penguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex, 'eye_color'=penguin_eye)
+penguin<- replace_with_na(penguin,replace=list(eye_color='NA'))
+
+
+
+
+#knitr::opts_chunk$set(error = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Welcome
+
+In this tutorial, you will learn how to deal with missing data using the `naniar` package. The `naniar` package helps visualize where there are missing or 'NA' values in a dataset. It allows you to see how many 'NA' values there are and where they show up.
+
+### Functions in Focus
+
+Let's start by looking at some of our key functions which we'll use in this exercise.
+
+1.  `miss_var_summary()`: Creates a summary table of missing values by variable. Includes the *number* of missing values per variable (called `n_miss`) and the *percentage* of missing values per variable (called `pct_miss`).
+
+Syntax when used with a dataframe: `miss_var_summary(df)`
+
+2.  `gg_miss_var()`: Creates a bar graph of missing values by variable.
+
+Syntax: `gg_miss_var(df)`
+
+-   You can also choose one variable and create a different graph for each aspect of that variable using the syntax `gg_miss_var(df, facet=variable)` where `variable` is your chosen variable.
+
+3.  `vis_miss()`: Creates a visual of missing values by variable by position in the dataset.
+
+Syntax: `vis_miss(df)`
+
+## Our Dataset
+
+We will work with a dataset with measurements for 3 different species of penguins on islands in the Palmer Archipelago, Antarctica. We'll be focusing on the measurements for species, location, body mass (g), sex, and year the data was taken. For this tutorial, we've also added a new column called `eye_color`. Here's more [information](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html) about the [data set](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html)!
+
+Here is a preview of the data you will be working with:
+
+```{webr-r}
+penguin
+```
+
+Notice that there are NA values in our data set. Today we'll be looking at those NA (or missing) values.
+
+## Exercises
+
+Here are 4 practice exercises. You can click for hints and the answer for each problem.
+
+### Exercise 1
+
+First, let's find where we have `NA` values in our code. Use the command `miss_var_summary()` to find which variables have missing values and how many missing values each variable contains.
+
+```{webr-r}
+#Your code here
+
+
+#If your code works, you should see there are 114 missing observations in the eye color variable, which is 33% of the all the eye color observations.
+#You should also see that 3 variables have no missing data. 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+miss_var_summary(________)
+
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+miss_var_summary(penguin)
+
+```
+:::
+
+### Exercise 2
+
+You may have noticed that `eye_color` has the highest number of missing values, so we'll focus on the missing values in `eye_color` for this exercise.
+
+Use `miss_var_summary()` to display the number of missing `eye_color` values, separated into individual years. Don't include any other variables.
+
+```{webr-r}
+#Your code here 
+
+
+#If your code works, you should see the number of missing eye_color values for each year.
+#You'll see that one year contains only missing values. 
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the pipe function to select the specific data you want to display.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the `select()` function to choose the variables you want to focus on and use the `group_by()` function to choose how you want to layout the chart.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+penguin |> 
+  select(___, ____) |>
+  group_by(_____) |>
+  miss_var_summary()
+
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+penguin |> 
+  select(year, eye_color) |>
+  group_by(year) |>
+  miss_var_summary()
+
+```
+:::
+
+### Exercise 3
+
+Next use `gg_miss_var()` to create bar graphs that show the number of missing values per variable, by island. Create 3 graphs total, 1 graph for each island.
+
+```{webr-r}
+# Your code here: 
+
+#If your code worked, you should see 3 different missing value graphs titled "Biscoe" "Dream" and "Torgersen". 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Recall the syntax `gg_miss_var(df, facet=variable)` where `variable` is your chosen variable.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+gg_miss_var(penguin, facet=____)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+gg_miss_var(penguin, facet=island)
+```
+:::
+
+### Exercise 4
+
+Next, let's look at where the missing values are showing up within the observations in the dataset.
+
+First, sort the data by year: create a new dataset called `penguin_year` that has the `penguin` data sorted by year.
+
+Then, we'll input that data into the `vis_miss()` function to see where the `NA` values fall when the data is sorted by year.
+
+```{webr-r}
+# Your code here
+
+
+vis_miss(penguin_year) # If your code works, this code will create a chart with lines marking the locations of `NA` vales.
+
+#You should see black lines for all the NA values, 
+#and a gray background representing observations which do NOT contain NA values. 
+
+#The chart should be sorted by year, so there should be a black box in the eye_color column that corresponds to the year 2007 when all the values are NA. 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the `arrange()` function to sort the data by year.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+penguin_year<- arrange(____, ____)
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+penguin_year<- arrange(penguin,year)
+```
+:::
+
+Congratulations, you finished this tutorial!

@@ -76,6 +76,8 @@ climate_data_longer
 
 ## Exercises
 
+Here are a few exercises to try. You can click for hints and the answer for each problem.
+
 ### Exercise 1: Widen the Data
 
 This data is too long, with multiple variables sharing the same columns. Convert `climate_data_longer` to a wider format, where each column represents a different type of measurement. Use the current measurement variable to create new variable names. Name the wider dataframe climate_data.

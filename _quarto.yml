@@ -6,12 +6,11 @@ website:
   title: "DSCI 140 Web Tutorials"
   navbar:
     left:
-      - intro_R_tutorial.qmd
       - intro_R_tutorial_penguin.qmd
+      - string_tutorial_penguin.qmd
+      - missing_data_tutorial_penguin.qmd
       - factor_tutorial.qmd
       - reshape_tutorial.qmd
-      - string_tutorial.qmd
-      - string_tutorial_penguin.qmd
       
 
 format:
