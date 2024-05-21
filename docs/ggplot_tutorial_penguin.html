@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSCI 140 Web Tutorials - Introduction to stringr Package</title>
+<title>DSCI 140 Web Tutorials - Introduction to GGPlot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"true","context":"setup","output":"true","out-width":"700px","label":"unnamed-chunk-1","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"library(tidyverse)\n\ncensus <- data.frame(Identifiers=c(\"1400000US41003000500\", \"1400000US41003000600\", \"1400000US41003000900\", \n                 \"1400000US41003001001\", \"1400000US41003001002\", \"1400000US41003001101\", \n                 \"1400000US41003001102\"), Descriptions=c(\"Census Tract 5, Benton County, Oregon\", \"Census Tract 6, Benton County, Oregon\", \n                  \"Census Tract 9, Benton County, Oregon\", \"Census Tract 10.01, Benton County, Oregon\", \n                  \"Census Tract 10.02, Benton County, Oregon\", \"Census Tract 11.01, Benton County, Oregon\", \n                  \"Census Tract 11.02, Benton County, Oregon\"), MedianAge=c(54.1, 40.9, 31.8, 33.9, 35.7, 21.8, 23.7), Populations =c(3334, 4136, 5347, 4212, 3239, 3896, 4873))\n\n\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-2","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"\ncensus"},{"id":3,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-3","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"# Your code here\n\nstr(census$description_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created"},{"id":4,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-4","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"census$description_lower <- str_to_lower(census$_____)"},{"id":5,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-5","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"census$description_lower <- str_to_lower(census$Descriptions)"},{"id":6,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-6","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"# Your code here\n\nstr(census$county) # if your code worked, you should see your new county variable with this code"},{"id":7,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-7","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"census$county <- str_split(___$___, pattern = \",\")[,_____]"},{"id":8,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-8","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"census$county <- str_split(census$Descriptions, pattern = \",\")[,2]"},{"id":9,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-9","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"# Your code here\n\nstr(census$description_short) # if your code worked, this code will show you the structure of your new variable"},{"id":10,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-10","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"census$description_short <- str_remove(__$___, \"_____\")"},{"id":11,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-11","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"census$description_short <- str_remove(census$Descriptions, \"County, Oregon\")"},{"id":12,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-12","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"# Your code here\n\nstr(census$fips_tract) # The ID number should be shorter and start with 4"},{"id":13,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-13","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"\ncensus$fips_tract <- str_sub(____, ____, ____)"},{"id":14,"options":{"editor-max-height":"","message":"true","read-only":"false","out-height":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","results":"markup","autorun":"false","context":"interactive","output":"true","out-width":"700px","label":"unnamed-chunk-14","fig-width":7,"classes":"","dpi":72,"warning":"true","comment":"","fig-height":5},"code":"census$fips_tract <- str_sub(census$Identifiers, 10, -1)"}];
+globalThis.qwebrCellDetails = [{"options":{"warning":"true","dpi":72,"label":"input data","comment":"","results":"markup","editor-font-scale":1,"editor-max-height":"","out-width":"700px","fig-height":5,"classes":"","editor-quick-suggestions":"false","fig-cap":"","fig-width":7,"message":"true","out-height":"","context":"setup","autorun":"true","output":"true","read-only":"false"},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1}];
 
 </script>
 <script type="module">
@@ -1161,24 +1161,7 @@ globalThis.qwebrExecuteCode = async function (
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
-  <ul class="collapse">
-  <li><a href="#functions-in-focus" id="toc-functions-in-focus" class="nav-link" data-scroll-target="#functions-in-focus">Functions in Focus</a></li>
-  </ul></li>
-  <li><a href="#our-dataset" id="toc-our-dataset" class="nav-link" data-scroll-target="#our-dataset">Our Dataset</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1412,7 +1395,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to stringr Package</h1>
+<h1 class="title">Introduction to GGPlot</h1>
 </div>
 
 
@@ -1431,259 +1414,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>In this tutorial, you will delve into the manipulation of text data with the <code>stringr</code> package in the tidyverse. Text data is ubiquitous and manipulating strings efficiently is a fundamental skill in data analysis. <code>stringr</code> provides a cohesive set of functions designed to make string manipulation easy and consistent.</p>
-<section id="functions-in-focus" class="level3">
-<h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
-<p>Let’s familiarize ourselves with the essential functions from <code>stringr</code> that we’ll explore in this tutorial, along with their syntax:</p>
-<ol type="1">
-<li><p><code>str_sub()</code>: This function allows you to extract substrings in a character vector. Syntax: <code>str_sub(string, start_position, end_position)</code></p></li>
-<li><p><code>str_to_lower()</code>: Use this function to transform text to all lowercase. Syntax: <code>str_to_lower(string)</code></p></li>
-<li><p><code>str_split()</code>: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. Syntax: <code>str_split(string, pattern, simplify = TRUE)</code></p></li>
-<li><p><code>str_remove()</code>: Use <code>str_remove()</code> to eliminate the first instance of a pattern in a string. Syntax: <code>str_remove(string, pattern)</code></p></li>
-</ol>
-<p>With these tools at your disposal, you’ll be able to tackle a wide array of text processing tasks. Let’s proceed to the exercises and start putting these functions to work!</p>
-</section>
-</section>
-<section id="our-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
-<p>We will work with a dataset that includes variables found in the US Census.</p>
-<p>Here is a preview of the data you will be working with:</p>
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>Here are 5 practice exercises. You can click for hints for each problem. The last hint will be the solution.</p>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a variable called description_lower that converts Descriptions in the census data frame to lowercase using str_to_lower().</p>
-<div id="qwebr-insertion-location-3"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the str_to_lower function on the ‘Descriptions’ column of ‘census’.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Split the Descriptions variable in the census data frame into separate elements using str_split() based on the comma delimiter. In particular, create a new variable called county that extracts the county information (which appears after the first comma).</p>
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the str_split function and specify the comma as the pattern. Extract the second column using index notation.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-7"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Create a new variable called description_short that removes the phrase “County, Oregon” from all Descriptions in the census data frame using str_remove().</p>
-<div id="qwebr-insertion-location-9"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The str_remove function needs a pattern to match what should be removed.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-10"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>The Identifier variable is a code used by the postal service. This particlar ID number more information than necessary to identify a census tract. Create a variable called fips_tract that extracts the component of the ID number that exists from the 10th character to the last character using str_sub().</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use str_sub(). -1 will stand in for the last character.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-13"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-14"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<p>Congratulations, you finished this tutorial!</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

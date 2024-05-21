@@ -13,9 +13,8 @@ title: "Introduction to stringr Package"
 library(tidyverse)
 library("palmerpenguins")
 
-penguin<- tibble(penguins$species, penguins$island, penguins$bill_length_mm, penguins$body_mass_g, penguins$year)
+penguin<- tibble(species =penguins$species, location = penguins$island, bill_length = penguins$bill_length_mm, body_mass = penguins$body_mass_g, year = penguins$year)
 penguin_sample<- na.omit(penguin)
-penguin_sample<- rename(penguin_sample, species =`penguins$species`, location = `penguins$island`, bill_length = `penguins$bill_length_mm`, body_mass = `penguins$body_mass_g`, year = `penguins$year`)
 penguin_sample$location<- paste(penguin_sample$location,"Palmer Archipelago, Antarctica", sep=", ")
 
 knitr::opts_chunk$set(error = TRUE)
