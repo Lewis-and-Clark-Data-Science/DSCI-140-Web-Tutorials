@@ -14,13 +14,10 @@ title: "Missing Data Tutorial"
 library(tidyverse)
 library("palmerpenguins")
 library("naniar")
-penguin_eye <- c('NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'grey', 'red', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'brown', 'NA');
+
+penguin_eye<- c('X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','X','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','X','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','grey','red','red','brown','X','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','red','brown','brown','red','red','brown','brown','brown','brown','red','grey','brown','brown','brown','brown','red','grey','brown','brown','red','brown','red','grey','brown','X')
 
 penguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex, 'eye_color'=penguin_eye)
-penguin<- replace_with_na(penguin,replace=list(eye_color='NA'))
-
-
-
 
 #knitr::opts_chunk$set(error = TRUE)
 #knitr::opts_chunk$set(echo = TRUE)
@@ -34,17 +31,25 @@ In this tutorial, you will learn how to deal with missing data using the `naniar
 
 Let's start by looking at some of our key functions which we'll use in this exercise.
 
-1.  `miss_var_summary()`: Creates a summary table of missing values by variable. Includes the *number* of missing values per variable (called `n_miss`) and the *percentage* of missing values per variable (called `pct_miss`).
+1. `na_if()`: Converts values to `NA`. Can be combined with the `mutate()` function to create or replace a column with `NA` values. 
+
+Syntax: `na_if(vector, value to replace)`
+
+2. `replace_na()`: Changes an `NA` value to a given value. 
+
+Syntax: `replace_na(vector, value)`
+
+3.  `miss_var_summary()`: Creates a summary table of missing values by variable. Includes the *number* of missing values per variable (called `n_miss`) and the *percentage* of missing values per variable (called `pct_miss`).
 
 Syntax when used with a dataframe: `miss_var_summary(df)`
 
-2.  `gg_miss_var()`: Creates a bar graph of missing values by variable.
+4.  `gg_miss_var()`: Creates a bar graph of missing values by variable.
 
 Syntax: `gg_miss_var(df)`
 
 -   You can also choose one variable and create a different graph for each aspect of that variable using the syntax `gg_miss_var(df, facet=variable)` where `variable` is your chosen variable.
 
-3.  `vis_miss()`: Creates a visual of missing values by variable by position in the dataset.
+5.  `vis_miss()`: Creates a visual of missing values by variable by position in the dataset.
 
 Syntax: `vis_miss(df)`
 
@@ -58,15 +63,54 @@ Here is a preview of the data you will be working with:
 penguin
 ```
 
-Notice that there are NA values in our data set. Today we'll be looking at those NA (or missing) values.
+Notice that there are NA values as well as "X"s in our data set. Today we'll be looking at those NA (or missing) values.
 
 ## Exercises
 
-Here are 4 practice exercises. You can click for hints and the answer for each problem.
+Here are some practice exercises. You can click for hints and the answer for each problem.
 
 ### Exercise 1
 
-First, let's find where we have `NA` values in our code. Use the command `miss_var_summary()` to find which variables have missing values and how many missing values each variable contains.
+First, let's deal with the "X" values in our data set. We assume that these are missing values, so we want to replace the "X" with an "NA" so that we can use the `naniar` package functions on those values. 
+
+Use the `na_if()` function to replace all the X's with `NA` values. 
+
+Rewrite your data frame `penguin` so that when we pull up `penguin` in the future, all the "X" values will be gone. 
+
+```{webr-r}
+#Your code here
+
+penguin
+#If your code works, this should display your new data set with NA instead of X. 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+Use the pipe function to specify the `penguin` data set and then use the `mutate()` function to mutate the column `eye_color`. 
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+```{webr-r}
+penguin |> mutate(____=na_if(_____, '____'))
+```
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+Once you've mutated the `eye_color` column, you need to rewrite the `penguin` data frame with that new column. Use the variable assignment function (` <- `) to do this. 
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+```{webr-r}
+penguin <- penguin |> mutate(eye_color=na_if(eye_color, 'X'))
+```
+:::
+
+### Exercise 2
+
+Now, let's find where we have `NA` values in our code. Use the command `miss_var_summary()` to find which variables have missing values and how many missing values each variable contains.
 
 ```{webr-r}
 #Your code here
@@ -94,7 +138,7 @@ miss_var_summary(penguin)
 ```
 :::
 
-### Exercise 2
+### Exercise 3
 
 You may have noticed that `eye_color` has the highest number of missing values, so we'll focus on the missing values in `eye_color` for this exercise.
 
@@ -145,7 +189,7 @@ penguin |>
 ```
 :::
 
-### Exercise 3
+### Exercise 4
 
 Next use `gg_miss_var()` to create bar graphs that show the number of missing values per variable, by island. Create 3 graphs total, 1 graph for each island.
 
@@ -177,19 +221,17 @@ gg_miss_var(penguin, facet=island)
 ```
 :::
 
-### Exercise 4
+### Exercise 5
 
 Next, let's look at where the missing values are showing up within the observations in the dataset.
 
-First, sort the data by year: create a new dataset called `penguin_year` that has the `penguin` data sorted by year.
-
-Then, we'll input that data into the `vis_miss()` function to see where the `NA` values fall when the data is sorted by year.
+First, arrange the data by year, then input it into the `vis_miss()` function to see where the `NA` values fall when the data is sorted by year.
 
 ```{webr-r}
 # Your code here
 
 
-vis_miss(penguin_year) # If your code works, this code will create a chart with lines marking the locations of `NA` vales.
+# If your code works, it will create a chart with lines marking the locations of `NA` vales.
 
 #You should see black lines for all the NA values, 
 #and a gray background representing observations which do NOT contain NA values. 
@@ -200,14 +242,16 @@ vis_miss(penguin_year) # If your code works, this code will create a chart with 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Use the `arrange()` function to sort the data by year.
+Use the pipe function (`|>`) with the `arrange()` function to sort the data by year.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
 ```{webr-r}
-penguin_year<- arrange(____, ____)
+penguin |>
+  arrange(____) |>
+  _______(_____)
 ```
 :::
 
@@ -215,8 +259,48 @@ penguin_year<- arrange(____, ____)
 ## Answer
 
 ```{webr-r}
-penguin_year<- arrange(penguin,year)
+penguin |>
+  arrange(year) |>
+  vis_miss()
 ```
 :::
+
+### Exercise 6
+
+Finally, let's imagine that you don't want any `NA` values in the `body_mass` column. Use `replace_na()` to convert all of the `NA` values in that column to the mean of the `body_mass` column.
+
+```{webr-r}
+#Your code here
+
+
+#If your code works, you should not see any `NA` values in the body_mass column. Instead of an NA in row 4, there should be a 4202. 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the `summary()` function to find the mean of `body_mass`. 
+
+Then use the pipe to specify the penguin data and the `mutate()` function to change the `body_mass()` column and the `replace_na()` function to convert the NA values to the mean. 
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+penguin |>
+  mutate(____ = replace_na(_____, ____))
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+summary(penguin);
+penguin |> mutate(body_mass=replace_na(body_mass, 4202))
+```
+:::
+
 
 Congratulations, you finished this tutorial!

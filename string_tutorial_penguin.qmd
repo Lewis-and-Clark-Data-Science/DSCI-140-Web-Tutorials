@@ -38,13 +38,21 @@ Syntax: `str_sub(string, start_position, end_position)`
 
 Syntax: `str_to_lower(string)`
 
-3.  `str_split()`: This function splits up a string into multiple pieces according to a pattern. I recommend to include the option simplify=TRUE. This will allow you to extract specific pieces using index notations.
+3.  `word()`: This function will extract a specific word from a string (or character vector). 
 
-Syntax: `str_split(string, pattern, simplify = TRUE)`
+Syntax: `word(string, start, end, sep=fixed("___"))`
 
 4.  `str_remove()`: Use `str_remove()` to eliminate the first instance of a pattern in a string.
 
 Syntax: `str_remove(string, pattern)`
+
+5. `str_length()`: This function will give the number of *characters* in each element of a character vector. 
+
+Syntax: `str_length(string)`
+
+6. `str_detect()`: This function will look at each element of a string and determine if it matches a given pattern. For each element, it will output `FALSE` or `TRUE` depending on whether it matches the pattern. 
+
+Syntax: `str_detect(string, pattern)`
 
 With these tools at your disposal, you'll be able to tackle a wide array of text processing tasks. Let's proceed to the exercises and start putting these functions to work!
 
@@ -60,13 +68,15 @@ penguin_sample
 
 ## Exercises
 
-Here are 4 practice exercises. You can click for hints and the answer for each problem.
+Here are some practice exercises. You can click for hints and the answer for each problem.
 
 ### Exercise 1
 
 Create a variable called `location_lower` that converts location in the `penguin_sample` data frame to lowercase using `str_to_lower()`.
 
 ```{webr-r}
+#| autorun: false
+#| message: FALSE
 # Your code here
 
 str(penguin_sample$location_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created
@@ -96,9 +106,44 @@ penguin_sample$location_lower <- str_to_lower(penguin_sample$location)
 
 ### Exercise 2
 
-Split the Island variable in the `penguin_sample` data frame into separate elements using `str_split()` based on the comma delimiter. In particular, create a new variable called `island` that extracts only the island name (without Palmer Archipelago, Antarctica). Note that the island appears before the first comma.
+Sometimes we may decide the input in one observation is too long. Use `str_length()` to check how many characters there are in the *first* entry of the `location` column in our `penguin_sample` data set. 
 
 ```{webr-r}
+# Your code here
+
+
+#If your code worked, you should see that there are 41 characters in the first entry of the location column. 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the str_length() function to count the number of characters in each entry of a vector. Then use bracket notation to indicate the first entry. 
+
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+str_length(____$____)[___]
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+str_length(penguin_sample$location)[1]
+```
+:::
+
+### Exercise 3
+
+Split the Island variable in the `penguin_sample` data frame into separate elements using the `word()` based on the comma seperator. In particular, create a new column called `island` that extracts only the island name (without Palmer Archipelago, Antarctica).
+
+```{webr-r}
+#| autorun:false
 # Your code here
 
 str(penguin_sample$island) # if your code worked, you should see your new island variable with this code
@@ -107,14 +152,15 @@ str(penguin_sample$island) # if your code worked, you should see your new island
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Use the str_split function and specify the comma as the pattern. Extract the first column using index notation.
+Use the word() function and specify the comma as the separator. Extract the first word by specifying where the start.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
 ```{webr-r}
-penguin_sample$island <- str_split(___$___, pattern = ",", simplify=TRUE)[,_____]
+#| autorun: false
+penguin_sample$island <- word(______$______, start=___, sep="___")
 ```
 :::
 
@@ -122,11 +168,13 @@ penguin_sample$island <- str_split(___$___, pattern = ",", simplify=TRUE)[,_____
 ## Answer
 
 ```{webr-r}
-penguin_sample$island <- str_split(penguin_sample$location, pattern = ",", simplify=TRUE)[,1]
+#| autorun: false
+penguin_sample$island <- word(penguin_sample$location, start=1, sep=",")
 ```
 :::
 
-### Exercise 3
+
+### Exercise 4
 
 Create a new variable called `location_short` that removes the phrase "Antarctica" from all locations in the `penguin_sample` data frame using `str_remove()`.
 
@@ -159,7 +207,34 @@ penguin_sample$location_short <- str_remove(penguin_sample$location, ", Antarcti
 ```
 :::
 
-### Exercise 4
+### Exercise 5
+
+Let's check your work on Exercise 4. Use `str_detect()` to check all the values in your `location_short` column and ensure that "Antarctica" does not appear in any of the entries in that column (or string).
+
+```{webr-r}
+#Your code here 
+
+
+#If your code worked, you should see a long list of FALSE values indicating that "Antarctica" does not appear in any entry.
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+str_detect(____$_____, "____")
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+str_detect(penguin_sample$location_short, "Antarctica")
+```
+:::
+
+### Exercise 6
 
 Create a variable called `year_short` that extracts the last two characters of the year using `str_sub()`.
 

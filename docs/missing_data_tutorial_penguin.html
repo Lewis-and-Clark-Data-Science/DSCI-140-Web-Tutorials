@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"fig-height":5,"tidy":"true","classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"true","context":"setup","dpi":72,"label":"input data","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\nlibrary(\"naniar\")\npenguin_eye <- c('NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'red', 'grey', 'grey', 'grey', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'NA', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'grey', 'red', 'red', 'brown', 'NA', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'red', 'red', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'red', 'red', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'brown', 'brown', 'red', 'grey', 'brown', 'brown', 'red', 'brown', 'red', 'grey', 'brown', 'NA');\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex, 'eye_color'=penguin_eye)\npenguin<- replace_with_na(penguin,replace=list(eye_color='NA'))\n\n\n\n\n#knitr::opts_chunk$set(error = TRUE)\n#knitr::opts_chunk$set(echo = TRUE)","id":1},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-2","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"penguin","id":2},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-3","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"#Your code here\n\n\n#If your code works, you should see there are 114 missing observations in the eye color variable, which is 33% of the all the eye color observations.\n#You should also see that 3 variables have no missing data. ","id":3},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-4","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"miss_var_summary(________)","id":4},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-5","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"miss_var_summary(penguin)","id":5},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-6","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"#Your code here \n\n\n#If your code works, you should see the number of missing eye_color values for each year.\n#You'll see that one year contains only missing values. ","id":6},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-7","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"penguin |> \n  select(___, ____) |>\n  group_by(_____) |>\n  miss_var_summary()","id":7},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-8","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"penguin |> \n  select(year, eye_color) |>\n  group_by(year) |>\n  miss_var_summary()","id":8},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-9","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"# Your code here: \n\n#If your code worked, you should see 3 different missing value graphs titled \"Biscoe\" \"Dream\" and \"Torgersen\". ","id":9},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-10","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"gg_miss_var(penguin, facet=____)","id":10},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-11","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"gg_miss_var(penguin, facet=island)","id":11},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-12","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"# Your code here\n\n\nvis_miss(penguin_year) # If your code works, this code will create a chart with lines marking the locations of `NA` vales.\n\n#You should see black lines for all the NA values, \n#and a gray background representing observations which do NOT contain NA values. \n\n#The chart should be sorted by year, so there should be a black box in the eye_color column that corresponds to the year 2007 when all the values are NA. ","id":12},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-13","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"penguin_year<- arrange(____, ____)","id":13},{"options":{"fig-height":5,"classes":"","fig-width":7,"out-height":"","results":"markup","editor-max-height":"","out-width":"700px","autorun":"false","context":"interactive","dpi":72,"label":"unnamed-chunk-14","editor-quick-suggestions":"false","output":"true","comment":"","warning":"true","fig-cap":"","read-only":"false","message":"true","editor-font-scale":1},"code":"penguin_year<- arrange(penguin,year)","id":14}];
+globalThis.qwebrCellDetails = [{"options":{"out-width":"700px","label":"input data","context":"setup","fig-width":7,"fig-cap":"","results":"markup","tidy":"true","editor-quick-suggestions":"false","output":"true","autorun":"true","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":1,"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\nlibrary(\"naniar\")\n\npenguin_eye<- c('X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','X','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','X','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','grey','red','red','brown','X','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','red','brown','brown','red','red','brown','brown','brown','brown','red','grey','brown','brown','brown','brown','red','grey','brown','brown','red','brown','red','grey','brown','X')\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex, 'eye_color'=penguin_eye)\n\n#knitr::opts_chunk$set(error = TRUE)\n#knitr::opts_chunk$set(echo = TRUE)"},{"options":{"out-width":"700px","label":"unnamed-chunk-2","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":2,"code":"penguin"},{"options":{"out-width":"700px","label":"unnamed-chunk-3","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":3,"code":"#Your code here\n\npenguin\n#If your code works, this should display your new data set with NA instead of X. "},{"options":{"out-width":"700px","label":"unnamed-chunk-4","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":4,"code":"penguin |> mutate(____=na_if(_____, '____'))"},{"options":{"out-width":"700px","label":"unnamed-chunk-5","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":5,"code":"penguin <- penguin |> mutate(eye_color=na_if(eye_color, 'X'))"},{"options":{"out-width":"700px","label":"unnamed-chunk-6","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":6,"code":"#Your code here\n\n\n#If your code works, you should see there are 114 missing observations in the eye color variable, which is 33% of the all the eye color observations.\n#You should also see that 3 variables have no missing data. "},{"options":{"out-width":"700px","label":"unnamed-chunk-7","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":7,"code":"miss_var_summary(________)"},{"options":{"out-width":"700px","label":"unnamed-chunk-8","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":8,"code":"miss_var_summary(penguin)"},{"options":{"out-width":"700px","label":"unnamed-chunk-9","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":9,"code":"#Your code here \n\n\n#If your code works, you should see the number of missing eye_color values for each year.\n#You'll see that one year contains only missing values. "},{"options":{"out-width":"700px","label":"unnamed-chunk-10","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":10,"code":"penguin |> \n  select(___, ____) |>\n  group_by(_____) |>\n  miss_var_summary()"},{"options":{"out-width":"700px","label":"unnamed-chunk-11","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":11,"code":"penguin |> \n  select(year, eye_color) |>\n  group_by(year) |>\n  miss_var_summary()"},{"options":{"out-width":"700px","label":"unnamed-chunk-12","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":12,"code":"# Your code here: \n\n#If your code worked, you should see 3 different missing value graphs titled \"Biscoe\" \"Dream\" and \"Torgersen\". "},{"options":{"out-width":"700px","label":"unnamed-chunk-13","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":13,"code":"gg_miss_var(penguin, facet=____)"},{"options":{"out-width":"700px","label":"unnamed-chunk-14","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":14,"code":"gg_miss_var(penguin, facet=island)"},{"options":{"out-width":"700px","label":"unnamed-chunk-15","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":15,"code":"# Your code here\n\n\n# If your code works, it will create a chart with lines marking the locations of `NA` vales.\n\n#You should see black lines for all the NA values, \n#and a gray background representing observations which do NOT contain NA values. \n\n#The chart should be sorted by year, so there should be a black box in the eye_color column that corresponds to the year 2007 when all the values are NA. "},{"options":{"out-width":"700px","label":"unnamed-chunk-16","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":16,"code":"penguin |>\n  arrange(____) |>\n  _______(_____)"},{"options":{"out-width":"700px","label":"unnamed-chunk-17","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":17,"code":"penguin |>\n  arrange(year) |>\n  vis_miss()"},{"options":{"out-width":"700px","label":"unnamed-chunk-18","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":18,"code":"#Your code here\n\n\n#If your code works, you should not see any `NA` values in the body_mass column. Instead of an NA in row 4, there should be a 4202. "},{"options":{"out-width":"700px","label":"unnamed-chunk-19","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":19,"code":"penguin |>\n  mutate(____ = replace_na(_____, ____))"},{"options":{"out-width":"700px","label":"unnamed-chunk-20","context":"interactive","fig-width":7,"fig-cap":"","results":"markup","editor-quick-suggestions":"false","output":"true","autorun":"false","message":"true","comment":"","dpi":72,"read-only":"false","out-height":"","warning":"true","editor-font-scale":1,"editor-max-height":"","fig-height":5,"classes":""},"id":20,"code":"summary(penguin);\npenguin |> mutate(body_mass=replace_na(body_mass, 4202))"}];
 
 </script>
 <script type="module">
@@ -1176,6 +1176,8 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1438,17 +1440,25 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <h3 class="anchored" data-anchor-id="functions-in-focus">Functions in Focus</h3>
 <p>Let’s start by looking at some of our key functions which we’ll use in this exercise.</p>
 <ol type="1">
+<li><code>na_if()</code>: Converts values to <code>NA</code>. Can be combined with the <code>mutate()</code> function to create or replace a column with <code>NA</code> values.</li>
+</ol>
+<p>Syntax: <code>na_if(vector, value to replace)</code></p>
+<ol start="2" type="1">
+<li><code>replace_na()</code>: Changes an <code>NA</code> value to a given value.</li>
+</ol>
+<p>Syntax: <code>replace_na(vector, value)</code></p>
+<ol start="3" type="1">
 <li><code>miss_var_summary()</code>: Creates a summary table of missing values by variable. Includes the <em>number</em> of missing values per variable (called <code>n_miss</code>) and the <em>percentage</em> of missing values per variable (called <code>pct_miss</code>).</li>
 </ol>
 <p>Syntax when used with a dataframe: <code>miss_var_summary(df)</code></p>
-<ol start="2" type="1">
+<ol start="4" type="1">
 <li><code>gg_miss_var()</code>: Creates a bar graph of missing values by variable.</li>
 </ol>
 <p>Syntax: <code>gg_miss_var(df)</code></p>
 <ul>
 <li>You can also choose one variable and create a different graph for each aspect of that variable using the syntax <code>gg_miss_var(df, facet=variable)</code> where <code>variable</code> is your chosen variable.</li>
 </ul>
-<ol start="3" type="1">
+<ol start="5" type="1">
 <li><code>vis_miss()</code>: Creates a visual of missing values by variable by position in the dataset.</li>
 </ol>
 <p>Syntax: <code>vis_miss(df)</code></p>
@@ -1460,14 +1470,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Here is a preview of the data you will be working with:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Notice that there are NA values in our data set. Today we’ll be looking at those NA (or missing) values.</p>
+<p>Notice that there are NA values as well as “X”s in our data set. Today we’ll be looking at those NA (or missing) values.</p>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>Here are 4 practice exercises. You can click for hints and the answer for each problem.</p>
+<p>Here are some practice exercises. You can click for hints and the answer for each problem.</p>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>First, let’s find where we have <code>NA</code> values in our code. Use the command <code>miss_var_summary()</code> to find which variables have missing values and how many missing values each variable contains.</p>
+<p>First, let’s deal with the “X” values in our data set. We assume that these are missing values, so we want to replace the “X” with an “NA” so that we can use the <code>naniar</code> package functions on those values.</p>
+<p>Use the <code>na_if()</code> function to replace all the X’s with <code>NA</code> values.</p>
+<p>Rewrite your data frame <code>penguin</code> so that when we pull up <code>penguin</code> in the future, all the “X” values will be gone.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1482,35 +1494,27 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the pipe function to specify the <code>penguin</code> data set and then use the <code>mutate()</code> function to mutate the column <code>eye_color</code>.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>You may have noticed that <code>eye_color</code> has the highest number of missing values, so we’ll focus on the missing values in <code>eye_color</code> for this exercise.</p>
-<p>Use <code>miss_var_summary()</code> to display the number of missing <code>eye_color</code> values, separated into individual years. Don’t include any other variables.</p>
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1523,26 +1527,33 @@ Hint
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the pipe function to select the specific data you want to display.</p>
+<p>Once you’ve mutated the <code>eye_color</code> column, you need to rewrite the <code>penguin</code> data frame with that new column. Use the variable assignment function (<code>&lt;-</code>) to do this.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the <code>select()</code> function to choose the variables you want to focus on and use the <code>group_by()</code> function to choose how you want to layout the chart.</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
+</section>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Now, let’s find where we have <code>NA</code> values in our code. Use the command <code>miss_var_summary()</code> to find which variables have missing values and how many missing values each variable contains.</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1580,7 +1591,8 @@ Answer
 </section>
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Next use <code>gg_miss_var()</code> to create bar graphs that show the number of missing values per variable, by island. Create 3 graphs total, 1 graph for each island.</p>
+<p>You may have noticed that <code>eye_color</code> has the highest number of missing values, so we’ll focus on the missing values in <code>eye_color</code> for this exercise.</p>
+<p>Use <code>miss_var_summary()</code> to display the number of missing <code>eye_color</code> values, separated into individual years. Don’t include any other variables.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1595,7 +1607,7 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Recall the syntax <code>gg_miss_var(df, facet=variable)</code> where <code>variable</code> is your chosen variable.</p>
+<p>Use the pipe function to select the specific data you want to display.</p>
 </div>
 </div>
 </div>
@@ -1611,13 +1623,29 @@ Hint
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Use the <code>select()</code> function to choose the variables you want to focus on and use the <code>group_by()</code> function to choose how you want to layout the chart.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1626,7 +1654,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -1636,27 +1664,9 @@ Answer
 </section>
 <section id="exercise-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Next, let’s look at where the missing values are showing up within the observations in the dataset.</p>
-<p>First, sort the data by year: create a new dataset called <code>penguin_year</code> that has the <code>penguin</code> data sorted by year.</p>
-<p>Then, we’ll input that data into the <code>vis_miss()</code> function to see where the <code>NA</code> values fall when the data is sorted by year.</p>
+<p>Next use <code>gg_miss_var()</code> to create bar graphs that show the number of missing values per variable, by island. Create 3 graphs total, 1 graph for each island.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the <code>arrange()</code> function to sort the data by year.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1669,13 +1679,29 @@ Hint
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Recall the syntax <code>gg_miss_var(df, facet=variable)</code> where <code>variable</code> is your chosen variable.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1684,9 +1710,123 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Next, let’s look at where the missing values are showing up within the observations in the dataset.</p>
+<p>First, arrange the data by year, then input it into the <code>vis_miss()</code> function to see where the <code>NA</code> values fall when the data is sorted by year.</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the pipe function (<code>|&gt;</code>) with the <code>arrange()</code> function to sort the data by year.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<p>Finally, let’s imagine that you don’t want any <code>NA</code> values in the <code>body_mass</code> column. Use <code>replace_na()</code> to convert all of the <code>NA</code> values in that column to the mean of the <code>body_mass</code> column.</p>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>summary()</code> function to find the mean of <code>body_mass</code>.</p>
+<p>Then use the pipe to specify the penguin data and the <code>mutate()</code> function to change the <code>body_mass()</code> column and the <code>replace_na()</code> function to convert the NA values to the mean.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-19"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-20"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
