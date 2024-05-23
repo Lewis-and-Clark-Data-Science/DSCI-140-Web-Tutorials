@@ -17,7 +17,7 @@ library("naniar")
 
 penguin_eye<- c('X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','brown','brown','red','grey','brown','brown','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','brown','red','grey','brown','brown','brown','red','grey','grey','grey','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','X','red','grey','brown','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','X','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','brown','red','brown','grey','red','red','brown','X','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','grey','brown','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','red','red','brown','brown','red','grey','brown','brown','red','brown','red','grey','red','red','brown','brown','red','red','brown','brown','red','red','brown','brown','brown','brown','red','grey','brown','brown','brown','brown','red','grey','brown','brown','red','brown','red','grey','brown','X')
 
-penguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex, 'eye_color'=penguin_eye)
+penguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'body_mass'=as.numeric(penguins$body_mass_g), 'year'=penguins$year, 'sex'=penguins$sex, 'eye_color'=penguin_eye)
 
 #knitr::opts_chunk$set(error = TRUE)
 #knitr::opts_chunk$set(echo = TRUE)
@@ -279,9 +279,9 @@ Finally, let's imagine that you don't want any `NA` values in the `body_mass` co
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Use the `summary()` function to find the mean of `body_mass`. 
+Use the `mean()` function to find the mean of `body_mass`. 
 
-Then use the pipe to specify the penguin data and the `mutate()` function to change the `body_mass()` column and the `replace_na()` function to convert the NA values to the mean. 
+Use the pipe to specify the penguin data and the `mutate()` function to change the `body_mass()` column and the `replace_na()` function to convert the NA values to the mean. 
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
@@ -289,7 +289,7 @@ Then use the pipe to specify the penguin data and the `mutate()` function to cha
 
 ```{webr-r}
 penguin |>
-  mutate(____ = replace_na(_____, ____))
+  mutate(____ = replace_na(_____, mean(_____, na.rm=TRUE)))
 ```
 :::
 
@@ -297,8 +297,7 @@ penguin |>
 ## Answer
 
 ```{webr-r}
-summary(penguin);
-penguin |> mutate(body_mass=replace_na(body_mass, 4202))
+penguin |> mutate(body_mass=replace_na(body_mass, mean(body_mass, na.rm=TRUE)))
 ```
 :::
 

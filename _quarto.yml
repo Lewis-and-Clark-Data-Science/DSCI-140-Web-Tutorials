@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render: 
+      - "*.qmd"
+      - "!ggplot_tutorial_penguin.qmd"
 
 website:
   title: "DSCI 140 Web Tutorials"
