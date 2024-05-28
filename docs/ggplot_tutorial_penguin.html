@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"setup","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"input data","autorun":"true","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\nlibrary(naniar)\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'bill_length' = penguins$bill_length_mm, 'bill_depth' = penguins$bill_depth_mm, 'flipper_length'=penguins$flipper_length_mm, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-2","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin","id":2},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-3","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"#Your code here\n\nn_miss(penguin_clean) #If your code works, this should print 0. ","id":3},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-4","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean<- na.omit(_____)","id":4},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-5","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean<- na.omit(penguin)","id":5},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-6","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"#Your code here ","id":6},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-7","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"\nggplot(_______, aes(x=____, y=____))+\n  geom_point()+ \n  geom_smooth(method=_____, se=FALSE)","id":7},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-8","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=\"lm\", se=FALSE)","id":8},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-9","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"#Your code here \n ","id":9},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-10","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"# Use facet_wrap(~_____$_____)","id":10},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-11","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=\"lm\", se=FALSE)+ \n  facet_wrap(~penguin_clean$species)","id":11},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-12","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"#Your code here\n\n\n#If your code works, you should see the mean bill length of each penguin species. ","id":12},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-13","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean |> \ngroup_by(_____)|> \n  summarize(mean_bill=__________)","id":13},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-14","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean |> \ngroup_by(species)|> \n  summarize(mean_bill=mean(bill_length))","id":14},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-15","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=____, y=_____)) +\n  geom_col()","id":15},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-16","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=species, y=mean_bill)) +\n  geom_col()","id":16},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-17","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=fct_reorder(_____, _____), y=mean_bill))+\n  geom_col()","id":17},{"options":{"editor-font-scale":1,"editor-quick-suggestions":"false","results":"markup","classes":"","fig-cap":"","editor-max-height":"","context":"interactive","dpi":72,"message":"true","output":"true","read-only":"false","out-height":"","fig-height":5,"label":"unnamed-chunk-18","autorun":"false","comment":"","fig-width":7,"out-width":"700px","warning":"true"},"code":"penguin_clean |> \ngroup_by(species)|> \n  summarize(mean_mass=mean(body_mass))|>\nggplot(aes(x=fct_reorder(species, mean_mass), y=mean_mass))+\n  geom_col()","id":18}];
+globalThis.qwebrCellDetails = [{"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\nlibrary(naniar)\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'bill_length' = penguins$bill_length_mm, 'bill_depth' = penguins$bill_depth_mm, 'flipper_length'=penguins$flipper_length_mm, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"setup","autorun":"true","out-height":"","message":"true","editor-quick-suggestions":"false","label":"input data","editor-max-height":"","comment":""}},{"code":"penguin","id":2,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-2","editor-max-height":"","comment":""}},{"code":"#Your code here\n\n\nn_miss(penguin_clean) #If your code works, this should print 0. ","id":3,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-3","editor-max-height":"","comment":""}},{"code":"penguin_clean<- na.omit(_____)","id":4,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-4","editor-max-height":"","comment":""}},{"code":"penguin_clean<- na.omit(penguin)","id":5,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-5","editor-max-height":"","comment":""}},{"code":"#Your code here \n","id":6,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-6","editor-max-height":"","comment":""}},{"code":"\nggplot(_______, aes(x=____, y=____))+\n  geom_ ______()","id":7,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-7","editor-max-height":"","comment":""}},{"code":"ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()\n\n#OR you could use the pipe to start with penguin_clean and then create your plot: penguin_clean |> ggplot(aes(x=flipper_length, y=body_mass))+ geom_point()","id":8,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-8","editor-max-height":"","comment":""}},{"code":"#Your code here \n","id":9,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-9","editor-max-height":"","comment":""}},{"code":"\nggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=_____, se=_____)","id":10,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-10","editor-max-height":"","comment":""}},{"code":"\nggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=\"lm\", se=FALSE)\n\n#OR you could use the pipe function!","id":11,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-11","editor-max-height":"","comment":""}},{"code":"#Your code here \n ","id":12,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-12","editor-max-height":"","comment":""}},{"code":"facet_wrap(~_____)","id":13,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-13","editor-max-height":"","comment":""}},{"code":"ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=\"lm\", se=FALSE)+ \n  facet_wrap(~species)\n\n#OR you could use the pipe!","id":14,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-14","editor-max-height":"","comment":""}},{"code":"#Your code here\n","id":15,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-15","editor-max-height":"","comment":""}},{"code":"penguin_clean|>\n  ggplot(aes(x=_____))+\n    ______","id":16,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-16","editor-max-height":"","comment":""}},{"code":"penguin_clean|>\n  ggplot(aes(x=species))+\n    geom_bar()","id":17,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-17","editor-max-height":"","comment":""}},{"code":"#Your code here\n\n\n#If your code works, you should see a similar bar graph to Part A, but each bar will have different colors based on the island where each species lives. \n#You should notice that two of the species live on only 1 island (not all 3). ","id":18,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-18","editor-max-height":"","comment":""}},{"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=______))+\n  geom_bar()","id":19,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-19","editor-max-height":"","comment":""}},{"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=island))+\n  geom_bar()","id":20,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-20","editor-max-height":"","comment":""}},{"code":"#Your code here\n","id":21,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-21","editor-max-height":"","comment":""}},{"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=island))+\n  geom_bar(position=\"______\")","id":22,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-22","editor-max-height":"","comment":""}},{"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=island))+\n  geom_bar(position=\"dodge\")","id":23,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-23","editor-max-height":"","comment":""}},{"code":"#Your code here\n\n\n#If your code works, you should see the mean bill length of each penguin species. ","id":24,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-24","editor-max-height":"","comment":""}},{"code":"penguin_clean |> \ngroup_by(_____)|> \n  summarize(mean_bill=__________)","id":25,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-25","editor-max-height":"","comment":""}},{"code":"penguin_clean |> \ngroup_by(species)|> \n  summarize(mean_bill=mean(bill_length))","id":26,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-26","editor-max-height":"","comment":""}},{"code":"#Your code here\n","id":27,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-27","editor-max-height":"","comment":""}},{"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=____, y=_____)) +\n  geom_col()","id":28,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-28","editor-max-height":"","comment":""}},{"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=species, y=mean_bill)) +\n  geom_col()","id":29,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-29","editor-max-height":"","comment":""}},{"code":"#Your code here\n","id":30,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-30","editor-max-height":"","comment":""}},{"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=fct_reorder(_____, _____), y=mean_bill))+\n  geom_col()","id":31,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-31","editor-max-height":"","comment":""}},{"code":"penguin_clean |> \ngroup_by(species)|> \n  summarize(mean_mass=mean(body_mass))|>\nggplot(aes(x=fct_reorder(species, mean_mass), y=mean_mass))+\n  geom_col()","id":32,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-32","editor-max-height":"","comment":""}},{"code":"# Your code here \n","id":33,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-33","editor-max-height":"","comment":""}},{"code":"ggplot(_______, aes(x=______))+\n  _________\n\n#OR you can use the pipe: \n\n_____ |> \n  ggplot(aes(x=_____))+ \n    ________","id":34,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-34","editor-max-height":"","comment":""}},{"code":"ggplot(penguin_clean, aes(x=flipper_length))+\n  geom_density()\n\n#OR you can use the pipe: \n\n#penguin_clean|>\n#ggplot( aes(x=flipper_length))+\n#  geom_density()","id":35,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-35","editor-max-height":"","comment":""}},{"code":"# Your code here\n","id":36,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-36","editor-max-height":"","comment":""}},{"code":"\nggplot(penguin_clean, aes(x=flipper_length, color=______))+\n  geom_density()","id":37,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-37","editor-max-height":"","comment":""}},{"code":"\nggplot(penguin_clean, aes(x=flipper_length, color=island))+\n  geom_density()","id":38,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-38","editor-max-height":"","comment":""}},{"code":"#Your code here: \n\n\nsummary_data #If your code is successful, this will print the mean flipper length for each island. ","id":39,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-39","editor-max-height":"","comment":""}},{"code":"summary_data <- ________ |> \n  group_by(_____)|> \n  summarize(_________)","id":40,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-40","editor-max-height":"","comment":""}},{"code":"summary_data <- penguin_clean |> \n  group_by(______)|> \n  summarize(mean_flipper = mean(______))","id":41,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-41","editor-max-height":"","comment":""}},{"code":"summary_data<- penguin_clean|> \n  group_by(island)|>\n  summarize(mean_flipper=mean(flipper_length))","id":42,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-42","editor-max-height":"","comment":""}},{"code":"#Your code here \n\n\n#Your final plot should include 3 density lines and 3 vertical lines indicating the mean for each island. ","id":43,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-43","editor-max-height":"","comment":""}},{"code":"summary_data<- penguin_clean|> \n  group_by(island)|>\n  summarize(mean_flipper=mean(flipper_length))\n\nggplot(penguin_clean, aes(x=flipper_length, color=island))+\n  geom_density()+\n  geom_vline(data=_______, aes(xintercept=_______, color=______))","id":44,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-44","editor-max-height":"","comment":""}},{"code":"summary_data<- penguin_clean|> \n  group_by(island)|>\n  summarize(mean_flipper=mean(flipper_length))\n\nggplot(penguin_clean, aes(x=flipper_length, color=island))+\n  geom_density()+\n  geom_vline(data=summary_data, aes(xintercept=mean_flipper, color=island))","id":45,"options":{"editor-font-scale":1,"fig-width":7,"classes":"","fig-cap":"","dpi":72,"results":"markup","warning":"true","read-only":"false","output":"true","fig-height":5,"out-width":"700px","context":"interactive","autorun":"false","out-height":"","message":"true","editor-quick-suggestions":"false","label":"unnamed-chunk-45","editor-max-height":"","comment":""}}];
 
 </script>
 <script type="module">
@@ -1181,6 +1181,8 @@ globalThis.qwebrExecuteCode = async function (
   <ul class="collapse">
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1446,13 +1448,11 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>General syntax for <code>ggplot()</code>:</p>
 <ul>
 <li><p><code>ggplot(data, aes(x=variable1, y=variable2))</code> <code>+</code></p>
-<p><code>geom_x()</code> <code>+</code></p>
-<p><code>……</code></p>
+<p><code>geom_x()</code></p>
 <p>OR</p></li>
 <li><p><code>dataframe</code> <code>|&gt;</code></p>
 <p><code>ggplot(aes(x=variable1, y=variable2))</code> <code>+</code></p>
-<p><code>geom_x()</code> <code>+</code></p>
-<p><code>……</code></p></li>
+<p><code>geom_x()</code></p></li>
 </ul>
 <p>Specifying variables: X is the explanatory variable and Y is the outcome variable</p>
 </section>
@@ -1464,16 +1464,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="geometry" class="level3">
 <h3 class="anchored" data-anchor-id="geometry">Geometry</h3>
-<p>You can then include geometry (lines, points, bar graph, scatterplot) including:</p>
+<p>You can then include geometry including:</p>
 <ul>
 <li><p><code>geom_line()</code>: Connects all the points in a plot</p></li>
 <li><p><code>geom_smooth(method="lm", se=FALSE)</code>: Creates a line of best fit</p></li>
 <li><p><code>geom_point()</code>: Creates points (scatterplot) for each data point</p></li>
-<li><p><code>geom_bar()</code> : Creates a bar graph</p>
+<li><p><code>geom_bar()</code> : Creates a bar graph, aggregates data for you</p>
 <ul>
 <li>Syntax: <code>geom_bar(position="___")</code> Can choose “stack” (bars on top of each other), “dodge” (bars side by side) or “fill” (bars stacked, scaled to 100%).</li>
 </ul></li>
-<li><p><code>geom_col()</code>: Creates a bar graph with <em>pre-aggregated</em> data.</p></li>
+<li><p><code>geom_col()</code>: Creates a bar graph with <em>pre-aggregated</em> data</p></li>
 <li><p><code>geom_histogram()</code>: Creates a histogram</p>
 <ul>
 <li>Syntax: <code>geom_histogram(bins=X)</code> Specify number of bins</li>
@@ -1489,19 +1489,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="other-functions-to-use-with-ggplot" class="level2">
 <h2 class="anchored" data-anchor-id="other-functions-to-use-with-ggplot">Other functions to use with GGplot</h2>
-<ol type="1">
-<li><p><code>fct_infreq()</code>: Order data by its frequency.</p>
-<p>Syntax in ggplot: <code>ggplot(aes(x=fct_infreq(data)))</code> OR <code>ggplot(aes(y=fct_infreq(data)))</code></p></li>
-<li><p><code>fct_reorder()</code> : Reorder levels of a factor (or vector) based on the result of another function applied to all values within a specified variable.</p>
-<p>Syntax: <code>ggplot(aes(fct_reorder(factor, variable, .fun = function)))</code> The <code>.fun</code> default is median. That is, the function reorders the factor based on the median of the variable.</p></li>
-<li><p><code>fct_collapse()</code> : Collapse factor levels into groups you define.</p>
-<p>Syntax: <code>fct_collapse(data, group1=value, group2=value)</code></p></li>
-<li><p><code>group_by()</code>: Used to group data by a specific variable.</p></li>
-<li><p><code>facet_wrap()</code>: Create multiple graphs by group categories. Separate graphs wrapped around.</p>
-<p>Syntax: <code>facet_wrap(~facet + facet + facet...)</code> Note: can add more facets using a +</p></li>
-<li><p><code>summarize()</code>: Displays a table with summary statistics you specify. Can also specify groups to group the data by.</p>
-<p>Syntax: <code>summarize(.data, summary statistic)</code></p></li>
-</ol>
+<p>You can use the pipe to incorporate other tidyverse functions to organize your data before plotting.</p>
 </section>
 <section id="our-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
@@ -1559,7 +1547,7 @@ Answer
 </section>
 <section id="part-b" class="level4">
 <h4 class="anchored" data-anchor-id="part-b">Part B</h4>
-<p>Now use your clean data to construct a scatterplot with <code>flipper_length</code> as the explanatory variable and <code>body_mass</code> as the outcome variable. Add a line of best fit.</p>
+<p>Now use your clean data to construct a scatter plot with <code>flipper_length</code> as the explanatory variable and <code>body_mass</code> as the outcome variable.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1574,7 +1562,7 @@ Hint
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You’ll need to use ggplot, specify the data, the aesthetics (which includes the x and y variables) and then add a geometry to your plot to create points and a line of best fit.</p>
+<p>You’ll need to use ggplot, specify the data, the aesthetics (which includes the x and y variables) and then add a geometry to your plot to create points.</p>
 </div>
 </div>
 </div>
@@ -1615,7 +1603,7 @@ Answer
 </section>
 <section id="part-c" class="level4">
 <h4 class="anchored" data-anchor-id="part-c">Part C</h4>
-<p>Finally, let’s separate the plot into 3 different plots, one for each species.</p>
+<p>Now, add a line of best fit to your plot.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1630,7 +1618,7 @@ Hint
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the function <code>facet_wrap()</code> and be sure to define your facet.</p>
+<p>Add one more piece of geometry to your code from part B to your plot that creates a line of best fit.</p>
 </div>
 </div>
 </div>
@@ -1669,13 +1657,9 @@ Answer
 </div>
 </div>
 </section>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Create a bar graph displaying the mean bill length for each species of penguin.</p>
-<section id="part-a-1" class="level4">
-<h4 class="anchored" data-anchor-id="part-a-1">Part A</h4>
-<p>First, we need to make our data tiny so that we can then input it into a function. So, start by using the <code>summarize()</code> function to display the mean bill length of penguins by species.</p>
+<section id="part-d" class="level4">
+<h4 class="anchored" data-anchor-id="part-d">Part D</h4>
+<p>Finally, let’s separate the plot into 3 different plots, one for each species.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1690,7 +1674,7 @@ Hint
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In addition to the <code>summarize()</code> function, you’ll need to also use the <code>group_by()</code> function to group by species. Use the pipe to use both of these functions together.</p>
+<p>Use the function <code>facet_wrap()</code> and be sure to define your facet. Add this as a geometry to your code.</p>
 </div>
 </div>
 </div>
@@ -1729,9 +1713,15 @@ Answer
 </div>
 </div>
 </section>
-<section id="part-b-1" class="level4">
-<h4 class="anchored" data-anchor-id="part-b-1">Part B</h4>
-<p>Now that the data is tidy and tiny, we can plot it. Add to your code from part A and create a bar graph.</p>
+</section>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Create a bar graph which displays the number of penguins in each species. Also show which islands each penguin species is on by adjusting the fill and position of the bar graphs.</p>
+<section id="part-a-1" class="level4">
+<h4 class="anchored" data-anchor-id="part-a-1">Part A</h4>
+<p>First, create a bar graph that shows the number of penguins in each species.</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1744,7 +1734,7 @@ Hint
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Recall: <code>geom_bar()</code> is used when the data still needs to be aggregated.</p>
+<p><code>geom_bar()</code> is used when the data still needs to be aggregated.</p>
 <p><code>geom_col()</code> is used when the data is already aggregated.</p>
 </div>
 </div>
@@ -1761,7 +1751,7 @@ Hint
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-15"></div>
+<div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1778,16 +1768,17 @@ Answer
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-16"></div>
+<div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 </section>
-<section id="part-c-1" class="level4">
-<h4 class="anchored" data-anchor-id="part-c-1">Part C</h4>
-<p>Finally, we want to order the columns in the bar graph from smallest to largest. To do this, we’ll use <code>fct_reorder()</code>. Find where it goes in your current code. Hint: You will not have to write a new line.</p>
-<p>Feel free to also add other features to your graph, like a title, colored bars, etc!</p>
+<section id="part-b-1" class="level4">
+<h4 class="anchored" data-anchor-id="part-b-1">Part B</h4>
+<p>Next, display which island each species is on by adjusting the fill of the graph.</p>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1800,7 +1791,7 @@ Hint
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>What are you trying to reorder on the graph? Are you trying to reorder the x variable or y variable?</p>
+<p>This adjustment will go in the aesthetics section of your ggplot. Choose how you would like to fill the bars by using <code>fill = ____</code>.</p>
 </div>
 </div>
 </div>
@@ -1816,7 +1807,7 @@ Hint
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-17"></div>
+<div id="qwebr-insertion-location-19"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -1833,11 +1824,506 @@ Answer
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-18"></div>
+<div id="qwebr-insertion-location-20"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
+</section>
+<section id="part-c-1" class="level4">
+<h4 class="anchored" data-anchor-id="part-c-1">Part C</h4>
+<p>Now that the bars are filled in by island, let’s adjust them again so that they don’t stack on top of each other. Instead, place all the bars next to each other.</p>
+<div id="qwebr-insertion-location-21"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Adjust the <code>position</code> of bars in the <code>geom_bar()</code> geometry.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-22"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-23"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<p>Create a bar graph displaying the mean bill length for each species of penguin.</p>
+<section id="part-a-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-a-2">Part A</h4>
+<p>First, we need to make our data tiny so that we can then input it into a plot. So, start by using the <code>summarize()</code> function to display the mean bill length of penguins by species.</p>
+<div id="qwebr-insertion-location-24"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In addition to the <code>summarize()</code> function, you’ll need to also use the <code>group_by()</code> function to group by species. Use the pipe to string both of these functions together.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-25"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-26"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="part-b-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-b-2">Part B</h4>
+<p>Now that the data is tidy and tiny, we can plot it. Add to your code from part A and create a bar graph.</p>
+<div id="qwebr-insertion-location-27"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Recall: <code>geom_bar()</code> is used when the data still needs to be aggregated.</p>
+<p><code>geom_col()</code> is used when the data is already aggregated.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-28"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-29"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="part-c-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-c-2">Part C</h4>
+<p>Finally, we want to order the columns in the bar graph from smallest to largest. To do this, we’ll use <code>fct_reorder()</code>. Find where it goes in your current code. Hint: You will not have to write a new line.</p>
+<p>Feel free to also add other features to your graph, like a title, colored bars, etc!</p>
+<div id="qwebr-insertion-location-30"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>What are you trying to reorder on the graph? Are you trying to reorder the x variable or y variable?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-31"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-32"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Create a density plot of penguin flipper length. Include a line displaying the mean flipper length. Additionally, separate the data by island, so that you have one density curve per island.</p>
+<section id="part-a-3" class="level4">
+<h4 class="anchored" data-anchor-id="part-a-3">Part A</h4>
+<p>First, create a density curve of penguin flipper length.</p>
+<div id="qwebr-insertion-location-33"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the geometry command <code>geom_density()</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-34"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-35"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="part-b-3" class="level4">
+<h4 class="anchored" data-anchor-id="part-b-3">Part B</h4>
+<p>Next, separate out your density curve and create one density curve for each species. Hint: You will not need to add a whole new line of code to do this, just add a command into your existing code.</p>
+<div id="qwebr-insertion-location-36"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To separate the plot by island, you will need to adjust the color in the aesthetics section of <code>ggplot</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-37"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-38"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="part-c-3" class="level4">
+<h4 class="anchored" data-anchor-id="part-c-3">Part C</h4>
+<p>Next, we’ll add a line displaying the mean flipper length for each island. To do this, we need to first create tidy, tiny data which displays the mean flipper lengths.</p>
+<p>Create a new variable called <code>summary_data</code> which displays a chart with the mean flipper length for each island.</p>
+<div id="qwebr-insertion-location-39"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You’ll need to use the following functions in your code: <code>group_by()</code>, <code>summarize()</code>, and <code>mean()</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-40"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-41"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-42"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+</section>
+<section id="part-c-4" class="level4">
+<h4 class="anchored" data-anchor-id="part-c-4">Part C</h4>
+<p>Finally let’s add vertical lines to the graph indicating the mean flipper length for each island.</p>
+<p>To do this, use the geometry <code>geom_vline()</code>. Use your <code>summary_data()</code> to specify the conditions in <code>geom_vline()</code>.</p>
+<div id="qwebr-insertion-location-43"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First define your summary_data and mean_flipper, like you did in Part B.</p>
+<p>Then create the ggplot, like you did in Part A. Add a <code>geom_vline()</code> to the ggplot.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The syntax for <code>geom_vline()</code> is <code>geom_vline(data=____, aes(xintercept=_____, color=_____))</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-44"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="qwebr-insertion-location-45"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<p>Congratulations, you have finished this tutorial!!</p>
 
 
 </section>

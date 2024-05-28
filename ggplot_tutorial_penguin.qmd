@@ -34,9 +34,7 @@ General syntax for `ggplot()`:
 
 -   `ggplot(data, aes(x=variable1, y=variable2))` `+`
 
-    `geom_x()` `+`
-
-    `……`
+    `geom_x()`
 
     OR
 
@@ -44,9 +42,7 @@ General syntax for `ggplot()`:
 
     `ggplot(aes(x=variable1, y=variable2))` `+`
 
-    `geom_x()` `+`
-
-    `……`
+    `geom_x()`
 
 Specifying variables: X is the explanatory variable and Y is the outcome variable
 
@@ -60,7 +56,7 @@ For example the following code specifies the x & y variables, point size & color
 
 ### Geometry
 
-You can then include geometry (lines, points, bar graph, scatterplot) including:
+You can then include geometry including:
 
 -   `geom_line()`: Connects all the points in a plot
 
@@ -68,11 +64,11 @@ You can then include geometry (lines, points, bar graph, scatterplot) including:
 
 -   `geom_point()`: Creates points (scatterplot) for each data point
 
--   `geom_bar()` : Creates a bar graph
+-   `geom_bar()` : Creates a bar graph, aggregates data for you
 
     -   Syntax: `geom_bar(position="___")` Can choose "stack" (bars on top of each other), "dodge" (bars side by side) or "fill" (bars stacked, scaled to 100%).
 
--   `geom_col()`: Creates a bar graph with *pre-aggregated* data.
+-   `geom_col()`: Creates a bar graph with *pre-aggregated* data
 
 -   `geom_histogram()`: Creates a histogram
 
@@ -88,27 +84,7 @@ You can then include geometry (lines, points, bar graph, scatterplot) including:
 
 ## Other functions to use with GGplot
 
-1.  `fct_infreq()`: Order data by its frequency.
-
-    Syntax in ggplot: `ggplot(aes(x=fct_infreq(data)))` OR `ggplot(aes(y=fct_infreq(data)))`
-
-2.  `fct_reorder()` : Reorder levels of a factor (or vector) based on the result of another function applied to all values within a specified variable.
-
-    Syntax: `ggplot(aes(fct_reorder(factor, variable, .fun = function)))` The `.fun` default is median. That is, the function reorders the factor based on the median of the variable.
-
-3.  `fct_collapse()` : Collapse factor levels into groups you define.
-
-    Syntax: `fct_collapse(data, group1=value, group2=value)`
-
-4.  `group_by()`: Used to group data by a specific variable.
-
-5.  `facet_wrap()`: Create multiple graphs by group categories. Separate graphs wrapped around.
-
-    Syntax: `facet_wrap(~facet + facet + facet...)` Note: can add more facets using a +
-
-6.  `summarize()`: Displays a table with summary statistics you specify. Can also specify groups to group the data by.
-
-    Syntax: `summarize(.data, summary statistic)`
+You can use the pipe to incorporate other tidyverse functions to organize your data before plotting.
 
 ## Our Dataset
 
@@ -137,6 +113,7 @@ First, let's clean the data and remove any rows with missing values. Create a ne
 ```{webr-r}
 #Your code here
 
+
 n_miss(penguin_clean) #If your code works, this should print 0. 
 ```
 
@@ -158,17 +135,18 @@ penguin_clean<- na.omit(penguin)
 
 #### Part B
 
-Now use your clean data to construct a scatterplot with `flipper_length` as the explanatory variable and `body_mass` as the outcome variable. Add a line of best fit.
+Now use your clean data to construct a scatter plot with `flipper_length` as the explanatory variable and `body_mass` as the outcome variable.
 
 ```{webr-r}
 #Your code here 
+
 
 ```
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-You'll need to use ggplot, specify the data, the aesthetics (which includes the x and y variables) and then add a geometry to your plot to create points and a line of best fit.
+You'll need to use ggplot, specify the data, the aesthetics (which includes the x and y variables) and then add a geometry to your plot to create points.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
@@ -177,8 +155,7 @@ You'll need to use ggplot, specify the data, the aesthetics (which includes the 
 ```{webr-r}
 
 ggplot(_______, aes(x=____, y=____))+
-  geom_point()+ 
-  geom_smooth(method=_____, se=FALSE)
+  geom_ ______()
 ```
 :::
 
@@ -187,12 +164,54 @@ ggplot(_______, aes(x=____, y=____))+
 
 ```{webr-r}
 ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+
-  geom_point()+ 
-  geom_smooth(method="lm", se=FALSE)
+  geom_point()
+
+#OR you could use the pipe to start with penguin_clean and then create your plot: penguin_clean |> ggplot(aes(x=flipper_length, y=body_mass))+ geom_point()
 ```
 :::
 
 #### Part C
+
+Now, add a line of best fit to your plot.
+
+```{webr-r}
+#Your code here 
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Add one more piece of geometry to your code from part B to your plot that creates a line of best fit.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+
+ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+
+  geom_point()+ 
+  geom_smooth(method=_____, se=_____)
+
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+
+ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+
+  geom_point()+ 
+  geom_smooth(method="lm", se=FALSE)
+
+#OR you could use the pipe function!
+```
+:::
+
+#### Part D
 
 Finally, let's separate the plot into 3 different plots, one for each species.
 
@@ -205,14 +224,14 @@ Finally, let's separate the plot into 3 different plots, one for each species.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Use the function `facet_wrap()` and be sure to define your facet.
+Use the function `facet_wrap()` and be sure to define your facet. Add this as a geometry to your code.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
 ```{webr-r}
-# Use facet_wrap(~_____$_____)
+facet_wrap(~_____)
 ```
 :::
 
@@ -223,17 +242,136 @@ Use the function `facet_wrap()` and be sure to define your facet.
 ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+
   geom_point()+ 
   geom_smooth(method="lm", se=FALSE)+ 
-  facet_wrap(~penguin_clean$species)
+  facet_wrap(~species)
+
+#OR you could use the pipe!
 ```
 :::
 
 ### Exercise 2
 
+Create a bar graph which displays the number of penguins in each species. Also show which islands each penguin species is on by adjusting the fill and position of the bar graphs.
+
+#### Part A
+
+First, create a bar graph that shows the number of penguins in each species.
+
+```{webr-r}
+#Your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+`geom_bar()` is used when the data still needs to be aggregated.
+
+`geom_col()` is used when the data is already aggregated.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+penguin_clean|>
+  ggplot(aes(x=_____))+
+    ______
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+penguin_clean|>
+  ggplot(aes(x=species))+
+    geom_bar()
+```
+:::
+
+#### Part B
+
+Next, display which island each species is on by adjusting the fill of the graph.
+
+```{webr-r}
+#Your code here
+
+
+#If your code works, you should see a similar bar graph to Part A, but each bar will have different colors based on the island where each species lives. 
+#You should notice that two of the species live on only 1 island (not all 3). 
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+This adjustment will go in the aesthetics section of your ggplot. Choose how you would like to fill the bars by using `fill = ____`.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+penguin_clean|>
+  ggplot(aes(x=species, fill=______))+
+  geom_bar()
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+penguin_clean|>
+  ggplot(aes(x=species, fill=island))+
+  geom_bar()
+```
+:::
+
+#### Part C
+
+Now that the bars are filled in by island, let's adjust them again so that they don't stack on top of each other. Instead, place all the bars next to each other.
+
+```{webr-r}
+#Your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Adjust the `position` of bars in the `geom_bar()` geometry.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+penguin_clean|>
+  ggplot(aes(x=species, fill=island))+
+  geom_bar(position="______")
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+penguin_clean|>
+  ggplot(aes(x=species, fill=island))+
+  geom_bar(position="dodge")
+```
+:::
+
+### Exercise 3
+
 Create a bar graph displaying the mean bill length for each species of penguin.
 
 #### Part A
 
-First, we need to make our data tiny so that we can then input it into a function. So, start by using the `summarize()` function to display the mean bill length of penguins by species.
+First, we need to make our data tiny so that we can then input it into a plot. So, start by using the `summarize()` function to display the mean bill length of penguins by species.
 
 ```{webr-r}
 #Your code here
@@ -245,7 +383,7 @@ First, we need to make our data tiny so that we can then input it into a functio
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-In addition to the `summarize()` function, you'll need to also use the `group_by()` function to group by species. Use the pipe to use both of these functions together.
+In addition to the `summarize()` function, you'll need to also use the `group_by()` function to group by species. Use the pipe to string both of these functions together.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
@@ -271,6 +409,12 @@ group_by(species)|>
 #### Part B
 
 Now that the data is tidy and tiny, we can plot it. Add to your code from part A and create a bar graph.
+
+```{webr-r}
+#Your code here
+
+
+```
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -310,6 +454,12 @@ Finally, we want to order the columns in the bar graph from smallest to largest.
 
 Feel free to also add other features to your graph, like a title, colored bars, etc!
 
+```{webr-r}
+#Your code here
+
+
+```
+
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
@@ -339,3 +489,199 @@ ggplot(aes(x=fct_reorder(species, mean_mass), y=mean_mass))+
   geom_col()
 ```
 :::
+
+### Exercise 4
+
+Create a density plot of penguin flipper length. Include a line displaying the mean flipper length. Additionally, separate the data by island, so that you have one density curve per island.
+
+#### Part A
+
+First, create a density curve of penguin flipper length.
+
+```{webr-r}
+# Your code here 
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the geometry command `geom_density()`.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+ggplot(_______, aes(x=______))+
+  _________
+
+#OR you can use the pipe: 
+
+_____ |> 
+  ggplot(aes(x=_____))+ 
+    ________
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+ggplot(penguin_clean, aes(x=flipper_length))+
+  geom_density()
+
+#OR you can use the pipe: 
+
+#penguin_clean|>
+#ggplot( aes(x=flipper_length))+
+#  geom_density()
+
+```
+:::
+
+#### Part B
+
+Next, separate out your density curve and create one density curve for each species. Hint: You will not need to add a whole new line of code to do this, just add a command into your existing code.
+
+```{webr-r}
+# Your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+To separate the plot by island, you will need to adjust the color in the aesthetics section of `ggplot`.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+
+ggplot(penguin_clean, aes(x=flipper_length, color=______))+
+  geom_density()
+
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+
+ggplot(penguin_clean, aes(x=flipper_length, color=island))+
+  geom_density()
+
+```
+:::
+
+#### Part C
+
+Next, we'll add a line displaying the mean flipper length for each island. To do this, we need to first create tidy, tiny data which displays the mean flipper lengths.
+
+Create a new variable called `summary_data` which displays a chart with the mean flipper length for each island.
+
+```{webr-r}
+#Your code here: 
+
+
+summary_data #If your code is successful, this will print the mean flipper length for each island. 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+You'll need to use the following functions in your code: `group_by()`, `summarize()`, and `mean()`.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+summary_data <- ________ |> 
+  group_by(_____)|> 
+  summarize(_________)
+```
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+summary_data <- penguin_clean |> 
+  group_by(______)|> 
+  summarize(mean_flipper = mean(______))
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+summary_data<- penguin_clean|> 
+  group_by(island)|>
+  summarize(mean_flipper=mean(flipper_length))
+```
+:::
+
+#### Part C
+
+Finally let's add vertical lines to the graph indicating the mean flipper length for each island.
+
+To do this, use the geometry `geom_vline()`. Use your `summary_data()` to specify the conditions in `geom_vline()`.
+
+```{webr-r}
+#Your code here 
+
+
+#Your final plot should include 3 density lines and 3 vertical lines indicating the mean for each island. 
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+First define your summary_data and mean_flipper, like you did in Part B.
+
+Then create the ggplot, like you did in Part A. Add a `geom_vline()` to the ggplot.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+The syntax for `geom_vline()` is `geom_vline(data=____, aes(xintercept=_____, color=_____))`.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{webr-r}
+summary_data<- penguin_clean|> 
+  group_by(island)|>
+  summarize(mean_flipper=mean(flipper_length))
+
+ggplot(penguin_clean, aes(x=flipper_length, color=island))+
+  geom_density()+
+  geom_vline(data=_______, aes(xintercept=_______, color=______))
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{webr-r}
+summary_data<- penguin_clean|> 
+  group_by(island)|>
+  summarize(mean_flipper=mean(flipper_length))
+
+ggplot(penguin_clean, aes(x=flipper_length, color=island))+
+  geom_density()+
+  geom_vline(data=summary_data, aes(xintercept=mean_flipper, color=island))
+
+```
+:::
+
+Congratulations, you have finished this tutorial!!
