@@ -99,6 +99,7 @@ opinion_data <- opinion_data |>
 ## Answer
 
 ```{webr-r}
+#| eval:false
 opinion_data <- opinion_data |> 
   mutate(age_group = case_when(
     age < 40 ~ "Young",
