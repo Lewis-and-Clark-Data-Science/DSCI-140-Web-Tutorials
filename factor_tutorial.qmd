@@ -105,7 +105,7 @@ opinion_data <- opinion_data |>
     age < 40 ~ "Young",
     age >= 40 & age <= 59 ~ "Middle-Aged",
     age >= 60 ~ "Senior"), 
-  age_group = as.factor(age_group)) # converting the new column to a factor
+  age_group = as.factor(age_group)) # this is converting the new column to a factor
 ```
 :::
 
