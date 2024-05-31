@@ -166,7 +166,8 @@ ggplot(_______, aes(x=____, y=____))+
 ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+
   geom_point()
 
-#OR you could use the pipe to start with penguin_clean and then create your plot: penguin_clean |> ggplot(aes(x=flipper_length, y=body_mass))+ geom_point()
+#OR you could use the pipe to start with penguin_clean and then create your plot: 
+#penguin_clean |> ggplot(aes(x=flipper_length, y=body_mass))+ geom_point()
 ```
 :::
 
@@ -483,9 +484,9 @@ penguin_clean |>
 
 ```{webr-r}
 penguin_clean |> 
-group_by(species)|> 
+  group_by(species)|> 
   summarize(mean_mass=mean(body_mass))|>
-ggplot(aes(x=fct_reorder(species, mean_mass), y=mean_mass))+
+  ggplot(aes(x=fct_reorder(species, mean_mass), y=mean_mass))+
   geom_col()
 ```
 :::
@@ -644,7 +645,7 @@ To do this, use the geometry `geom_vline()`. Use your `summary_data()` to specif
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-First define your summary_data and mean_flipper, like you did in Part B.
+First define your `summary_data` and `mean_flipper`, like you did in Part B.
 
 Then create the ggplot, like you did in Part A. Add a `geom_vline()` to the ggplot.
 :::
