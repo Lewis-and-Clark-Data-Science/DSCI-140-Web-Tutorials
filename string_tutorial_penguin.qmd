@@ -37,7 +37,7 @@ Syntax: `str_sub(string, start_position, end_position)`
 
 Syntax: `str_to_lower(string)`
 
-3.  `word()`: This function will extract a specific word from a string (or character vector). 
+3.  `word()`: This function will extract a specific word from a string (or character vector).
 
 Syntax: `word(string, start, end, sep=fixed("___"))`
 
@@ -45,11 +45,11 @@ Syntax: `word(string, start, end, sep=fixed("___"))`
 
 Syntax: `str_remove(string, pattern)`
 
-5. `str_length()`: This function will give the number of *characters* in each element of a character vector. 
+5.  `str_length()`: This function will give the number of *characters* in each element of a character vector.
 
 Syntax: `str_length(string)`
 
-6. `str_detect()`: This function will look at each element of a string and determine if it matches a given pattern. For each element, it will output `FALSE` or `TRUE` depending on whether it matches the pattern. 
+6.  `str_detect()`: This function will look at each element of a string and determine if it matches a given pattern. For each element, it will output `FALSE` or `TRUE` depending on whether it matches the pattern.
 
 Syntax: `str_detect(string, pattern)`
 
@@ -84,11 +84,11 @@ Create a variable called 'location_lower' that converts location in the `penguin
 ::: {.callout-caution collapse="true" icon="false"}
 ## Check your work
 
-To check your work, run the following code in the cell chunk below. 
+To check your work, run the following code in the code chunk below.
 
 `str(penguin_sample$location_lower)`
 
-This code will run successfully and show a few example values in lower case if the variable was properly created. 
+This code will run successfully and show a few example values in lower case if the variable was properly created.
 
 ```{webr-r}
 #Copy and paste the code here 
@@ -122,10 +122,9 @@ penguin_sample$location_lower <- str_to_lower(penguin_sample$location)
 ```
 :::
 
-
 ### Exercise 2
 
-Sometimes we may decide the input in one observation is too long. Use `str_length()` to check how many characters there are in the *first* entry of the `location` column in our `penguin_sample` data set. 
+Sometimes we may decide the input in one observation is too long. Use `str_length()` to check how many characters there are in the *first* entry of the `location` column in our `penguin_sample` data set.
 
 ```{webr-r}
 # Your code here
@@ -137,8 +136,7 @@ Sometimes we may decide the input in one observation is too long. Use `str_lengt
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Use the str_length() function to count the number of characters in each entry of a vector. Then use bracket notation to indicate the first entry. 
-
+Use the str_length() function to count the number of characters in each entry of a vector. Then use bracket notation to indicate the first entry.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
@@ -172,7 +170,7 @@ Split the Island variable in the `penguin_sample` data frame into separate eleme
 ::: {.callout-caution collapse="true" icon="false"}
 ## Check your work
 
-To check your work, run the following code in the cell chunk below. 
+To check your work, run the following code in the code chunk below.
 
 `str(penguin_sample$island)`
 
@@ -184,7 +182,6 @@ If your code worked, you should see your new island variable with this code.
 
 ```
 :::
-
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -210,7 +207,6 @@ penguin_sample$island <- word(penguin_sample$location, start=1, sep=",")
 ```
 :::
 
-
 ### Exercise 4
 
 Create a new variable called `location_short` that removes the phrase "Antarctica" from all locations in the `penguin_sample` data frame using `str_remove()`.
@@ -225,7 +221,7 @@ Create a new variable called `location_short` that removes the phrase "Antarctic
 ::: {.callout-caution collapse="true" icon="false"}
 ## Check your work
 
-To check your work, run the following code in the cell chunk below. 
+To check your work, run the following code in the code chunk below.
 
 `str(penguin_sample$location_short)`
 
@@ -304,7 +300,7 @@ Create a variable called `year_short` that extracts the last two characters of t
 ::: {.callout-caution collapse="true" icon="false"}
 ## Check your work
 
-To check your work, run the following code in the cell chunk below. 
+To check your work, run the following code in the code chunk below.
 
 `str(penguin_sample$year_short)`
 

@@ -75,10 +75,24 @@ Create a vector named numbers containing the first ten numbers.
 ```{webr-r}
 # Your code here
 
-numbers
-# this code will run successfully and indicate a vector 
-# was created if your code is right!
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`numbers`
+
+This code will run successfully and indicate a vector was created if your code is right!
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -95,7 +109,8 @@ The syntax for creating a vector generally looks like: c(1, 2, 3, ...). You coul
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-```{webr-r}
+```{r}
+#| eval: false
 
 numbers <- c(1:10) #numbers<- c(1,2,3,4,5,6,7,8,9,10) also works!
 ```
@@ -121,7 +136,8 @@ Call summary() on your data frame, which is named penguin_sample.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 summary(____)
 ```
 :::
@@ -129,7 +145,8 @@ summary(____)
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-```{webr-r}
+```{r}
+#| eval: false
 summary(penguin_sample)
 ```
 :::
@@ -141,8 +158,8 @@ Create a simple plot of `bill_length` vs `body_mass` from `penguin_sample`.
 ```{webr-r}
 # Your code here
 
-# if your code worked a scatter plot should appear!
 
+# if your code worked a scatter plot should appear!
 ```
 
 ::: {.callout-tip collapse="true" icon="false"}
@@ -154,16 +171,14 @@ Hint: Use the plot() function with two arguments from your data frame.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
-#The syntax is 
-plot(data_frame$column1, data_frame$column2)
-```
+The syntax is `plot(data_frame$column1, data_frame$column2)`
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-```{webr-r}
+```{r}
+#| eval: false
 plot(penguin_sample$bill_length, penguin_sample$body_mass)
 ```
 :::
@@ -175,8 +190,24 @@ Using the \$ Operator: Extract the `bill_length` column from `penguin_sample` us
 ```{webr-r}
 # Your code here
 
-bill_length # This should print the vector if done correctly
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`bill_length`
+
+This code should print the vector if done correctly.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -195,7 +226,8 @@ and use syntax like my_data_frame\$column_name
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-```{webr-r}
+```{r}
+#| eval: false
  bill_length <- penguin_sample$bill_length
 ```
 :::
@@ -207,27 +239,45 @@ Using the \$ operator to reference the vector (variable) `bill_length` in the da
 ```{webr-r}
 # Your code here
 
-long_bill # this will print bill lengths over 50 if successfully coded
+
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
 
-Use bracket indexing. The vector penguin_sample\$bill_length should appear twice in the correct code!
+To check your work, run the following code in the code chunk below.
+
+`long_bill`
+
+This will print bill lengths over 50 if successfully coded.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
-# long_bill <- penguin_sample$bill_length[___ >= 50]
+Use bracket indexing. The vector `penguin_sample$bill_length` should appear twice in the correct code!
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{r}
+#| eval: false 
+long_bill <- penguin_sample$bill_length[___ >= 50]
 ```
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-```{webr-r}
+```{r}
+#| eval: false
 long_bill <- penguin_sample$bill_length[penguin_sample$bill_length>= 50]
 ```
 :::
@@ -239,8 +289,24 @@ This time, extract the entire dataset (all columns, including body mass and spec
 ```{webr-r}
 # Your code here
 
-long_bill_data # this will print only penguins with a bill length over 50mm if successfully coded
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`long_bill_data`
+
+This will print only penguins with bill lengths over 50 if successfully coded.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -251,15 +317,17 @@ Use bracket indexing. You will need to specify rows you are interested in, and l
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
-# long_bill_data <- penguin_sample[___ >= 50,]
+```{r}
+#| eval: false 
+long_bill_data <- penguin_sample[___ >= 50,]
 ```
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-```{webr-r}
+```{r}
+#| eval: false
 long_bill_data <- penguin_sample[penguin_sample$bill_length >= 50,]
 ```
 :::

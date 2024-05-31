@@ -62,7 +62,7 @@ opinion_data
 
 ## Exercises
 
-Here are 5 practice exercises. You can click for hints and the answer for each problem. 
+Here are 5 practice exercises. You can click for hints and the answer for each problem.
 
 ### Exercise 1
 
@@ -120,25 +120,27 @@ levels(opinion_data$ideology) # if your code worked, you should see the new leve
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+
 Use the `fct_expand()` function on the `ideology` column of `opinion_data`. Don't forget to assign the new levels you want to add.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+
 ```{webr-r}
 opinion_data <- opinion_data |> 
   mutate(ideology = fct_expand(______, "______"))
 ```
-::: 
+:::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{webr-r}
 opinion_data <- opinion_data |> 
   mutate(ideology = fct_expand(ideology, "Libertarian"))
 ```
 :::
-
 
 ### Exercise 3
 
@@ -153,6 +155,7 @@ levels(opinion_data$race) # if your code worked, the recoded levels should appea
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+
 Use the fct_recode() function with the 'race' column and specify that "Latino" should replace "Hispanic".
 :::
 
@@ -172,8 +175,7 @@ opinion_data <- opinion_data |>
 opinion_data <- opinion_data |> 
   mutate(race = fct_recode(race, "Latino" = "Hispanic"))
 ```
-::: 
-
+:::
 
 ### Exercise 4
 
@@ -187,6 +189,7 @@ levels(opinion_data$religion) # Only two levels should appear if done correctly
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+
 You might need to manually recode the 'religion' levels into 'Christian' and 'NonChristian'. Think about using a function that allows specifying conditions for recoding.
 :::
 
@@ -201,11 +204,11 @@ opinion_data <- opinion_data |>
                                   NonChristian = c("Atheist", "Hindu", "Jewish", "Buddhist")))
 
 ```
-
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{webr-r}
 opinion_data <- opinion_data |> 
   mutate(religion = fct_collapse(religion, 
@@ -213,7 +216,6 @@ opinion_data <- opinion_data |>
                                   NonChristian = c("Atheist", "Hindu", "Jewish", "Buddhist")))
 ```
 :::
-
 
 ### Exercise 5
 
@@ -252,6 +254,7 @@ count(opinion_data, ______)
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{webr-r}
 opinion_data <- opinion_data |> 
   mutate(party = fct_infreq(party))
