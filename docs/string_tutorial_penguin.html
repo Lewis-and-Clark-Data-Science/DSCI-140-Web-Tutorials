@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -271,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"autorun":"true","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"setup","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"input data","warning":"true","classes":""},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\n\npenguin<- tibble(species =penguins$species, location = penguins$island, bill_length = penguins$bill_length_mm, body_mass = penguins$body_mass_g, year = penguins$year)\npenguin_sample<- na.omit(penguin)\npenguin_sample$location<- paste(penguin_sample$location,\"Palmer Archipelago, Antarctica\", sep=\", \")\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-2","warning":"true","classes":""},"code":"penguin_sample"},{"id":3,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"FALSE","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-3","warning":"true","classes":""},"code":"# Your code here\n\nstr(penguin_sample$location_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created"},{"id":4,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-4","warning":"true","classes":""},"code":"penguin_sample$location_lower <- str_to_lower(penguin_sample$_____)"},{"id":5,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-5","warning":"true","classes":""},"code":"penguin_sample$location_lower <- str_to_lower(penguin_sample$location)"},{"id":6,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-6","warning":"true","classes":""},"code":"# Your code here\n\n\n#If your code worked, you should see that there are 41 characters in the first entry of the location column. "},{"id":7,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-7","warning":"true","classes":""},"code":"str_length(____$____)[___]"},{"id":8,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-8","warning":"true","classes":""},"code":"str_length(penguin_sample$location)[1]"},{"id":9,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-9","warning":"true","classes":""},"code":"# Your code here\n\nstr(penguin_sample$island) # if your code worked, you should see your new island variable with this code"},{"id":10,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-10","warning":"true","classes":""},"code":"penguin_sample$island <- word(______$______, start=___, sep=\"___\")"},{"id":11,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-11","warning":"true","classes":""},"code":"penguin_sample$island <- word(penguin_sample$location, start=1, sep=\",\")"},{"id":12,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-12","warning":"true","classes":""},"code":"# Your code here\n\nstr(penguin_sample$location_short) # if your code worked, this code will show you the structure of your new variable"},{"id":13,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-13","warning":"true","classes":""},"code":"penguin_sample$location_short <- str_remove(__$___, \"_____\")"},{"id":14,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-14","warning":"true","classes":""},"code":"penguin_sample$location_short <- str_remove(penguin_sample$location, \", Antarctica\")"},{"id":15,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-15","warning":"true","classes":""},"code":"#Your code here \n\n\n#If your code worked, you should see a long list of FALSE values indicating that \"Antarctica\" does not appear in any entry."},{"id":16,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-16","warning":"true","classes":""},"code":"str_detect(____$_____, \"____\")"},{"id":17,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-17","warning":"true","classes":""},"code":"str_detect(penguin_sample$location_short, \"Antarctica\")"},{"id":18,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-18","warning":"true","classes":""},"code":"# Your code here\n\nstr(penguin_sample$year_short) # The year should only display the last two numbers"},{"id":19,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-19","warning":"true","classes":""},"code":"\npenguin_sample$year_short <- str_sub(____, ____, ____)"},{"id":20,"options":{"autorun":"false","out-width":"700px","fig-width":7,"editor-max-height":"","fig-cap":"","context":"interactive","editor-quick-suggestions":"false","read-only":"false","comment":"","editor-font-scale":1,"results":"markup","fig-height":5,"message":"true","output":"true","out-height":"","dpi":72,"label":"unnamed-chunk-20","warning":"true","classes":""},"code":"penguin_sample$year_short <- str_sub(penguin_sample$year, 3, -1)"}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"setup","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"true","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"input data","classes":"","out-height":""},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\n\npenguin<- tibble(species =penguins$species, location = penguins$island, bill_length = penguins$bill_length_mm, body_mass = penguins$body_mass_g, year = penguins$year)\npenguin_sample<- na.omit(penguin)\npenguin_sample$location<- paste(penguin_sample$location,\"Palmer Archipelago, Antarctica\", sep=\", \")\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-2","classes":"","out-height":""},"code":"penguin_sample"},{"id":3,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"FALSE","fig-height":5,"label":"unnamed-chunk-3","classes":"","out-height":""},"code":"# Your code here\n"},{"id":4,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-4","classes":"","out-height":""},"code":"#Copy and paste the code here \n"},{"id":5,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-5","classes":"","out-height":""},"code":"# Your code here\n\n\n#If your code worked, you should see that there are 41 characters in the first entry of the location column. "},{"id":6,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-6","classes":"","out-height":""},"code":"# Your code here\n"},{"id":7,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-7","classes":"","out-height":""},"code":"#Copy and paste the code here \n"},{"id":8,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-8","classes":"","out-height":""},"code":"# Your code here\n\n"},{"id":9,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-9","classes":"","out-height":""},"code":"#Copy and paste the code here \n"},{"id":10,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-10","classes":"","out-height":""},"code":"#Your code here \n\n\n#If your code worked, you should see a long list of FALSE values indicating that \"Antarctica\" does not appear in any entry."},{"id":11,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-11","classes":"","out-height":""},"code":"# Your code here\n"},{"id":12,"options":{"results":"markup","editor-font-scale":1,"fig-cap":"","editor-max-height":"","out-width":"700px","context":"interactive","comment":"","read-only":"false","output":"true","editor-quick-suggestions":"false","warning":"true","autorun":"false","dpi":72,"fig-width":7,"message":"true","fig-height":5,"label":"unnamed-chunk-12","classes":"","out-height":""},"code":"#Copy and paste the code here \n"}];
 
 </script>
 <script type="module">
@@ -1482,22 +1516,26 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Here are some practice exercises. You can click for hints and the answer for each problem.</p>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a variable called <code>location_lower</code> that converts location in the <code>penguin_sample</code> data frame to lowercase using <code>str_to_lower()</code>.</p>
+<p>Create a variable called ‘location_lower’ that converts location in the <code>penguin_sample</code> data frame to lowercase using <code>str_to_lower()</code>.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Check your work
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_to_lower function on the ‘location’ column of ‘penguin_sample’.</p>
+<p>To check your work, run the following code in the cell chunk below.</p>
+<p><code>str(penguin_sample$location_lower)</code></p>
+<p>This code will run successfully and show a few example values in lower case if the variable was properly created.</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
@@ -1513,36 +1551,12 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the str_to_lower function on the ‘location’ column of ‘penguin_sample’.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Sometimes we may decide the input in one observation is too long. Use <code>str_length()</code> to check how many characters there are in the <em>first</em> entry of the <code>location</code> column in our <code>penguin_sample</code> data set.</p>
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1551,12 +1565,38 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>location_lower <span class="ot">&lt;-</span> <span class="fu">str_to_lower</span>(penguin_sample<span class="sc">$</span>_____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the str_length() function to count the number of characters in each entry of a vector. Then use bracket notation to indicate the first entry.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>location_lower <span class="ot">&lt;-</span> <span class="fu">str_to_lower</span>(penguin_sample<span class="sc">$</span>location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Sometimes we may decide the input in one observation is too long. Use <code>str_length()</code> to check how many characters there are in the <em>first</em> entry of the <code>location</code> column in our <code>penguin_sample</code> data set.</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1569,13 +1609,30 @@ Hint
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-7"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the str_length() function to count the number of characters in each entry of a vector. Then use bracket notation to indicate the first entry.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_length</span>(____<span class="sc">$</span>____)[___]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1584,10 +1641,11 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_length</span>(penguin_sample<span class="sc">$</span>location)[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1595,64 +1653,44 @@ Answer
 <section id="exercise-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
 <p>Split the Island variable in the <code>penguin_sample</code> data frame into separate elements using the <code>word()</code> based on the comma seperator. In particular, create a new column called <code>island</code> that extracts only the island name (without Palmer Archipelago, Antarctica).</p>
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the word() function and specify the comma as the separator. Extract the first word by specifying where the start.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Check your work
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-10"></div>
+<p>To check your work, run the following code in the cell chunk below.</p>
+<p><code>str(penguin_sample$island)</code></p>
+<p>If your code worked, you should see your new island variable with this code.</p>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the word() function and specify the comma as the separator. Extract the first word by specifying where the start.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Create a new variable called <code>location_short</code> that removes the phrase “Antarctica” from all locations in the <code>penguin_sample</code> data frame using <code>str_remove()</code>.</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1665,29 +1703,14 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The str_remove function needs a pattern to match what should be removed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>island <span class="ot">&lt;-</span> <span class="fu">word</span>(______<span class="sc">$</span>______, <span class="at">start=</span>___, <span class="at">sep=</span><span class="st">"___"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-13"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1696,19 +1719,40 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-14"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>island <span class="ot">&lt;-</span> <span class="fu">word</span>(penguin_sample<span class="sc">$</span>location, <span class="at">start=</span><span class="dv">1</span>, <span class="at">sep=</span><span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Let’s check your work on Exercise 4. Use <code>str_detect()</code> to check all the values in your <code>location_short</code> column and ensure that “Antarctica” does not appear in any of the entries in that column (or string).</p>
-<div id="qwebr-insertion-location-15"></div>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Create a new variable called <code>location_short</code> that removes the phrase “Antarctica” from all locations in the <code>penguin_sample</code> data frame using <code>str_remove()</code>.</p>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your work
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To check your work, run the following code in the cell chunk below.</p>
+<p><code>str(penguin_sample$location_short)</code></p>
+<p>If your code worked, this code will show you the structure of your new variable.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1721,36 +1765,12 @@ Hint
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The str_remove function needs a pattern to match what should be removed.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-6" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
-<p>Create a variable called <code>year_short</code> that extracts the last two characters of the year using <code>str_sub()</code>.</p>
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1759,12 +1779,38 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>location_short <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(__<span class="sc">$</span>___, <span class="st">"_____"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use str_sub(). -1 will stand in for the last character.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>location_short <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(penguin_sample<span class="sc">$</span>location, <span class="st">", Antarctica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Let’s double check your work on Exercise 4. Use <code>str_detect()</code> to check all the values in your <code>location_short</code> column and ensure that “Antarctica” does not appear in any of the entries in that column (or string).</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1777,8 +1823,9 @@ Hint
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-19"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(____<span class="sc">$</span>_____, <span class="st">"____"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1794,8 +1841,87 @@ Answer
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-20"></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(penguin_sample<span class="sc">$</span>location_short, <span class="st">"Antarctica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<p>Create a variable called <code>year_short</code> that extracts the last two characters of the year using <code>str_sub()</code>.</p>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your work
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To check your work, run the following code in the cell chunk below.</p>
+<p><code>str(penguin_sample$year_short)</code></p>
+<p>If your code worked, the year should only display the last two numbers.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use str_sub(). -1 will stand in for the last character.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>year_short <span class="ot">&lt;-</span> <span class="fu">str_sub</span>(____, ____, ____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>penguin_sample<span class="sc">$</span>year_short <span class="ot">&lt;-</span> <span class="fu">str_sub</span>(penguin_sample<span class="sc">$</span>year, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>

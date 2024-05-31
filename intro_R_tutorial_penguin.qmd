@@ -75,7 +75,7 @@ Create a vector named numbers containing the first ten numbers.
 ```{webr-r}
 # Your code here
 
-numbers 
+numbers
 # this code will run successfully and indicate a vector 
 # was created if your code is right!
 ```

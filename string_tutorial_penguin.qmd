@@ -71,15 +71,31 @@ Here are some practice exercises. You can click for hints and the answer for eac
 
 ### Exercise 1
 
-Create a variable called `location_lower` that converts location in the `penguin_sample` data frame to lowercase using `str_to_lower()`.
+Create a variable called 'location_lower' that converts location in the `penguin_sample` data frame to lowercase using `str_to_lower()`.
 
 ```{webr-r}
 #| autorun: false
 #| message: FALSE
 # Your code here
 
-str(penguin_sample$location_lower) # this code will run successfully and show a few example values in lower case if the variable was properly created
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the cell chunk below. 
+
+`str(penguin_sample$location_lower)`
+
+This code will run successfully and show a few example values in lower case if the variable was properly created. 
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -90,7 +106,8 @@ Use the str_to_lower function on the 'location' column of 'penguin_sample'.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin_sample$location_lower <- str_to_lower(penguin_sample$_____)
 ```
 :::
@@ -98,10 +115,13 @@ penguin_sample$location_lower <- str_to_lower(penguin_sample$_____)
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin_sample$location_lower <- str_to_lower(penguin_sample$location)
+
 ```
 :::
+
 
 ### Exercise 2
 
@@ -124,7 +144,8 @@ Use the str_length() function to count the number of characters in each entry of
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 str_length(____$____)[___]
 ```
 :::
@@ -132,7 +153,8 @@ str_length(____$____)[___]
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 str_length(penguin_sample$location)[1]
 ```
 :::
@@ -142,11 +164,27 @@ str_length(penguin_sample$location)[1]
 Split the Island variable in the `penguin_sample` data frame into separate elements using the `word()` based on the comma seperator. In particular, create a new column called `island` that extracts only the island name (without Palmer Archipelago, Antarctica).
 
 ```{webr-r}
-#| autorun:false
 # Your code here
 
-str(penguin_sample$island) # if your code worked, you should see your new island variable with this code
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the cell chunk below. 
+
+`str(penguin_sample$island)`
+
+If your code worked, you should see your new island variable with this code.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
+
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -157,8 +195,8 @@ Use the word() function and specify the comma as the separator. Extract the firs
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
-#| autorun: false
+```{r}
+#| eval: false
 penguin_sample$island <- word(______$______, start=___, sep="___")
 ```
 :::
@@ -166,8 +204,8 @@ penguin_sample$island <- word(______$______, start=___, sep="___")
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
-#| autorun: false
+```{r}
+#| eval: false
 penguin_sample$island <- word(penguin_sample$location, start=1, sep=",")
 ```
 :::
@@ -180,9 +218,25 @@ Create a new variable called `location_short` that removes the phrase "Antarctic
 ```{webr-r}
 # Your code here
 
-str(penguin_sample$location_short) # if your code worked, this code will show you the structure of your new variable
+
 
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the cell chunk below. 
+
+`str(penguin_sample$location_short)`
+
+If your code worked, this code will show you the structure of your new variable.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -193,7 +247,8 @@ The str_remove function needs a pattern to match what should be removed.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin_sample$location_short <- str_remove(__$___, "_____")
 ```
 :::
@@ -201,14 +256,15 @@ penguin_sample$location_short <- str_remove(__$___, "_____")
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin_sample$location_short <- str_remove(penguin_sample$location, ", Antarctica")
 ```
 :::
 
 ### Exercise 5
 
-Let's check your work on Exercise 4. Use `str_detect()` to check all the values in your `location_short` column and ensure that "Antarctica" does not appear in any of the entries in that column (or string).
+Let's double check your work on Exercise 4. Use `str_detect()` to check all the values in your `location_short` column and ensure that "Antarctica" does not appear in any of the entries in that column (or string).
 
 ```{webr-r}
 #Your code here 
@@ -220,7 +276,8 @@ Let's check your work on Exercise 4. Use `str_detect()` to check all the values 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 str_detect(____$_____, "____")
 ```
 :::
@@ -228,7 +285,8 @@ str_detect(____$_____, "____")
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 str_detect(penguin_sample$location_short, "Antarctica")
 ```
 :::
@@ -240,8 +298,24 @@ Create a variable called `year_short` that extracts the last two characters of t
 ```{webr-r}
 # Your code here
 
-str(penguin_sample$year_short) # The year should only display the last two numbers
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the cell chunk below. 
+
+`str(penguin_sample$year_short)`
+
+If your code worked, the year should only display the last two numbers.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -252,7 +326,8 @@ Use str_sub(). -1 will stand in for the last character.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 
 penguin_sample$year_short <- str_sub(____, ____, ____)
 
@@ -262,7 +337,8 @@ penguin_sample$year_short <- str_sub(____, ____, ____)
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin_sample$year_short <- str_sub(penguin_sample$year, 3, -1)
 
 ```
