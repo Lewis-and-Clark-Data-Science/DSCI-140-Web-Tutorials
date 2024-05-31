@@ -18,7 +18,7 @@ opinion_data <- tibble(
   ideology = factor(c("Liberal", "Conservative", "Moderate", "Liberal", "Conservative", "Moderate", "Liberal", "Moderate", "Conservative", "Liberal", "Moderate", "Conservative", "Liberal", "Conservative", "Moderate", "Liberal")), 
   race = factor(c("White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "White", "Black", "Hispanic", "Black")), # race for new entry
   gender = factor(c("Male", "Female", "Male", "Male", "Female", "Female", "Male", "Male", "Female", "Male", "Female", "Male", "Male", "Female", "Female", "Female")), 
-  party = factor(c("Strong Republican", "Weak Republican", "Strong Democrat", "Strong Republican", "Weak Republican", "Weak Democrat", "Weak Republican", "Strong Democrat", "Weak Democrat", "Strong Republican", "Strong Republican", "Strong Republican", "Weak Democrat", "Strong Democrat", "Weak Republican", "Very Strong Democrat"), levels = c("Strong Republican", "Weak Republican", "Strong Democrat", "Weak Democrat", "Very Strong Democrat")),
+  party = factor(c("Strong Republican", "Weak Republican", "Strong Democrat", "Strong Republican", "Weak Republican", "Weak Democrat", "Weak Republican", "Strong Democrat", "Weak Democrat", "Strong Republican", "Strong Republican", "Strong Republican", "Weak Democrat", "Strong Democrat", "Weak Republican", "Very Strong Democrat"), levels = c("Strong Republican", "Weak Republican", "Very Strong Democrat", "Strong Democrat", "Weak Democrat")),
   religion = factor(c("Catholic", "Protestant", "Atheist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Catholic", "Protestant", "Atheist", "Hindu", "Jewish", "Buddhist", "Protestant")), 
   voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) 
 )
@@ -35,7 +35,7 @@ In this tutorial, you will learn how to work with categorical data using the for
 
 Before we dive into the exercises, let's introduce the key functions we will be working with and provide some guidance on their syntax:
 
-1.  `as.factor()`: This function can convert a variable in another format into a factor variable. Syntax: \`as.factor(nonfactor_variable)
+1.  `as.factor()`: This function can convert a variable in another format into a factor variable. Syntax: `as.factor(nonfactor_variable)`
 
 2.  `fct_expand()`: This function is used to add new levels to a factor variable. Syntax: `fct_expand(factor_variable, "new_levels")`
 
@@ -45,7 +45,7 @@ Before we dive into the exercises, let's introduce the key functions we will be 
 
 5.  `fct_lump_n()`: Use `fct_lump_n()` to lump levels in a factor variable into broader categories. Syntax: `fct_lump(factor_variable, n=X)`
 
-6.  `fct_infreq()`: Use `fct_infreq()` to reorder the levels of the factor variable to follow the frequency of observations for different factor levels. Syntax: `fct_infreq(factor_variable`
+6.  `fct_infreq()`: Use `fct_infreq()` to reorder the levels of the factor variable to follow the frequency of observations for different factor levels. Syntax: `fct_infreq(factor_variable)`
 
 Now, let's proceed to the exercises!
 
@@ -66,7 +66,7 @@ Here are 5 practice exercises. You can click for hints and the answer for each p
 
 ### Exercise 1
 
-Create a new variable called age_group that groups the "age" variable into three categories: "Young" (under 40), "Middle-Aged" (40-59), and "Senior" (60 and above). Make this new variable a factor variable.
+Create a new variable called `age_group` that groups the "age" variable into three categories: "Young" (under 40), "Middle-Aged" (40-59), and "Senior" (60 and above). Make this new variable a factor variable.
 
 ```{webr-r}
 # Your code here
@@ -120,7 +120,7 @@ levels(opinion_data$ideology) # if your code worked, you should see the new leve
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
-Use the fct_expand() function on the 'ideology' column of 'opinion_data'. Don't forget to assign the new levels you want to add.
+Use the `fct_expand()` function on the `ideology` column of `opinion_data`. Don't forget to assign the new levels you want to add.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
