@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -271,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"    # context setup prevents this from being shown in the website\n\nlibrary(tidyverse)\n\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Very Strong Democrat\", \"Strong Democrat\", \"Weak Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","options":{"editor-quick-suggestions":"false","output":"true","autorun":"true","out-height":"","context":"setup","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"load-packages","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":2,"code":"opinion_data","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-2","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":3,"code":"# Your code here\n\nstr(opinion_data$age_group) # this code will run successfully and indicate a factor variable was created if your code is right!","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-3","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":4,"code":"# Hint: You might need to categorize the 'age' data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-4","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":5,"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    ____ ~ \"______\",\n    ____ & ______ ~ \"______\",\n    ____ ~ \"______\"), \n  age_group = _________(age_group)) ","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-5","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":6,"code":"opinion_data <- opinion_data |> \n  mutate(age_group = case_when(\n    age < 40 ~ \"Young\",\n    age >= 40 & age <= 59 ~ \"Middle-Aged\",\n    age >= 60 ~ \"Senior\"), \n  age_group = as.factor(age_group)) # this is converting the new column to a factor","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-6","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":7,"code":"# Your code here\n\nlevels(opinion_data$ideology) # if your code worked, you should see the new levels with this line of code","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-7","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":8,"code":"opinion_data <- opinion_data |> \n  mutate(ideology = fct_expand(______, \"______\"))","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-8","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":9,"code":"opinion_data <- opinion_data |> \n  mutate(ideology = fct_expand(ideology, \"Libertarian\"))","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-9","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":10,"code":"# Your code here\n\nlevels(opinion_data$race) # if your code worked, the recoded levels should appear here","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-10","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":11,"code":"opinion_data <- opinion_data |> \n  mutate(race = ________(race, \"______\" = \"______\"))```","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-11","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":12,"code":"opinion_data <- opinion_data |> \n  mutate(race = fct_recode(race, \"Latino\" = \"Hispanic\"))","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-12","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":13,"code":"# Your code here\n\nlevels(opinion_data$religion) # Only two levels should appear if done correctly","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-13","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":14,"code":"\nopinion_data <- opinion_data |>\n  mutate(religion = _______(_______, \n                                  Christian = c(\"Catholic\", \"Protestant\"),\n                                  NonChristian = c(\"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\")))","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-14","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":15,"code":"opinion_data <- opinion_data |> \n  mutate(religion = fct_collapse(religion, \n                                  Christian = c(\"Catholic\", \"Protestant\"),\n                                  NonChristian = c(\"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\")))","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-15","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":16,"code":"count(opinion_data, party)","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-16","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":17,"code":"# Your code here\n\ncount(opinion_data, party) # the table should appear in a different order if successfully coded","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-17","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":18,"code":"# To reorder:\nopinion_data <- opinion_data |> \n   mutate(party = fct_infreq(_____))\n\n# To create a frequency table:\ncount(opinion_data, ______)","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-18","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}},{"id":19,"code":"opinion_data <- opinion_data |> \n  mutate(party = fct_infreq(party))\n\n# Create frequency table\ncount(opinion_data, party)","options":{"editor-quick-suggestions":"false","output":"true","autorun":"false","out-height":"","context":"interactive","editor-max-height":"","fig-height":5,"warning":"true","out-width":"700px","fig-cap":"","message":"true","dpi":72,"results":"markup","label":"unnamed-chunk-19","classes":"","comment":"","fig-width":7,"editor-font-scale":1,"read-only":"false"}}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"load-packages","fig-width":7,"classes":"","autorun":"true","message":"true","results":"markup","context":"setup","output":"true","editor-font-scale":1},"code":"    # context setup prevents this from being shown in the website\n\nlibrary(tidyverse)\n\nopinion_data <- tibble(\n  age = c(25, 45, 30, 60, 35, 50, 40, 55, 28, 58, 48, 38, 32, 52, 42, 29), \n  ideology = factor(c(\"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Moderate\", \"Conservative\", \"Liberal\", \"Conservative\", \"Moderate\", \"Liberal\")), \n  race = factor(c(\"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"White\", \"Black\", \"Hispanic\", \"Black\")), # race for new entry\n  gender = factor(c(\"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Male\", \"Male\", \"Female\", \"Male\", \"Female\", \"Male\", \"Male\", \"Female\", \"Female\", \"Female\")), \n  party = factor(c(\"Strong Republican\", \"Weak Republican\", \"Strong Democrat\", \"Strong Republican\", \"Weak Republican\", \"Weak Democrat\", \"Weak Republican\", \"Strong Democrat\", \"Weak Democrat\", \"Strong Republican\", \"Strong Republican\", \"Strong Republican\", \"Weak Democrat\", \"Strong Democrat\", \"Weak Republican\", \"Very Strong Democrat\"), levels = c(\"Strong Republican\", \"Weak Republican\", \"Very Strong Democrat\", \"Strong Democrat\", \"Weak Democrat\")),\n  religion = factor(c(\"Catholic\", \"Protestant\", \"Atheist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Catholic\", \"Protestant\", \"Atheist\", \"Hindu\", \"Jewish\", \"Buddhist\", \"Protestant\")), \n  voted = c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE) \n)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)"},{"id":2,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-2","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"opinion_data"},{"id":3,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-3","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"# Your code here\n"},{"id":4,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-4","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"#Copy and paste the code here \n"},{"id":5,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-5","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"# Your code here\n"},{"id":6,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-6","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"#Copy and paste the code here \n"},{"id":7,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-7","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"# Your code here\n\n"},{"id":8,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-8","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"#Copy and paste the code here \n"},{"id":9,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-9","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"# Your code here\n"},{"id":10,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-10","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"#Copy and paste the code here \n"},{"id":11,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-11","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"count(opinion_data, party)"},{"id":12,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-12","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"# Your code here\n\n "},{"id":13,"options":{"comment":"","editor-max-height":"","out-height":"","read-only":"false","fig-height":5,"out-width":"700px","dpi":72,"editor-quick-suggestions":"false","fig-cap":"","warning":"true","label":"unnamed-chunk-13","fig-width":7,"classes":"","autorun":"false","message":"true","results":"markup","context":"interactive","output":"true","editor-font-scale":1},"code":"#Copy and paste the code here \n"}];
 
 </script>
 <script type="module">
@@ -1468,18 +1502,21 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Create a new variable called <code>age_group</code> that groups the “age” variable into three categories: “Young” (under 40), “Middle-Aged” (40-59), and “Senior” (60 and above). Make this new variable a factor variable.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Check your work
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>To check your work, run the following code in the code chunk below.</p>
+<p><code>str(opinion_data$age_group)</code></p>
+<p>This code will run successfully and indicate a factor variable was created if your code is right!</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
@@ -1497,13 +1534,35 @@ Hint
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>You might need to categorize the <code>age</code> data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    ____ <span class="sc">~</span> <span class="st">"______"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    ____ <span class="sc">&amp;</span> ______ <span class="sc">~</span> <span class="st">"______"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    ____ <span class="sc">~</span> <span class="st">"______"</span>), </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">age_group =</span> <span class="fu">_________</span>(age_group)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1512,10 +1571,16 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    age <span class="sc">&lt;</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">"Young"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    age <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">&amp;</span> age <span class="sc">&lt;=</span> <span class="dv">59</span> <span class="sc">~</span> <span class="st">"Middle-Aged"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    age <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"Senior"</span>), </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">age_group =</span> <span class="fu">as.factor</span>(age_group)) <span class="co"># this is converting the new column to a factor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1523,64 +1588,44 @@ Answer
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
 <p>Use the <code>fct_expand()</code> function to add one new level, “Libertarian”, to the “ideology” factor variable.</p>
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the <code>fct_expand()</code> function on the <code>ideology</code> column of <code>opinion_data</code>. Don’t forget to assign the new levels you want to add.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Check your work
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-8"></div>
+<p>To check your work, run the following code in the code chunk below.</p>
+<p><code>levels(opinion_data$ideology)</code></p>
+<p>If your code worked, you should see the new levels with this line of code</p>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-9"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the <code>fct_expand()</code> function on the <code>ideology</code> column of <code>opinion_data</code>. Don’t forget to assign the new levels you want to add.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Recategorize the “race” factor variable, replacing “Hispanic” with “Latino” using the <code>fct_recode()</code> function.</p>
-<div id="qwebr-insertion-location-10"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1593,29 +1638,15 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the fct_recode() function with the ‘race’ column and specify that “Latino” should replace “Hispanic”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ideology =</span> <span class="fu">fct_expand</span>(______, <span class="st">"______"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1624,19 +1655,41 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ideology =</span> <span class="fu">fct_expand</span>(ideology, <span class="st">"Libertarian"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Reclassify the “religion” variable into two categories: “Christian” and “Non-Christian” by creating a new factor variable.</p>
-<div id="qwebr-insertion-location-13"></div>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<p>Recategorize the “race” factor variable, replacing “Hispanic” with “Latino” using the <code>fct_recode()</code> function.</p>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your work
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To check your work, run the following code in the code chunk below.</p>
+<p><code>levels(opinion_data$race)</code></p>
+<p>If your code worked, the recoded levels should appear here.</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1649,7 +1702,7 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You might need to manually recode the ‘religion’ levels into ‘Christian’ and ‘NonChristian’. Think about using a function that allows specifying conditions for recoding.</p>
+<p>Use the fct_recode() function with the ‘race’ column and specify that “Latino” should replace “Hispanic”.</p>
 </div>
 </div>
 </div>
@@ -1665,8 +1718,10 @@ Hint
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-14"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">race =</span> <span class="fu">________</span>(race, <span class="st">"______"</span> <span class="ot">=</span> <span class="st">"______"</span>))<span class="st">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1682,33 +1737,36 @@ Answer
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-15"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">race =</span> <span class="fu">fct_recode</span>(race, <span class="st">"Latino"</span> <span class="ot">=</span> <span class="st">"Hispanic"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Currently a frequency table of the variable ‘party’ would look like this:</p>
-<div id="qwebr-insertion-location-16"></div>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Reclassify the “religion” variable into two categories: “Christian” and “Non-Christian” by creating a new factor variable.</p>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Reorder the levels of the “party” factor variable based on their frequencies and then create a frequency table to view the number of respondents associated with each party.</p>
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Check your work
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the fct_infreq() function to reorder the levels of the ‘party’ variable in ‘opinion_data’ based on their frequencies.</p>
+<p>To check your work, run the following code in the code chunk below.</p>
+<p><code>levels(opinion_data$religion)</code></p>
+<p>Only two levels should appear if done correctly.</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
@@ -1724,13 +1782,33 @@ Hint
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>You might need to manually recode the ‘religion’ levels into ‘Christian’ and ‘NonChristian’. Think about using a function that allows specifying conditions for recoding.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">religion =</span> <span class="fu">_______</span>(_______, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">Christian =</span> <span class="fu">c</span>(<span class="st">"Catholic"</span>, <span class="st">"Protestant"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">NonChristian =</span> <span class="fu">c</span>(<span class="st">"Atheist"</span>, <span class="st">"Hindu"</span>, <span class="st">"Jewish"</span>, <span class="st">"Buddhist"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1739,10 +1817,104 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-19"></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">religion =</span> <span class="fu">fct_collapse</span>(religion, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">Christian =</span> <span class="fu">c</span>(<span class="st">"Catholic"</span>, <span class="st">"Protestant"</span>),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">NonChristian =</span> <span class="fu">c</span>(<span class="st">"Atheist"</span>, <span class="st">"Hindu"</span>, <span class="st">"Jewish"</span>, <span class="st">"Buddhist"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Currently a frequency table of the variable ‘party’ would look like this:</p>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Reorder the levels of the “party” factor variable based on their frequencies and then create a frequency table to view the number of respondents associated with each party.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your work
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To check your work, run the following code in the code chunk below.</p>
+<p><code>count(opinion_data, party)</code></p>
+<p>The table should appear in a different order if successfully coded.</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the fct_infreq() function to reorder the levels of the ‘party’ variable in ‘opinion_data’ based on their frequencies.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To reorder:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">fct_infreq</span>(_____))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># To create a frequency table:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">count</span>(opinion_data, ______)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>opinion_data <span class="ot">&lt;-</span> opinion_data <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">fct_infreq</span>(party))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create frequency table</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">count</span>(opinion_data, party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>

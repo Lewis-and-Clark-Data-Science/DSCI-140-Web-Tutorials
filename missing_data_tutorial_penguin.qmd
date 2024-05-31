@@ -31,11 +31,11 @@ In this tutorial, you will learn how to deal with missing data using the `naniar
 
 Let's start by looking at some of our key functions which we'll use in this exercise.
 
-1. `na_if()`: Converts values to `NA`. Can be combined with the `mutate()` function to create or replace a column with `NA` values. 
+1.  `na_if()`: Converts values to `NA`. Can be combined with the `mutate()` function to create or replace a column with `NA` values.
 
 Syntax: `na_if(vector, value to replace)`
 
-2. `replace_na()`: Changes an `NA` value to a given value. 
+2.  `replace_na()`: Changes an `NA` value to a given value.
 
 Syntax: `replace_na(vector, value)`
 
@@ -71,39 +71,61 @@ Here are some practice exercises. You can click for hints and the answer for eac
 
 ### Exercise 1
 
-First, let's deal with the "X" values in our data set. We assume that these are missing values, so we want to replace the "X" with an "NA" so that we can use the `naniar` package functions on those values. 
+First, let's deal with the "X" values in our data set. We assume that these are missing values, so we want to replace the "X" with an "NA" so that we can use the `naniar` package functions on those values.
 
-Use the `na_if()` function to replace all the X's with `NA` values. 
+Use the `na_if()` function to replace all the X's with `NA` values.
 
-Rewrite your data frame `penguin` so that when we pull up `penguin` in the future, all the "X" values will be gone. 
+Rewrite your data frame `penguin` so that when we pull up `penguin` in the future, all the "X" values will be gone.
 
 ```{webr-r}
 #Your code here
 
-penguin
-#If your code works, this should display your new data set with NA instead of X. 
+
+
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-Use the pipe function to specify the `penguin` data set and then use the `mutate()` function to mutate the column `eye_color`. 
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`penguin`
+
+If your code works, this should display your new data set with NA instead of X. 
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
-```{webr-r}
+
+Use the pipe function to specify the `penguin` data set and then use the `mutate()` function to mutate the column `eye_color`.
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{r}
+#| eval: false
 penguin |> mutate(____=na_if(_____, '____'))
 ```
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
-Once you've mutated the `eye_color` column, you need to rewrite the `penguin` data frame with that new column. Use the variable assignment function (` <- `) to do this. 
+
+Once you've mutated the `eye_color` column, you need to rewrite the `penguin` data frame with that new column. Use the variable assignment function (`<-`) to do this.
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
-```{webr-r}
+
+```{r}
+#| eval: false
 penguin <- penguin |> mutate(eye_color=na_if(eye_color, 'X'))
 ```
 :::
@@ -123,7 +145,8 @@ Now, let's find where we have `NA` values in our code. Use the command `miss_var
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 miss_var_summary(________)
 
 ```
@@ -132,7 +155,8 @@ miss_var_summary(________)
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 miss_var_summary(penguin)
 
 ```
@@ -168,7 +192,8 @@ Use the `select()` function to choose the variables you want to focus on and use
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin |> 
   select(___, ____) |>
   group_by(_____) |>
@@ -180,7 +205,8 @@ penguin |>
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin |> 
   select(year, eye_color) |>
   group_by(year) |>
@@ -208,7 +234,8 @@ Recall the syntax `gg_miss_var(df, facet=variable)` where `variable` is your cho
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 gg_miss_var(penguin, facet=____)
 ```
 :::
@@ -216,7 +243,8 @@ gg_miss_var(penguin, facet=____)
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 gg_miss_var(penguin, facet=island)
 ```
 :::
@@ -248,7 +276,8 @@ Use the pipe function (`|>`) with the `arrange()` function to sort the data by y
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin |>
   arrange(____) |>
   _______(_____)
@@ -258,7 +287,8 @@ penguin |>
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin |>
   arrange(year) |>
   vis_miss()
@@ -279,15 +309,16 @@ Finally, let's imagine that you don't want any `NA` values in the `body_mass` co
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Use the `mean()` function to find the mean of `body_mass`. 
+Use the `mean()` function to find the mean of `body_mass`.
 
-Use the pipe to specify the penguin data and the `mutate()` function to change the `body_mass()` column and the `replace_na()` function to convert the NA values to the mean. 
+Use the pipe to specify the penguin data and the `mutate()` function to change the `body_mass()` column and the `replace_na()` function to convert the NA values to the mean.
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin |>
   mutate(____ = replace_na(_____, mean(_____, na.rm=TRUE)))
 ```
@@ -296,10 +327,10 @@ penguin |>
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 penguin |> mutate(body_mass=replace_na(body_mass, mean(body_mass, na.rm=TRUE)))
 ```
 :::
-
 
 Congratulations, you finished this tutorial!

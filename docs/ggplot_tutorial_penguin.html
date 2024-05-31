@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -271,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"read-only":"false","fig-width":7,"context":"setup","fig-height":5,"message":"true","classes":"","comment":"","autorun":"true","fig-cap":"","label":"input data","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\nlibrary(naniar)\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'bill_length' = penguins$bill_length_mm, 'bill_depth' = penguins$bill_depth_mm, 'flipper_length'=penguins$flipper_length_mm, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-2","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin","id":2},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-3","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here\n\n\nn_miss(penguin_clean) #If your code works, this should print 0. ","id":3},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-4","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean<- na.omit(_____)","id":4},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-5","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean<- na.omit(penguin)","id":5},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-6","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here \n","id":6},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-7","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"\nggplot(_______, aes(x=____, y=____))+\n  geom_ ______()","id":7},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-8","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()\n\n#OR you could use the pipe to start with penguin_clean and then create your plot: \n#penguin_clean |> ggplot(aes(x=flipper_length, y=body_mass))+ geom_point()","id":8},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-9","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here \n","id":9},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-10","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"\nggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=_____, se=_____)","id":10},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-11","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"\nggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=\"lm\", se=FALSE)\n\n#OR you could use the pipe function!","id":11},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-12","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here \n ","id":12},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-13","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"facet_wrap(~_____)","id":13},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-14","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"ggplot(penguin_clean, aes(x=flipper_length, y=body_mass))+\n  geom_point()+ \n  geom_smooth(method=\"lm\", se=FALSE)+ \n  facet_wrap(~species)\n\n#OR you could use the pipe!","id":14},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-15","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here\n","id":15},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-16","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean|>\n  ggplot(aes(x=_____))+\n    ______","id":16},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-17","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean|>\n  ggplot(aes(x=species))+\n    geom_bar()","id":17},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-18","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here\n\n\n#If your code works, you should see a similar bar graph to Part A, but each bar will have different colors based on the island where each species lives. \n#You should notice that two of the species live on only 1 island (not all 3). ","id":18},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-19","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=______))+\n  geom_bar()","id":19},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-20","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=island))+\n  geom_bar()","id":20},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-21","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here\n","id":21},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-22","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=island))+\n  geom_bar(position=\"______\")","id":22},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-23","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean|>\n  ggplot(aes(x=species, fill=island))+\n  geom_bar(position=\"dodge\")","id":23},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-24","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here\n\n\n#If your code works, you should see the mean bill length of each penguin species. ","id":24},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-25","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean |> \ngroup_by(_____)|> \n  summarize(mean_bill=__________)","id":25},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-26","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean |> \ngroup_by(species)|> \n  summarize(mean_bill=mean(bill_length))","id":26},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-27","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here\n","id":27},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-28","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=____, y=_____)) +\n  geom_col()","id":28},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-29","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=species, y=mean_bill)) +\n  geom_col()","id":29},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-30","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here\n","id":30},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-31","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_bill=mean(bill_length)) |> \n  ggplot(aes(x=fct_reorder(_____, _____), y=mean_bill))+\n  geom_col()","id":31},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-32","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"penguin_clean |> \n  group_by(species)|> \n  summarize(mean_mass=mean(body_mass))|>\n  ggplot(aes(x=fct_reorder(species, mean_mass), y=mean_mass))+\n  geom_col()","id":32},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-33","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"# Your code here \n","id":33},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-34","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"ggplot(_______, aes(x=______))+\n  _________\n\n#OR you can use the pipe: \n\n_____ |> \n  ggplot(aes(x=_____))+ \n    ________","id":34},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-35","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"ggplot(penguin_clean, aes(x=flipper_length))+\n  geom_density()\n\n#OR you can use the pipe: \n\n#penguin_clean|>\n#ggplot( aes(x=flipper_length))+\n#  geom_density()","id":35},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-36","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"# Your code here\n","id":36},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-37","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"\nggplot(penguin_clean, aes(x=flipper_length, color=______))+\n  geom_density()","id":37},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-38","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"\nggplot(penguin_clean, aes(x=flipper_length, color=island))+\n  geom_density()","id":38},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-39","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here: \n\n\nsummary_data #If your code is successful, this will print the mean flipper length for each island. ","id":39},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-40","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"summary_data <- ________ |> \n  group_by(_____)|> \n  summarize(_________)","id":40},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-41","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"summary_data <- penguin_clean |> \n  group_by(______)|> \n  summarize(mean_flipper = mean(______))","id":41},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-42","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"summary_data<- penguin_clean|> \n  group_by(island)|>\n  summarize(mean_flipper=mean(flipper_length))","id":42},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-43","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"#Your code here \n\n\n#Your final plot should include 3 density lines and 3 vertical lines indicating the mean for each island. ","id":43},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-44","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"summary_data<- penguin_clean|> \n  group_by(island)|>\n  summarize(mean_flipper=mean(flipper_length))\n\nggplot(penguin_clean, aes(x=flipper_length, color=island))+\n  geom_density()+\n  geom_vline(data=_______, aes(xintercept=_______, color=______))","id":44},{"options":{"read-only":"false","fig-width":7,"context":"interactive","fig-height":5,"message":"true","classes":"","comment":"","autorun":"false","fig-cap":"","label":"unnamed-chunk-45","out-width":"700px","results":"markup","editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"output":"true","warning":"true","out-height":"","editor-max-height":""},"code":"summary_data<- penguin_clean|> \n  group_by(island)|>\n  summarize(mean_flipper=mean(flipper_length))\n\nggplot(penguin_clean, aes(x=flipper_length, color=island))+\n  geom_density()+\n  geom_vline(data=summary_data, aes(xintercept=mean_flipper, color=island))","id":45}];
+globalThis.qwebrCellDetails = [{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"setup","label":"input data","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"true","fig-width":7,"out-height":""},"code":"\nlibrary(tidyverse)\nlibrary(\"palmerpenguins\")\nlibrary(naniar)\n\npenguin<- tibble('species'=penguins$species, 'island'=penguins$island, 'bill_length' = penguins$bill_length_mm, 'bill_depth' = penguins$bill_depth_mm, 'flipper_length'=penguins$flipper_length_mm, 'body_mass'=penguins$body_mass_g, 'year'=penguins$year, 'sex'=penguins$sex)\n\nknitr::opts_chunk$set(error = TRUE)\nknitr::opts_chunk$set(echo = TRUE)","id":1},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-2","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"penguin","id":2},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-3","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here\n","id":3},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-4","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Copy and paste the code here \n","id":4},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-5","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here \n","id":5},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-6","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here \n","id":6},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-7","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here \n ","id":7},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-8","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here\n","id":8},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-9","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here\n\n\n#If your code works, you should see a similar bar graph to Part A, but each bar will have different colors based on the island where each species lives. \n#You should notice that two of the species live on only 1 island (not all 3). ","id":9},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-10","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here\n","id":10},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-11","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here\n\n\n#If your code works, you should see the mean bill length of each penguin species. ","id":11},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-12","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here\n","id":12},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-13","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here\n","id":13},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-14","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"# Your code here \n","id":14},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-15","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"# Your code here\n","id":15},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-16","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here: \n\n\n ","id":16},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-17","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Copy and paste the code here \n","id":17},{"options":{"warning":"true","classes":"","dpi":72,"comment":"","context":"interactive","label":"unnamed-chunk-18","editor-max-height":"","output":"true","message":"true","results":"markup","fig-cap":"","editor-quick-suggestions":"false","fig-height":5,"out-width":"700px","read-only":"false","editor-font-scale":1,"autorun":"false","fig-width":7,"out-height":""},"code":"#Your code here \n\n\n#Your final plot should include 3 density lines and 3 vertical lines indicating the mean for each island. ","id":18}];
 
 </script>
 <script type="module">
@@ -1510,8 +1544,28 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>First, let’s clean the data and remove any rows with missing values. Create a new dataset called <code>penguin_clean</code> which doesn’t contain NA values.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your work
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To check your work, run the following code in the code chunk below.</p>
+<p><code>n_miss(penguin_clean)</code></p>
+<p>If your code works, this should print 0.</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1520,15 +1574,16 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="ot">&lt;-</span> <span class="fu">na.omit</span>(_____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1537,10 +1592,11 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1548,24 +1604,8 @@ Answer
 <section id="part-b" class="level4">
 <h4 class="anchored" data-anchor-id="part-b">Part B</h4>
 <p>Now use your clean data to construct a scatter plot with <code>flipper_length</code> as the explanatory variable and <code>body_mass</code> as the outcome variable.</p>
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>You’ll need to use ggplot, specify the data, the aesthetics (which includes the x and y variables) and then add a geometry to your plot to create points.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1578,36 +1618,12 @@ Hint
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-7"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>You’ll need to use ggplot, specify the data, the aesthetics (which includes the x and y variables) and then add a geometry to your plot to create points.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="part-c" class="level4">
-<h4 class="anchored" data-anchor-id="part-c">Part C</h4>
-<p>Now, add a line of best fit to your plot.</p>
-<div id="qwebr-insertion-location-9"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1616,12 +1632,43 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(_______, <span class="fu">aes</span>(<span class="at">x=</span>____, <span class="at">y=</span>____))<span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  geom_ <span class="fu">______</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Add one more piece of geometry to your code from part B to your plot that creates a line of best fit.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">y=</span>body_mass))<span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#OR you could use the pipe to start with penguin_clean and then create your plot: </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#penguin_clean |&gt; ggplot(aes(x=flipper_length, y=body_mass))+ geom_point()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-c" class="level4">
+<h4 class="anchored" data-anchor-id="part-c">Part C</h4>
+<p>Now, add a line of best fit to your plot.</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1634,36 +1681,12 @@ Hint
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-10"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Add one more piece of geometry to your code from part B to your plot that creates a line of best fit.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="part-d" class="level4">
-<h4 class="anchored" data-anchor-id="part-d">Part D</h4>
-<p>Finally, let’s separate the plot into 3 different plots, one for each species.</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1672,12 +1695,44 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">y=</span>body_mass))<span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>_____, <span class="at">se=</span>_____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the function <code>facet_wrap()</code> and be sure to define your facet. Add this as a geometry to your code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">y=</span>body_mass))<span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">FALSE</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#OR you could use the pipe function!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-d" class="level4">
+<h4 class="anchored" data-anchor-id="part-d">Part D</h4>
+<p>Finally, let’s separate the plot into 3 different plots, one for each species.</p>
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1690,13 +1745,30 @@ Hint
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-13"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the function <code>facet_wrap()</code> and be sure to define your facet. Add this as a geometry to your code.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">facet_wrap</span>(<span class="sc">~</span>_____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1705,10 +1777,16 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-14"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">y=</span>body_mass))<span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#OR you could use the pipe!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1720,25 +1798,8 @@ Answer
 <section id="part-a-1" class="level4">
 <h4 class="anchored" data-anchor-id="part-a-1">Part A</h4>
 <p>First, create a bar graph that shows the number of penguins in each species.</p>
-<div id="qwebr-insertion-location-15"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><code>geom_bar()</code> is used when the data still needs to be aggregated.</p>
-<p><code>geom_col()</code> is used when the data is already aggregated.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1751,36 +1812,13 @@ Hint
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><code>geom_bar()</code> is used when the data still needs to be aggregated.</p>
+<p><code>geom_col()</code> is used when the data is already aggregated.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="part-b-1" class="level4">
-<h4 class="anchored" data-anchor-id="part-b-1">Part B</h4>
-<p>Next, display which island each species is on by adjusting the fill of the graph.</p>
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1789,12 +1827,42 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>_____))<span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    ______</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This adjustment will go in the aesthetics section of your ggplot. Choose how you would like to fill the bars by using <code>fill = ____</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species))<span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-b-1" class="level4">
+<h4 class="anchored" data-anchor-id="part-b-1">Part B</h4>
+<p>Next, display which island each species is on by adjusting the fill of the graph.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1807,36 +1875,12 @@ Hint
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-19"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This adjustment will go in the aesthetics section of your ggplot. Choose how you would like to fill the bars by using <code>fill = ____</code>.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-20"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="part-c-1" class="level4">
-<h4 class="anchored" data-anchor-id="part-c-1">Part C</h4>
-<p>Now that the bars are filled in by island, let’s adjust them again so that they don’t stack on top of each other. Instead, place all the bars next to each other.</p>
-<div id="qwebr-insertion-location-21"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1845,12 +1889,42 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>______))<span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Adjust the <code>position</code> of bars in the <code>geom_bar()</code> geometry.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>island))<span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-c-1" class="level4">
+<h4 class="anchored" data-anchor-id="part-c-1">Part C</h4>
+<p>Now that the bars are filled in by island, let’s adjust them again so that they don’t stack on top of each other. Instead, place all the bars next to each other.</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1863,13 +1937,32 @@ Hint
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-22"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Adjust the <code>position</code> of bars in the <code>geom_bar()</code> geometry.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>island))<span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"______"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1878,10 +1971,13 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-23"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>penguin_clean<span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>island))<span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1893,24 +1989,8 @@ Answer
 <section id="part-a-2" class="level4">
 <h4 class="anchored" data-anchor-id="part-a-2">Part A</h4>
 <p>First, we need to make our data tiny so that we can then input it into a plot. So, start by using the <code>summarize()</code> function to display the mean bill length of penguins by species.</p>
-<div id="qwebr-insertion-location-24"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>In addition to the <code>summarize()</code> function, you’ll need to also use the <code>group_by()</code> function to group by species. Use the pipe to string both of these functions together.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1923,36 +2003,12 @@ Hint
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-25"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>In addition to the <code>summarize()</code> function, you’ll need to also use the <code>group_by()</code> function to group by species. Use the pipe to string both of these functions together.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-26"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="part-b-2" class="level4">
-<h4 class="anchored" data-anchor-id="part-b-2">Part B</h4>
-<p>Now that the data is tidy and tiny, we can plot it. Add to your code from part A and create a bar graph.</p>
-<div id="qwebr-insertion-location-27"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1961,13 +2017,42 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>penguin_clean <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(_____)<span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_bill=</span>__________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Recall: <code>geom_bar()</code> is used when the data still needs to be aggregated.</p>
-<p><code>geom_col()</code> is used when the data is already aggregated.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>penguin_clean <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(species)<span class="sc">|&gt;</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_bill=</span><span class="fu">mean</span>(bill_length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-b-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-b-2">Part B</h4>
+<p>Now that the data is tidy and tiny, we can plot it. Add to your code from part A and create a bar graph.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1980,37 +2065,13 @@ Hint
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-28"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Recall: <code>geom_bar()</code> is used when the data still needs to be aggregated.</p>
+<p><code>geom_col()</code> is used when the data is already aggregated.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-29"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="part-c-2" class="level4">
-<h4 class="anchored" data-anchor-id="part-c-2">Part C</h4>
-<p>Finally, we want to order the columns in the bar graph from smallest to largest. To do this, we’ll use <code>fct_reorder()</code>. Find where it goes in your current code. Hint: You will not have to write a new line.</p>
-<p>Feel free to also add other features to your graph, like a title, colored bars, etc!</p>
-<div id="qwebr-insertion-location-30"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2019,12 +2080,47 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>penguin_clean <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species)<span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_bill=</span><span class="fu">mean</span>(bill_length)) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>____, <span class="at">y=</span>_____)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>What are you trying to reorder on the graph? Are you trying to reorder the x variable or y variable?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>penguin_clean <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species)<span class="sc">|&gt;</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_bill=</span><span class="fu">mean</span>(bill_length)) <span class="sc">|&gt;</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>mean_bill)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-c-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-c-2">Part C</h4>
+<p>Finally, we want to order the columns in the bar graph from smallest to largest. To do this, we’ll use <code>fct_reorder()</code>. Find where it goes in your current code. Hint: You will not have to write a new line.</p>
+<p>Feel free to also add other features to your graph, like a title, colored bars, etc!</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2037,13 +2133,34 @@ Hint
 </div>
 <div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-31"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>What are you trying to reorder on the graph? Are you trying to reorder the x variable or y variable?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>penguin_clean <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species)<span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_bill=</span><span class="fu">mean</span>(bill_length)) <span class="sc">|&gt;</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">fct_reorder</span>(_____, _____), <span class="at">y=</span>mean_bill))<span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2052,10 +2169,15 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-32"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>penguin_clean <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species)<span class="sc">|&gt;</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass=</span><span class="fu">mean</span>(body_mass))<span class="sc">|&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">fct_reorder</span>(species, mean_mass), <span class="at">y=</span>mean_mass))<span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -2067,24 +2189,8 @@ Answer
 <section id="part-a-3" class="level4">
 <h4 class="anchored" data-anchor-id="part-a-3">Part A</h4>
 <p>First, create a density curve of penguin flipper length.</p>
-<div id="qwebr-insertion-location-33"></div>
+<div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the geometry command <code>geom_density()</code>.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2097,36 +2203,12 @@ Hint
 </div>
 <div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-34"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use the geometry command <code>geom_density()</code>.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-35"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-</section>
-<section id="part-b-3" class="level4">
-<h4 class="anchored" data-anchor-id="part-b-3">Part B</h4>
-<p>Next, separate out your density curve and create one density curve for each species. Hint: You will not need to add a whole new line of code to do this, just add a command into your existing code.</p>
-<div id="qwebr-insertion-location-36"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2135,12 +2217,52 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(_______, <span class="fu">aes</span>(<span class="at">x=</span>______))<span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  _________</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#OR you can use the pipe: </span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>_____ <span class="sc">|&gt;</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>_____))<span class="sc">+</span> </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    ________</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To separate the plot by island, you will need to adjust the color in the aesthetics section of <code>ggplot</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length))<span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#OR you can use the pipe: </span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">#penguin_clean|&gt;</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">#ggplot( aes(x=flipper_length))+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  geom_density()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-b-3" class="level4">
+<h4 class="anchored" data-anchor-id="part-b-3">Part B</h4>
+<p>Next, separate out your density curve and create one density curve for each species. Hint: You will not need to add a whole new line of code to do this, just add a command into your existing code.</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2153,13 +2275,31 @@ Hint
 </div>
 <div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-37"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>To separate the plot by island, you will need to adjust the color in the aesthetics section of <code>ggplot</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">color=</span>______))<span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2168,10 +2308,12 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-38"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">color=</span>island))<span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -2180,37 +2322,24 @@ Answer
 <h4 class="anchored" data-anchor-id="part-c-3">Part C</h4>
 <p>Next, we’ll add a line displaying the mean flipper length for each island. To do this, we need to first create tidy, tiny data which displays the mean flipper lengths.</p>
 <p>Create a new variable called <code>summary_data</code> which displays a chart with the mean flipper length for each island.</p>
-<div id="qwebr-insertion-location-39"></div>
+<div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>You’ll need to use the following functions in your code: <code>group_by()</code>, <code>summarize()</code>, and <code>mean()</code>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Check your work
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-40"></div>
+<p>To check your work, run the following code in the code chunk below.</p>
+<p><code>summary_data</code></p>
+<p>If your code is successful, this will print the mean flipper length for each island.</p>
+<div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -2227,35 +2356,30 @@ Hint
 </div>
 <div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-41"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>You’ll need to use the following functions in your code: <code>group_by()</code>, <code>summarize()</code>, and <code>mean()</code>.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer
+Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-42"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> ________ <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(_____)<span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(_________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="part-c-4" class="level4">
-<h4 class="anchored" data-anchor-id="part-c-4">Part C</h4>
-<p>Finally let’s add vertical lines to the graph indicating the mean flipper length for each island.</p>
-<p>To do this, use the geometry <code>geom_vline()</code>. Use your <code>summary_data()</code> to specify the conditions in <code>geom_vline()</code>.</p>
-<div id="qwebr-insertion-location-43"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2268,27 +2392,41 @@ Hint
 </div>
 <div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>First define your <code>summary_data</code> and <code>mean_flipper</code>, like you did in Part B.</p>
-<p>Then create the ggplot, like you did in Part A. Add a <code>geom_vline()</code> to the ggplot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> penguin_clean <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(______)<span class="sc">|&gt;</span> </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_flipper =</span> <span class="fu">mean</span>(______))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The syntax for <code>geom_vline()</code> is <code>geom_vline(data=____, aes(xintercept=_____, color=_____))</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>summary_data<span class="ot">&lt;-</span> penguin_clean<span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island)<span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_flipper=</span><span class="fu">mean</span>(flipper_length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="part-c-4" class="level4">
+<h4 class="anchored" data-anchor-id="part-c-4">Part C</h4>
+<p>Finally let’s add vertical lines to the graph indicating the mean flipper length for each island.</p>
+<p>To do this, use the geometry <code>geom_vline()</code>. Use your <code>summary_data()</code> to specify the conditions in <code>geom_vline()</code>.</p>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2301,13 +2439,53 @@ Hint
 </div>
 <div id="callout-42" class="callout-42-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-44"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>First define your <code>summary_data</code> and <code>mean_flipper</code>, like you did in Part B.</p>
+<p>Then create the ggplot, like you did in Part A. Add a <code>geom_vline()</code> to the ggplot.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The syntax for <code>geom_vline()</code> is <code>geom_vline(data=____, aes(xintercept=_____, color=_____))</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>summary_data<span class="ot">&lt;-</span> penguin_clean<span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island)<span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_flipper=</span><span class="fu">mean</span>(flipper_length))</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">color=</span>island))<span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">data=</span>_______, <span class="fu">aes</span>(<span class="at">xintercept=</span>_______, <span class="at">color=</span>______))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2316,10 +2494,17 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-45"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>summary_data<span class="ot">&lt;-</span> penguin_clean<span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island)<span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_flipper=</span><span class="fu">mean</span>(flipper_length))</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguin_clean, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length, <span class="at">color=</span>island))<span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">data=</span>summary_data, <span class="fu">aes</span>(<span class="at">xintercept=</span>mean_flipper, <span class="at">color=</span>island))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>

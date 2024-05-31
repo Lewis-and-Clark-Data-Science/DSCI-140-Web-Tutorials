@@ -71,21 +71,37 @@ Create a new variable called `age_group` that groups the "age" variable into thr
 ```{webr-r}
 # Your code here
 
-str(opinion_data$age_group) # this code will run successfully and indicate a factor variable was created if your code is right!
+
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`str(opinion_data$age_group)`
+
+This code will run successfully and indicate a factor variable was created if your code is right!
 
 ```{webr-r}
-# Hint: You might need to categorize the 'age' data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.
+#Copy and paste the code here 
+
+
 ```
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+You might need to categorize the `age` data first before you can use it as a factor. Consider creating a new column with the age groups based on conditions.
+
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(age_group = case_when(
     ____ ~ "______",
@@ -98,7 +114,8 @@ opinion_data <- opinion_data |>
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(age_group = case_when(
     age < 40 ~ "Young",
@@ -115,8 +132,24 @@ Use the `fct_expand()` function to add one new level, "Libertarian", to the "ide
 ```{webr-r}
 # Your code here
 
-levels(opinion_data$ideology) # if your code worked, you should see the new levels with this line of code
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`levels(opinion_data$ideology)`
+
+If your code worked, you should see the new levels with this line of code
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -127,7 +160,8 @@ Use the `fct_expand()` function on the `ideology` column of `opinion_data`. Don'
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(ideology = fct_expand(______, "______"))
 ```
@@ -136,7 +170,8 @@ opinion_data <- opinion_data |>
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(ideology = fct_expand(ideology, "Libertarian"))
 ```
@@ -149,9 +184,25 @@ Recategorize the "race" factor variable, replacing "Hispanic" with "Latino" usin
 ```{webr-r}
 # Your code here
 
-levels(opinion_data$race) # if your code worked, the recoded levels should appear here
+
 
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`levels(opinion_data$race)`
+
+If your code worked, the recoded levels should appear here.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -162,7 +213,8 @@ Use the fct_recode() function with the 'race' column and specify that "Latino" s
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(race = ________(race, "______" = "______"))```
 ```
@@ -171,7 +223,8 @@ opinion_data <- opinion_data |>
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(race = fct_recode(race, "Latino" = "Hispanic"))
 ```
@@ -184,8 +237,24 @@ Reclassify the "religion" variable into two categories: "Christian" and "Non-Chr
 ```{webr-r}
 # Your code here
 
-levels(opinion_data$religion) # Only two levels should appear if done correctly
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`levels(opinion_data$religion)`
+
+Only two levels should appear if done correctly.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -196,7 +265,8 @@ You might need to manually recode the 'religion' levels into 'Christian' and 'No
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 
 opinion_data <- opinion_data |>
   mutate(religion = _______(_______, 
@@ -209,7 +279,8 @@ opinion_data <- opinion_data |>
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(religion = fct_collapse(religion, 
                                   Christian = c("Catholic", "Protestant"),
@@ -230,8 +301,24 @@ Reorder the levels of the "party" factor variable based on their frequencies and
 ```{webr-r}
 # Your code here
 
-count(opinion_data, party) # the table should appear in a different order if successfully coded
+ 
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`count(opinion_data, party)`
+
+The table should appear in a different order if successfully coded.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -242,7 +329,8 @@ Use the fct_infreq() function to reorder the levels of the 'party' variable in '
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 # To reorder:
 opinion_data <- opinion_data |> 
    mutate(party = fct_infreq(_____))
@@ -255,7 +343,8 @@ count(opinion_data, ______)
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 opinion_data <- opinion_data |> 
   mutate(party = fct_infreq(party))
 

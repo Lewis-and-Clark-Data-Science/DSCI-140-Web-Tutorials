@@ -83,11 +83,26 @@ Here are a few exercises to try. You can click for hints and the answer for each
 This data is too long, with multiple variables sharing the same columns. Convert `climate_data_longer` to a wider format, where each column represents a different type of measurement. Use the current measurement variable to create new variable names. Name the wider dataframe `climate_data`.
 
 ```{webr-r}
-# Your code here.  If run successfully, the following code would indicate that your data has
-# 16 observations and 5 variables
+# Your code here.  
 
-str(climate_data)
+
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`str(climate_data)`
+
+If run successfully, the following code would indicate that your data has 16 observations and 5 variables
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -98,17 +113,19 @@ You'll want to use the `pivot_wider()` function. You will need to specify the na
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 # Here's how you start:
-# climate_data <- climate_data_longer |> 
-#   pivot_wider(names_from = _______, values_from = ______)
+climate_data <- climate_data_longer |> 
+  pivot_wider(names_from = _______, values_from = ______)
 ```
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 climate_data <- climate_data_longer |> 
   pivot_wider(names_from = measurement, values_from = value)
 ```
@@ -121,8 +138,24 @@ For practice purposes, can you convert `climate_data` back to its original, long
 ```{webr-r}
 # Your code here
 
-str(climate_data_reversion) # should show 32 observations, 5 variables
+ 
 ```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`str(climate_data_reversion)`
+
+If run successfully, the following code should show 32 observations, 5 variables.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -133,21 +166,23 @@ This time, you'll want to use the pivot_longer() function. You need to specify w
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false 
 # Start with this:
-# climate_data_reversion <- climate_data |> 
-#   pivot_longer(cols = c(______, _____), 
-#                names_to = "______", 
-#                values_to = "______")
+climate_data_reversion <- climate_data |> 
+  pivot_longer(cols = c(______, _____), 
+              names_to = "______", 
+              values_to = "______")
 ```
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 climate_data_reversion <- climate_data |> 
-  pivot_longer(cols = c(carbon_emission, temperature_change), 
+  pivot_longer(cols = c(carbon_emission, temperature_change),
                names_to = "measurement", 
                values_to = "value")
 ```
@@ -176,8 +211,23 @@ Now, bind this new data to `climate_data` and call your new data set `all_climat
 ```{webr-r}
 # Your code here
 
-str(all_climate_data) # should now have 20 observations
+
 ```
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`str(all_climate_data)`
+
+If run successfully, the following code should now show 20 observations.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -188,16 +238,18 @@ Use bind_rows() to combine the rows of two datasets. Make sure they have the sam
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 # Here's how you start:
-# all_climate_data <- bind_rows(____, _____)
+all_climate_data <- bind_rows(____, _____)
 ```
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 all_climate_data <- bind_rows(climate_data, new_data)
 ```
 :::
@@ -211,9 +263,24 @@ Let's find out which countries in our `climate_data` have signed an environmenta
 ```{webr-r}
 # Your code here
 
-str(climate_treaty_info) # If run successfully you sould have more than 5 variables
+ 
 ```
 
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`str(climate_treaty_info)`
+
+If run successfully you should have more than 5 variables.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
@@ -223,29 +290,46 @@ You can use `left_join()` to merge data, keeping all records from `climate_data`
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 # Here's how you start:
-# climate_treaty_info <- left_join(______, ______, by = "______")
+climate_treaty_info <- left_join(______, ______, by = "______")
 ```
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 climate_treaty_info <- left_join(climate_data, treaty_data, by = "country")
 ```
 :::
 
 ### Exercise 5: Anti-Join
 
-Now, identify which countries listed in `treaty_data` are not present in `climate_data` using `anti_join()`. Save the mismatched countries in an object called missing_countries
+Now, identify which countries listed in `treaty_data` are not present in `climate_data` using `anti_join()`. Save the mismatched countries in an object called `missing_countries`.
 
 ```{webr-r}
 # Your code here
 
-str(missing_countries) # should have 1 observation, Elbonia
+ 
 ```
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+
+To check your work, run the following code in the code chunk below.
+
+`str(missing_countries)`
+
+If run successfully this should have 1 observation, Elbonia.
+
+```{webr-r}
+#Copy and paste the code here 
+
+
+```
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
@@ -256,16 +340,18 @@ anti_join() will return rows from x where there are no corresponding rows in y t
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-```{webr-r}
+```{r}
+#| eval: false
 # Here's how you start:
-# missing_countries <- anti_join(______, ______, by = "_______")
+missing_countries <- anti_join(______, ______, by = "_______")
 ```
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{webr-r}
+```{r}
+#| eval: false
 missing_countries <- anti_join(treaty_data, climate_data, by = "country")
 ```
 :::
