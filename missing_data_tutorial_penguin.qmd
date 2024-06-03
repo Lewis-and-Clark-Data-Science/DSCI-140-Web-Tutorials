@@ -67,7 +67,9 @@ Notice that there are NA values as well as "X"s in our data set. Today we'll be 
 
 ## Exercises
 
-Here are some practice exercises. You can click for hints and the answer for each problem.
+Here are some practice exercises. You can check if your code works using the "check your work" button after each problem. 
+
+If you get stuck, you can also click for hints and for an example answer. Remember, there's many ways to solve each problem, so the code in the "answer" box isn't the only way to solve it!  
 
 ### Exercise 1
 

@@ -12,6 +12,8 @@ website:
       - factor_tutorial.qmd
       - reshape_tutorial.qmd
       - ggplot_tutorial_penguin.qmd
+    background: "info"
+    foreground: "light"
       
 
 format:
