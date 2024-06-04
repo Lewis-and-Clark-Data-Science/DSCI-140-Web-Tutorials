@@ -526,8 +526,8 @@ penguin_clean |>
 #| eval: false
 penguin_clean |> 
   group_by(species)|> 
-  summarize(mean_mass=mean(body_mass))|>
-  ggplot(aes(x=fct_reorder(species, mean_mass), y=mean_mass))+
+  summarize(mean_bill=mean(bill_length))|>
+  ggplot(aes(x=fct_reorder(species, mean_bill), y=mean_bill))+
   geom_col()
 ```
 :::
@@ -587,7 +587,7 @@ ggplot(penguin_clean, aes(x=flipper_length))+
 
 #### Part B
 
-Next, separate out your density curve and create one density curve for each species. Hint: You will not need to add a whole new line of code to do this, just add a command into your existing code.
+Next, separate out your density curve and create one density curve for each island. Hint: You will not need to add a whole new line of code to do this, just add a command into your existing code.
 
 ```{webr-r}
 # Your code here
@@ -695,7 +695,7 @@ summary_data<- penguin_clean|>
 
 #### Part C
 
-Finally let's add vertical lines to the graph indicating the mean flipper length for each island.
+Now let's add vertical lines to the graph indicating the mean flipper length for each island.
 
 To do this, use the geometry `geom_vline()`. Use your `summary_data()` to specify the conditions in `geom_vline()`.
 
@@ -750,5 +750,56 @@ ggplot(penguin_clean, aes(x=flipper_length, color=island))+
 
 ```
 :::
+
+#### Part D
+
+Finally, add labels to your plot including x and y axis labels and a title. 
+
+```{webr-r}
+#Your code here
+
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Just add the `labs()` geometry to your existing code. 
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+```{r}
+#| eval: false
+summary_data<- penguin_clean|> 
+  group_by(island)|>
+  summarize(mean_flipper=mean(flipper_length))
+
+ggplot(penguin_clean, aes(x=flipper_length, color=island))+
+  geom_density()+
+  geom_vline(data=_______, aes(xintercept=_______, color=______))+
+  labs(title="_____", x="_____", y="_____")
+```
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+summary_data<- penguin_clean|> 
+  group_by(island)|>
+  summarize(mean_flipper=mean(flipper_length))
+
+ggplot(penguin_clean, aes(x=flipper_length, color=island))+
+  geom_density()+
+  geom_vline(data=summary_data, aes(xintercept=mean_flipper, color=island))+
+  labs(title="Flipper Length Density Plot for Penguins on Biscoe, Dream, and Torgersen Islands", x="Flipper Length (mm)", y="Density")
+
+```
+:::
+
 
 Congratulations, you have finished this tutorial!!
