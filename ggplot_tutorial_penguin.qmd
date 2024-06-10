@@ -527,8 +527,9 @@ penguin_clean |>
 penguin_clean |> 
   group_by(species)|> 
   summarize(mean_bill=mean(bill_length))|>
-  ggplot(aes(x=fct_reorder(species, mean_bill), y=mean_bill))+
-  geom_col()
+  ggplot(aes(x=fct_reorder(species, mean_bill), y=mean_bill, fill=species))+
+  geom_col()+
+  labs(x="Species", y = "Mean bill length (mm)", title="Mean bill length of penguins in the Palmer Archipelago")
 ```
 :::
 
